@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.section-title {
+  @apply text-3xl font-black tracking-tight text-slate-950 dark:text-white md:text-4xl;
+}
+
+.card {
+  @apply rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:shadow-glow dark:border-slate-800 dark:bg-slate-900/70;
+}
+
+.pill {
+  @apply rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200;
+}
