@@ -198,7 +198,50 @@ const FEATURED_PROJECTS = [
       { num: "< 30s", label: "AI Lead Response Time" },
       { num: "100%", label: "Deduplication Reliability" },
     ],
-    mediaNote: "Screenshot & architecture diagram preview",
+    gallery: [
+      {
+        id: "unit-matrix",
+        title: "Developer Project Unit Matrix (Interactive 2D/3D Grid)",
+        desc: "Real-time master project inventory matrix tracking 282 units across 8 floors with instant status classification (Available, Reserved, EOI, Booked, Sold, Blocked) and multi-filter pipeline.",
+        src: "/projects/real-estate/unit-matrix-2d-view.png",
+        tabLabel: "🏢 Unit Matrix (2D Grid)",
+      },
+      {
+        id: "wizard-details",
+        title: "Property Details Wizard & Multi-Type Specifications",
+        desc: "Multi-step property listing workflow capturing property categorization (Residential vs Commercial, Rent vs Sale), specifications (Sq ft/sq m, Unit No, Bedrooms, Title Deed), and agent assignment.",
+        src: "/projects/real-estate/property-details-wizard.png",
+        tabLabel: "⚙️ Details Wizard",
+      },
+      {
+        id: "publishing",
+        title: "Multi-Portal Sync & Publishing Gateway (Bayut & Property Finder API)",
+        desc: "Centralized publishing control with per-portal toggles (Bayut, Dubizzle, Property Finder API, Office Website), account mapping, and Sudonum telephony tracking.",
+        src: "/projects/real-estate/multi-portal-publishing.png",
+        tabLabel: "🔄 Multi-Portal Publishing",
+      },
+      {
+        id: "listings",
+        title: "Enterprise Property Listings & Live Feed Dashboard",
+        desc: "High-scale inventory table managing 841+ active properties with multi-portal sync indicators (Bayut, PF, Dubizzle), status lifecycle filters, and bulk WhatsApp sharing.",
+        src: "/projects/real-estate/property-listings-dashboard.png",
+        tabLabel: "📋 Listings Dashboard",
+      },
+      {
+        id: "compliance",
+        title: "RERA Legal Compliance & Document Automation (Form A & Title Deeds)",
+        desc: "Strict UAE regulatory compliance pipeline automating document verification, Form A validation, Title Deed attachments, and legal authorization tracking.",
+        src: "/projects/real-estate/rera-document-compliance.png",
+        tabLabel: "📄 Form A & Title Deeds",
+      },
+      {
+        id: "media",
+        title: "Media Asset Pipeline & Automated Watermarking",
+        desc: "Multi-step property creation wizard featuring automated watermark injection, high-res photo sequencing, and optimized cloud CDN delivery.",
+        src: "/projects/real-estate/media-gallery-watermark.png",
+        tabLabel: "🖼️ Media & Watermarking",
+      },
+    ],
   },
   {
     id: "wisemarket",
@@ -236,7 +279,43 @@ const FEATURED_PROJECTS = [
       { num: "100%", label: "WPS SIF Audit Compliance" },
       { num: "Zero", label: "Calculation Discrepancies" },
     ],
-    mediaNote: "Payroll engine & employee portal preview",
+    gallery: [
+      {
+        id: "hrm-wps",
+        title: "UAE Wages Protection System (WPS) & Automated Payroll Engine",
+        desc: "Deterministic payroll processing with direct 'Generate WPS' banking compliance SIF file generation, automated batch payslip downloads, and net pay computation.",
+        src: "/projects/hrm/hrm-wps-payslips-payroll.png",
+        tabLabel: "💳 WPS & Payroll Engine",
+      },
+      {
+        id: "hrm-employees",
+        title: "Enterprise Employee Directory & Real-Time Workforce Analytics",
+        desc: "Centralized workforce registry tracking active/inactive employees, designation hierarchies (Leasing Agents, Property Managers), and contact records.",
+        src: "/projects/hrm/hrm-employees-directory.png",
+        tabLabel: "👥 Employee Directory",
+      },
+      {
+        id: "hrm-attendance",
+        title: "Biometric Attendance Tracking & CSV Batch Ingestion",
+        desc: "Attendance reconciliation engine supporting CSV biometric device imports, check-in/out logging, overtime computation, and automated late deduction calculations.",
+        src: "/projects/hrm/hrm-attendance-csv-import.png",
+        tabLabel: "⏱️ Attendance & CSV Import",
+      },
+      {
+        id: "hrm-leaves",
+        title: "Leave Management & Multi-Tier Approval Workflow",
+        desc: "Leave tracking portal with planned/unplanned utilization dashboards, CSV exports, and manager approval/rejection pipelines for casual, annual, and paternity leaves.",
+        src: "/projects/hrm/hrm-leave-management.png",
+        tabLabel: "📅 Leave Approvals",
+      },
+      {
+        id: "hrm-loans",
+        title: "Employee Loans & Advance Salary Ledger",
+        desc: "Automated loan installment tracking and advance salary reconciliation, deducting repayments directly from monthly payroll runs.",
+        src: "/projects/hrm/hrm-loans-advances.png",
+        tabLabel: "🏦 Loans & Advances",
+      },
+    ],
   },
 ];
 
@@ -368,6 +447,11 @@ const RECRUITER_KNOWLEDGE = [
       "At Saabsoft, Khuzemah engineered multiple UAE/MENA real estate platforms handling 15,000+ units. He integrated Property Finder, Bayut, and Dubizzle for automated listing sync, built Bitrix24 CRM lead automation, and implemented Sudonum virtual numbers for lead tracking.",
   },
   {
+    keywords: ["hrm", "payroll", "wps", "attendance", "leaves", "salary", "saabsoft"],
+    answer:
+      "At Saabsoft, Khuzemah architected a full UAE HRM & Payroll platform covering biometric attendance CSV ingestion, automated overtime and late deductions, multi-tier leave approval pipelines, employee loan reconciliations, and compliant 1-click UAE Central Bank Wages Protection System (WPS) SIF file generation.",
+  },
+  {
     keywords: ["ai", "chatbot", "llm", "intelligence", "gpt", "openai"],
     answer:
       "Khuzemah builds operational AI systems that drive revenue. For UAE real estate, he built an AI conversational lead qualifier using Python and LLM APIs that captures budget, preferred property type, and investment readiness before routing clean leads directly into Bitrix24 CRM in under 30 seconds.",
@@ -391,6 +475,7 @@ const RECRUITER_KNOWLEDGE = [
 
 export default function Home() {
   const [activeNode, setActiveNode] = useState(NODES[1]); // Default to Bitrix24
+  const [galleryTabs, setGalleryTabs] = useState({ "uae-proptech": 0, "uae-hrm": 0 });
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
@@ -699,16 +784,86 @@ export default function Home() {
                     ))}
                   </div>
 
-                  {/* Visual Drop-in Placeholder for User Projects */}
-                  <div className="case-media-placeholder">
-                    <span className="icon">🖼️</span>
-                    <span>
-                      <strong>Visual Artifact Slot:</strong> {proj.mediaNote}
-                    </span>
-                    <span style={{ fontSize: "11.5px", color: "var(--muted-dim)" }}>
-                      (Ready to embed user project screenshots and diagrams)
-                    </span>
-                  </div>
+                  {/* Visual Drop-in Placeholder or Interactive Gallery */}
+                  {proj.gallery && proj.gallery.length > 0 ? (
+                    <div className="project-gallery">
+                      <div
+                        className="gallery-nav"
+                        role="tablist"
+                        aria-label={`${proj.title} views`}
+                      >
+                        {proj.gallery.map((item, gIdx) => {
+                          const currentTab = galleryTabs[proj.id] || 0;
+                          return (
+                            <button
+                              key={item.id}
+                              type="button"
+                              role="tab"
+                              aria-selected={currentTab === gIdx}
+                              className={`gallery-tab ${
+                                currentTab === gIdx ? "active" : ""
+                              }`}
+                              onClick={() =>
+                                setGalleryTabs((prev) => ({
+                                  ...prev,
+                                  [proj.id]: gIdx,
+                                }))
+                              }
+                            >
+                              {item.tabLabel}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      {(() => {
+                        const currentTab = galleryTabs[proj.id] || 0;
+                        const activeItem = proj.gallery[currentTab] || proj.gallery[0];
+                        return (
+                          <div className="gallery-viewport">
+                            <img
+                              src={activeItem.src}
+                              alt={activeItem.title || "Project Screenshot"}
+                              className="gallery-img"
+                              loading="lazy"
+                            />
+                            <div className="gallery-caption">
+                              <div>
+                                <span className="gallery-caption-title">
+                                  {activeItem.title}
+                                </span>
+                                <span className="gallery-caption-desc">
+                                  {activeItem.desc}
+                                </span>
+                              </div>
+                              <a
+                                href={activeItem.src}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="gallery-expand-link"
+                                title="Open full resolution screenshot in new tab"
+                              >
+                                <span>View Full Resolution</span>
+                                <span>↗</span>
+                              </a>
+                            </div>
+                          </div>
+                        );
+                      })()}
+                    </div>
+                  ) : (
+                    <div className="case-media-placeholder">
+                      <span className="icon">🖼️</span>
+                      <span>
+                        <strong>Visual Artifact Slot:</strong> {proj.mediaNote}
+                      </span>
+                      <span
+                        style={{ fontSize: "11.5px", color: "var(--muted-dim)" }}
+                      >
+                        (Ready to embed user project screenshots and diagrams)
+                      </span>
+                    </div>
+                  )}
                 </article>
               ))}
             </div>
@@ -947,6 +1102,13 @@ export default function Home() {
                 onClick={() => handleSendPrompt("How do you build AI chatbots and integrations?")}
               >
                 🤖 AI Chatbots & LLMs
+              </button>
+              <button
+                type="button"
+                className="ai-chip"
+                onClick={() => handleSendPrompt("Tell me about your UAE HRM and WPS payroll platform")}
+              >
+                💼 UAE HRM & WPS Payroll
               </button>
               <button
                 type="button"
