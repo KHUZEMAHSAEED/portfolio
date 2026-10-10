@@ -14,7 +14,7 @@ export default function Hero({ onOpenAssistant, onOpenContact }) {
       </p>
       <h1>Systems that connect, scale, and hold together.</h1>
       <p className="tagline">
-        Six-plus years architecting resilient Laravel, Python, and Next.js
+        Six-plus years architecting resilient Python, Django, Laravel, and Next.js
         platforms that sit at the core of UAE real estate, international
         e-commerce, and enterprise operations — orchestrating CRMs,
         marketplaces, logistics, and AI bots into unified ecosystems.

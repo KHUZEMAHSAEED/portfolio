@@ -20,6 +20,7 @@ export default function Home() {
   const [activeNode, setActiveNode] = useState(NODES[1]); // Default to Bitrix24
   const [galleryTabs, setGalleryTabs] = useState({
     "uae-proptech": 0,
+    zenawalk: 0,
     "uae-hrm": 0,
   });
   const [drawerOpen, setDrawerOpen] = useState(false);

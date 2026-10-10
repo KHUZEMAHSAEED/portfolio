@@ -112,14 +112,14 @@ export const SKILLS = [
   {
     group: "Backend Engineering",
     items: [
+      "Python",
+      "Django",
+      "FastAPI",
       "PHP 8+",
       "Laravel",
-      "Python",
       "CodeIgniter",
       "RESTful APIs",
-      "FastAPI",
-      "Microservices",
-      "Queue Workers",
+      "Microservices & Queues",
     ],
   },
   {
@@ -241,6 +241,35 @@ export const FEATURED_PROJECTS = [
         tabLabel: "🖼️ Media & Watermarking",
       },
     ],
+  },
+  {
+    id: "zenawalk",
+    domain: "TravelTech & Multilingual CMS Platforms",
+    role: "Full Stack & Systems Engineer",
+    stack: "Python (Flask) · MySQL · Cloudflare R2 · OpenRouteService · Boto3 · Vanilla JS (ES6+) · Stripe",
+    title: "ZenaWalk — Multilingual Audio Tour Platform & Centralized CMS Engine",
+    summary:
+      "Full-stack digital walking tour ecosystem for Genoa (Italy), featuring a centralized zero-code homepage CMS, 5-language localization with intelligent fallback to Italian, and Cloudflare R2 media streaming for high-definition audio guides and walking routes.",
+    problem:
+      "Tour creators and certified guides required a centralized way to manage texts, media, and audio commentary across 5 languages (Italian, English, French, German, Spanish) without developer intervention or redeployment, while serving heavy audio/image payloads globally with zero streaming latency.",
+    solution:
+      "Architected a Python/Flask REST backend with idempotent MySQL migrations (zw_settings, zw_translations), integrated Cloudflare R2 object storage via Boto3 with S3v4 signing for zero-egress audio distribution, built an OpenRouteService GPS walking route engine, and engineered a dynamic translation engine with Italian fallback.",
+    metrics: [
+      { num: "5", label: "Supported Languages (IT/EN/FR/DE/ES)" },
+      { num: "10+", label: "Curated Walking Routes" },
+      { num: "100%", label: "Cloudflare R2 CDN Streaming" },
+      { num: "Zero-Code", label: "CMS Publishing & Fallback" },
+    ],
+    gallery: [
+      {
+        id: "zenawalk-hero",
+        title: "ZenaWalk Genoa Itinerary Hub & Mobile Audio Guide Experience",
+        desc: "Interactive pedestrian tour platform featuring GPS waypoint navigation, audio commentary, and mobile-first responsive layout.",
+        src: "/projects/zenawalk/genova-hero.jpg",
+        tabLabel: "🇮🇹 Genoa Tour Experience",
+      },
+    ],
+    isZenaWalkVisual: true,
   },
   {
     id: "wisemarket",
@@ -507,6 +536,12 @@ export const INTEGRATIONS_DATA = [
     id: "sudonum",
   },
   {
+    name: "Cloudflare R2",
+    category: "Object Storage CDN",
+    color: "#F38020",
+    id: "cloudflare-r2",
+  },
+  {
     name: "OpenAI API",
     category: "LLMs & Automation",
     color: "#10A37F",
@@ -516,9 +551,15 @@ export const INTEGRATIONS_DATA = [
 
 export const RECRUITER_KNOWLEDGE = [
   {
+    keywords: ["zenawalk", "genoa", "genova", "audio", "tour", "multilingual", "r2", "cms"],
+    answer:
+      "ZenaWalk is a full-stack digital walking tour platform for Genoa (Italy) engineered by Khuzemah. Key systems: Python (Flask) REST API with MySQL, Cloudflare R2 object storage via Boto3 (S3v4) for zero-latency audio streaming, a centralized zero-code CMS (/api/settings/public/), and 5-language localization (Italian, English, French, German, Spanish) with intelligent fallback to Italian.",
+    action: { label: "Inspect ZenaWalk Case Study", href: "#cases" },
+  },
+  {
     keywords: ["stack", "technology", "technologies", "framework", "languages"],
     answer:
-      "Khuzemah is a Senior Full Stack & AI Systems Engineer with 6+ years of production experience. Core stack: PHP (Laravel, CodeIgniter), Python (FastAPI, LLM orchestration), React.js, Next.js (App Router), MySQL, Redis, and RESTful API architecture. He specializes in deep third-party integrations (CRMs, PropTech, logistics, payments) and practical AI automation.",
+      "Khuzemah is a Senior Full Stack & AI Systems Engineer with 6+ years of production experience. Core stack: Python (Django, FastAPI, LLM orchestration), PHP (Laravel, CodeIgniter), React.js, Next.js (App Router), MySQL, Redis, and RESTful API architecture. He specializes in deep third-party integrations (Bitrix24, PropTech, logistics, payments) and practical AI automation.",
     action: { label: "View Capabilities", href: "#skills" },
   },
   {

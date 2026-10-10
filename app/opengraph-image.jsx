@@ -18,34 +18,66 @@ export default function Image() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#0e141b",
-          padding: "60px 80px",
+          backgroundColor: "#101014",
+          padding: "64px 80px",
           fontFamily: "system-ui, -apple-system, sans-serif",
-          border: "2px solid #2b3a49",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
+        {/* Cinematic ambient background glow */}
+        <div
+          style={{
+            position: "absolute",
+            top: "-120px",
+            right: "-100px",
+            width: "550px",
+            height: "550px",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(139, 92, 246, 0.28) 0%, rgba(59, 130, 246, 0.12) 50%, transparent 70%)",
+            filter: "blur(40px)",
+          }}
+        />
+
         {/* Top Header Badge */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            position: "relative",
+            zIndex: 2,
+          }}
+        >
           <div
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "12px",
-              background: "#141c25",
-              padding: "10px 20px",
+              gap: "10px",
+              background: "rgba(25, 25, 32, 0.8)",
+              padding: "10px 22px",
               borderRadius: "40px",
-              border: "1px solid #2b3a49",
+              border: "1px solid rgba(139, 92, 246, 0.3)",
+              boxShadow: "0 0 20px rgba(139, 92, 246, 0.15)",
             }}
           >
             <div
               style={{
-                width: "10px",
-                height: "10px",
+                width: "8px",
+                height: "8px",
                 borderRadius: "50%",
-                backgroundColor: "#e2a33d",
+                backgroundColor: "#8B5CF6",
+                boxShadow: "0 0 10px #8B5CF6",
               }}
             />
-            <span style={{ color: "#e8edf3", fontSize: "18px", fontWeight: "600" }}>
+            <span
+              style={{
+                color: "#F5F5F7",
+                fontSize: "16px",
+                fontWeight: "600",
+                letterSpacing: "0.5px",
+              }}
+            >
               Senior Full Stack &amp; AI Systems Engineer
             </span>
           </div>
@@ -54,39 +86,91 @@ export default function Image() {
             style={{
               display: "flex",
               alignItems: "center",
-              color: "#8798a8",
-              fontSize: "18px",
+              color: "#A1A1B0",
+              fontSize: "16px",
+              letterSpacing: "0.3px",
             }}
           >
-            Lahore, PK · Remote Worldwide
+            Lahore, PK · Remote Worldwide (GMT+5)
           </div>
         </div>
 
-        {/* Central Core Branding */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          <div style={{ fontSize: "56px", fontWeight: "800", color: "#e8edf3", letterSpacing: "-1px" }}>
+        {/* Center Editorial Title */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "16px",
+            position: "relative",
+            zIndex: 2,
+          }}
+        >
+          <div
+            style={{
+              fontSize: "64px",
+              fontWeight: "800",
+              color: "#F5F5F7",
+              letterSpacing: "-1.5px",
+              lineHeight: "1.05",
+            }}
+          >
             Khuzemah Saeed
           </div>
-          <div style={{ fontSize: "28px", color: "#e2a33d", fontWeight: "600" }}>
-            Systems that connect, scale, and hold together.
+          <div
+            style={{
+              fontSize: "30px",
+              fontWeight: "600",
+              background: "linear-gradient(90deg, #8B5CF6 0%, #60A5FA 100%)",
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              color: "transparent",
+            }}
+          >
+            High-Concurreny Platforms · Enterprise Integrations · Operational AI
           </div>
-          <div style={{ fontSize: "20px", color: "#8798a8", maxWidth: "900px", lineHeight: "1.4" }}>
-            6+ Years architecting resilient Laravel, Python, and Next.js platforms · UAE PropTech · Bitrix24 &amp; Property Finder APIs · Automated WPS Payroll · Enterprise Integrations
+          <div
+            style={{
+              fontSize: "20px",
+              color: "#A1A1B0",
+              maxWidth: "960px",
+              lineHeight: "1.45",
+            }}
+          >
+            6+ years engineering mission-critical systems across UAE PropTech, global marketplaces,
+            and HRM. Bitrix24 · Property Finder · Cin7 ERP · WPS Central Bank Payroll · LangChain &amp; OpenAI
           </div>
         </div>
 
         {/* Bottom Tag Strip */}
-        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-          {["Laravel", "Python", "Next.js", "Bitrix24 CRM", "Property Finder API", "Cin7", "WPS Payroll", "AI Chatbots"].map((tag) => (
+        <div
+          style={{
+            display: "flex",
+            gap: "12px",
+            flexWrap: "wrap",
+            position: "relative",
+            zIndex: 2,
+          }}
+        >
+          {[
+            "Python",
+            "Laravel",
+            "Next.js",
+            "Bitrix24 CRM",
+            "Property Finder API",
+            "Cin7 ERP",
+            "WPS Banking SIF",
+            "OpenAI API",
+          ].map((tag) => (
             <div
               key={tag}
               style={{
-                background: "#182230",
-                color: "#e8edf3",
-                padding: "8px 16px",
-                borderRadius: "6px",
-                fontSize: "16px",
-                border: "1px solid #2b3a49",
+                background: "rgba(25, 25, 32, 0.9)",
+                color: "#E2E8F0",
+                padding: "8px 18px",
+                borderRadius: "8px",
+                fontSize: "15px",
+                fontWeight: "500",
+                border: "1px solid rgba(255, 255, 255, 0.08)",
               }}
             >
               {tag}

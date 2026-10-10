@@ -1,18 +1,18 @@
-import { Fraunces, IBM_Plex_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["500", "600", "700"],
   variable: "--font-display",
   display: "swap",
 });
 
-const plexSans = IBM_Plex_Sans({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-body",
   display: "swap",
 });
@@ -25,18 +25,20 @@ export const metadata = {
   metadataBase: new URL(siteUrl),
   title: "Khuzemah Saeed — Senior Full Stack & AI Systems Engineer",
   description:
-    "Senior Full Stack & AI Systems Engineer with 6+ years specializing in Laravel, Python, Next.js, enterprise CRM integrations, and AI workflow automation across UAE real estate, e-commerce, and HRM.",
+    "Senior Full Stack & AI Systems Engineer with 6+ years specializing in Python, Laravel, Next.js, enterprise CRM integrations, and AI workflow automation across UAE real estate, e-commerce, and HRM.",
   keywords: [
     "Khuzemah Saeed",
     "Senior Full Stack Developer",
     "AI Systems Engineer",
-    "Laravel Developer",
     "Python Developer",
+    "Laravel Developer",
     "Next.js Developer",
     "Bitrix24 Integration",
     "UAE Real Estate Developer",
     "Property Finder API",
-    "Bayut API"
+    "Bayut API",
+    "Cin7 ERP",
+    "Enterprise Automation"
   ],
   authors: [{ name: "Khuzemah Saeed" }],
   openGraph: {
@@ -46,7 +48,7 @@ export const metadata = {
     type: "profile",
     locale: "en_US",
     url: siteUrl,
-    siteName: "Khuzemah Saeed Portfolio",
+    siteName: "Khuzemah Saeed — Cinematic Engineering Portfolio",
   },
   twitter: {
     card: "summary_large_image",
@@ -66,9 +68,10 @@ const jsonLd = {
     name: "National University of Sciences and Technology (NUST)",
   },
   knowsAbout: [
-    "PHP",
-    "Laravel",
     "Python",
+    "Django",
+    "Laravel",
+    "PHP",
     "Next.js",
     "React",
     "REST APIs",
@@ -87,7 +90,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${plexSans.variable}`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${plusJakarta.variable}`}>
       <head>
         <script
           type="application/ld+json"

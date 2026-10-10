@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import WiseMarketVisual from "./WiseMarketVisual";
+import ZenaWalkVisual from "./ZenaWalkVisual";
 
 export default function CaseStudies({
   projects = [],
@@ -16,10 +17,9 @@ export default function CaseStudies({
           <h2>Featured Case Studies</h2>
           <span className="section-index">01</span>
         </div>
-        <p style={{ color: "var(--muted)", maxWidth: "66ch", marginBottom: "32px" }}>
-          Deep architectural dives into production systems handling multi-portal
-          real estate synchronization, international marketplace logistics, and
-          strict enterprise compliance.
+        <p style={{ color: "var(--text-secondary)", maxWidth: "68ch", marginBottom: "36px", fontSize: "16px" }}>
+          Deep architectural dives into production systems handling multilingual digital travel platforms,
+          multi-portal real estate synchronization, cross-border e-commerce, and strict fintech compliance.
         </p>
 
         <div className="case-grid">
@@ -30,7 +30,7 @@ export default function CaseStudies({
                   <span className="case-badge badge-domain">{proj.domain}</span>
                   <span className="case-badge badge-role">{proj.role}</span>
                 </div>
-                <span style={{ fontSize: "12.5px", color: "var(--muted-dim)" }}>
+                <span style={{ fontSize: "12.5px", color: "var(--text-muted)" }}>
                   {proj.stack}
                 </span>
               </div>
@@ -58,34 +58,34 @@ export default function CaseStudies({
                 ))}
               </div>
 
-              {/* WiseMarket Custom Architecture Visual */}
-              {proj.id === "wisemarket" ? (
-                <WiseMarketVisual />
-              ) : proj.gallery && proj.gallery.length > 0 ? (
+              {/* Screenshot Gallery (for projects with images) */}
+              {proj.gallery && proj.gallery.length > 0 && (
                 <div className="project-gallery">
-                  <div
-                    className="gallery-nav"
-                    role="tablist"
-                    aria-label={`${proj.title} views`}
-                  >
-                    {proj.gallery.map((item, gIdx) => {
-                      const currentTab = galleryTabs[proj.id] || 0;
-                      return (
-                        <button
-                          key={item.id}
-                          type="button"
-                          role="tab"
-                          aria-selected={currentTab === gIdx}
-                          className={`gallery-tab ${
-                            currentTab === gIdx ? "active" : ""
-                          }`}
-                          onClick={() => onTabChange(proj.id, gIdx)}
-                        >
-                          {item.tabLabel}
-                        </button>
-                      );
-                    })}
-                  </div>
+                  {proj.gallery.length > 1 && (
+                    <div
+                      className="gallery-nav"
+                      role="tablist"
+                      aria-label={`${proj.title} views`}
+                    >
+                      {proj.gallery.map((item, gIdx) => {
+                        const currentTab = galleryTabs[proj.id] || 0;
+                        return (
+                          <button
+                            key={item.id}
+                            type="button"
+                            role="tab"
+                            aria-selected={currentTab === gIdx}
+                            className={`gallery-tab ${
+                              currentTab === gIdx ? "active" : ""
+                            }`}
+                            onClick={() => onTabChange(proj.id, gIdx)}
+                          >
+                            {item.tabLabel}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
 
                   {(() => {
                     const currentTab = galleryTabs[proj.id] || 0;
@@ -141,7 +141,13 @@ export default function CaseStudies({
                     );
                   })()}
                 </div>
-              ) : null}
+              )}
+
+              {/* ZenaWalk Multilingual & Cloudflare R2 Architecture Visual */}
+              {proj.id === "zenawalk" && <ZenaWalkVisual />}
+
+              {/* WiseMarket Custom Architecture Visual */}
+              {proj.id === "wisemarket" && <WiseMarketVisual />}
             </article>
           ))}
         </div>
