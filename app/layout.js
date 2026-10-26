@@ -1,29 +1,27 @@
-import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-display",
+  variable: "--font-inter",
   display: "swap",
 });
 
-const plusJakarta = Plus_Jakarta_Sans({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-body",
+  weight: ["400", "500"],
+  variable: "--font-jetbrains",
   display: "swap",
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://khuzemahsaeed.vercel.app");
+  process.env.NEXT_PUBLIC_SITE_URL || "https://khuzemah.growthpulse.space";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Khuzemah Saeed — Senior Full Stack & AI Systems Engineer",
+  title: "Khuzemah Saeed — Senior Full Stack Developer (Backend & AI)",
   description:
     "Senior Full Stack & AI Systems Engineer with 6+ years specializing in Python, Laravel, Next.js, enterprise CRM integrations, and AI workflow automation across UAE real estate, e-commerce, and HRM.",
   keywords: [
@@ -42,17 +40,18 @@ export const metadata = {
   ],
   authors: [{ name: "Khuzemah Saeed" }],
   openGraph: {
-    title: "Khuzemah Saeed — Senior Full Stack & AI Systems Engineer",
+    title: "Khuzemah Saeed — Senior Full Stack Developer (Backend & AI)",
     description:
       "6+ years architecting scalable platforms, enterprise integrations (Bitrix24, Property Finder, Cin7), and AI automations. NUST CS graduate.",
     type: "profile",
     locale: "en_US",
     url: siteUrl,
-    siteName: "Khuzemah Saeed — Cinematic Engineering Portfolio",
+    siteName: "Khuzemah Saeed — Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Khuzemah Saeed — Senior Full Stack & AI Systems Engineer",
+    creator: "@KhuzemahSaeed",
+    title: "Khuzemah Saeed — Senior Full Stack Developer (Backend & AI)",
     description:
       "6+ years architecting scalable platforms, enterprise integrations (Bitrix24, Property Finder, Cin7), and AI automations.",
   },
@@ -63,6 +62,12 @@ const jsonLd = {
   "@type": "Person",
   name: "Khuzemah Saeed",
   jobTitle: "Senior Full Stack & AI Systems Engineer",
+  email: "mailto:khuzemasaeed@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Lahore",
+    addressCountry: "PK",
+  },
   alumniOf: {
     "@type": "CollegeOrUniversity",
     name: "National University of Sciences and Technology (NUST)",
@@ -81,16 +86,24 @@ const jsonLd = {
     "System Integration",
     "UAE Real Estate Platforms"
   ],
-  url: "https://github.com/KHUZEMAHSAEED",
+  url: siteUrl,
   sameAs: [
+    "https://x.com/KhuzemahSaeed",
     "https://github.com/KHUZEMAHSAEED",
     "https://www.linkedin.com/in/khuzemah-saeed/"
   ]
 };
 
+export const viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#F7F6F2" },
+    { media: "(prefers-color-scheme: dark)", color: "#0E1013" },
+  ],
+};
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${plusJakarta.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
         <script
           type="application/ld+json"

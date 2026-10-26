@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Engineering Projects & Architecture Case Studies | Khuzemah Saeed",
+  title: "Case Studies | Khuzemah Saeed — Senior Full Stack Developer",
   description:
     "Explore in-depth architectural case studies by Khuzemah Saeed — from UAE PropTech real estate synchronization to multilingual European digital tourism, cross-border e-commerce, and fintech compliance.",
   openGraph: {
@@ -7,7 +7,6 @@ export const metadata = {
     description:
       "Production systems engineered for real-world operations with verified metrics, third-party API pipelines, and cloud infrastructures.",
     type: "website",
-    url: "https://khuzemah.dev/projects",
   },
 };
 

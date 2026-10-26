@@ -37,22 +37,17 @@ Follow the prompts; Vercel will give you a live URL when it finishes.
 
 ## Editing content
 
-Everything text-based lives in `app/page.js` as plain arrays near the top
-of the file:
-- `SKILLS` — the capability grid
-- `INTEGRATIONS` — the platform list under "Platforms integrated"
-- `EXPERIENCE` — your roles, each with sub-projects and bullet points
-- The `NODES` array and hero copy (headline/tagline) are also in this file
+All copy lives in `data/portfolioData.js`:
 
-Colors, fonts, and spacing are all defined as CSS variables at the top of
-`app/globals.css` under `:root` — change a value there and it updates
-everywhere it's used.
+- `PROFILE` — name, headline, contact details, availability and the recruiter
+  "hiring snapshot". Optional fields (`noticePeriod`, `employmentType`,
+  `relocation`, `languages`, `photo`, `certifications`, `testimonials`) stay
+  hidden on the site until you fill them in.
+- `IMPACT`, `DOMAINS`, `FAQ` — homepage numbers, industries and recruiter Q&A.
+- `PROJECT_CARDS` / `HOMEPAGE_PROJECTS` — short card copy and which case
+  studies appear on the homepage (and in what order).
+- `FEATURED_PROJECTS`, `EXPERIENCE`, `SKILLS`, `CORE_SKILLS` — full case
+  studies, work history and the skills matrix.
 
-## Before you publish
-
-A couple of things worth double-checking against your own records:
-- The phone number and email in the hero, footer, and header are taken
-  directly from your resume — confirm they're still current.
-- Add a real project screenshot or two if you can share non-confidential
-  ones — right now the site relies on the diagram and written detail
-  rather than screenshots, since none were provided.
+Styling is plain CSS with design tokens at the top of `app/globals.css`
+(light theme by default, dark theme via `prefers-color-scheme`).

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
+import { IconClose, IconChevronLeft, IconChevronRight, IconZoom, IconArrowUpRight } from "./Icons";
 
 export default function LightboxModal({
   isOpen,
@@ -23,48 +24,43 @@ export default function LightboxModal({
     setIsLoaded(false);
   }, [currentIndex]);
 
-  // Lock body scroll and handle focus trap / keyboard navigation
+  const handlePrev = useCallback(() => {
+    if (items.length <= 1) return;
+    onNavigate((currentIndex - 1 + items.length) % items.length);
+  }, [items.length, currentIndex, onNavigate]);
+
+  const handleNext = useCallback(() => {
+    if (items.length <= 1) return;
+    onNavigate((currentIndex + 1) % items.length);
+  }, [items.length, currentIndex, onNavigate]);
+
+  // Lock body scroll and restore focus on close
   useEffect(() => {
     if (!isOpen) return;
 
     previousActiveElement.current = document.activeElement;
     document.body.style.overflow = "hidden";
-
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
-        onClose();
-      } else if (e.key === "ArrowLeft") {
-        handlePrev();
-      } else if (e.key === "ArrowRight") {
-        handleNext();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    if (modalRef.current) {
-      modalRef.current.focus();
-    }
+    modalRef.current?.focus();
 
     return () => {
       document.body.style.overflow = "";
-      window.removeEventListener("keydown", handleKeyDown);
-      if (previousActiveElement.current) {
-        previousActiveElement.current.focus?.();
-      }
+      previousActiveElement.current?.focus?.();
     };
-  }, [isOpen, onClose]);
+  }, [isOpen]);
 
-  const handlePrev = useCallback(() => {
-    if (items.length <= 1) return;
-    const nextIdx = (currentIndex - 1 + items.length) % items.length;
-    onNavigate(nextIdx);
-  }, [items.length, currentIndex, onNavigate]);
+  // Keyboard navigation (re-bound when the index changes so arrows never act on a stale slide)
+  useEffect(() => {
+    if (!isOpen) return;
 
-  const handleNext = useCallback(() => {
-    if (items.length <= 1) return;
-    const nextIdx = (currentIndex + 1) % items.length;
-    onNavigate(nextIdx);
-  }, [items.length, currentIndex, onNavigate]);
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") onClose();
+      else if (e.key === "ArrowLeft") handlePrev();
+      else if (e.key === "ArrowRight") handleNext();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose, handlePrev, handleNext]);
 
   const toggleZoom = () => {
     setScale((prev) => (prev === 1 ? 1.6 : prev === 1.6 ? 2.2 : 1));
@@ -83,7 +79,6 @@ export default function LightboxModal({
       tabIndex={-1}
     >
       <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-        {/* Top Header Bar */}
         <div className="lightbox-topbar">
           <div className="lightbox-meta">
             <span className="lightbox-counter">
@@ -97,35 +92,34 @@ export default function LightboxModal({
               type="button"
               className="lightbox-action-btn"
               onClick={toggleZoom}
-              title={`Zoom (current: ${scale}x)`}
-              aria-label="Toggle Zoom"
+              aria-label={scale > 1 ? "Zoom out" : "Zoom in"}
             >
-              {scale > 1 ? "🔍 Zoom Out" : "🔎 Zoom In"}
+              <IconZoom size={16} />
+              <span>{scale > 1 ? `${scale}×` : "Zoom"}</span>
             </button>
             <a
               href={activeItem.src}
               target="_blank"
               rel="noreferrer"
               className="lightbox-action-btn"
-              title="Open raw image in new tab"
+              aria-label="Open original image in a new tab"
             >
-              Raw ↗
+              <IconArrowUpRight size={16} />
+              <span>Original</span>
             </a>
             <button
               type="button"
-              className="lightbox-close-btn"
+              className="lightbox-action-btn"
               onClick={onClose}
-              aria-label="Close Lightbox (Esc)"
-              title="Close (Esc)"
+              aria-label="Close (Esc)"
             >
-              ✕
+              <IconClose size={18} />
             </button>
           </div>
         </div>
 
-        {/* Viewport Frame */}
         <div className="lightbox-viewport" onClick={toggleZoom}>
-          {!isLoaded && <div className="lightbox-loader">Loading image...</div>}
+          {!isLoaded && <div className="lightbox-loader">Loading…</div>}
           <div
             className="lightbox-zoom-container"
             style={{
@@ -135,7 +129,7 @@ export default function LightboxModal({
           >
             <Image
               src={activeItem.src}
-              alt={activeItem.title || "Project Screenshot"}
+              alt={activeItem.title || "Project screenshot"}
               width={1600}
               height={1000}
               className={`lightbox-img ${isLoaded ? "is-loaded" : ""}`}
@@ -146,7 +140,6 @@ export default function LightboxModal({
           </div>
         </div>
 
-        {/* Navigation Arrows */}
         {items.length > 1 && (
           <>
             <button
@@ -156,10 +149,9 @@ export default function LightboxModal({
                 e.stopPropagation();
                 handlePrev();
               }}
-              aria-label="Previous Screenshot (Arrow Left)"
-              title="Previous Screenshot (←)"
+              aria-label="Previous screenshot"
             >
-              ‹
+              <IconChevronLeft size={22} />
             </button>
             <button
               type="button"
@@ -168,15 +160,13 @@ export default function LightboxModal({
                 e.stopPropagation();
                 handleNext();
               }}
-              aria-label="Next Screenshot (Arrow Right)"
-              title="Next Screenshot (→)"
+              aria-label="Next screenshot"
             >
-              ›
+              <IconChevronRight size={22} />
             </button>
           </>
         )}
 
-        {/* Caption Footbar */}
         {activeItem.desc && (
           <div className="lightbox-caption">
             <p>{activeItem.desc}</p>

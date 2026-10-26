@@ -9,20 +9,13 @@ import SiteFooter from "@/components/SiteFooter";
 import RecruiterDrawer from "@/components/RecruiterDrawer";
 import ContactModal from "@/components/ContactModal";
 import LightboxModal from "@/components/LightboxModal";
+import MobileActionBar from "@/components/MobileActionBar";
+import { IconSearch, IconClose, IconArrowRight } from "@/components/Icons";
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [galleryTabs, setGalleryTabs] = useState({
-    "uae-proptech": 0,
-    "reelly-luxe": 0,
-    "talentfilter-ai": 0,
-    "alkithab-academy": 0,
-    "slowrise-pizza": 0,
-    "hash-move": 0,
-    zenawalk: 0,
-    "uae-hrm": 0,
-  });
+  const [galleryTabs, setGalleryTabs] = useState({});
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
   const [lightboxState, setLightboxState] = useState({
@@ -88,42 +81,36 @@ export default function ProjectsPage() {
     });
   }, [selectedCategory, searchQuery]);
 
+  const resetFilters = () => {
+    setSelectedCategory("all");
+    setSearchQuery("");
+  };
+
   return (
     <>
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
       <SiteHeader onOpenContact={() => setContactOpen(true)} />
 
-      <main className="gridpaper projects-page-main">
-        {/* ARCHIVE HERO HEADER */}
-        <section className="archive-hero-section">
+      <main id="main">
+        <section className="archive-hero">
           <div className="wrap">
-            <nav className="archive-breadcrumbs" aria-label="Breadcrumbs">
-              <Link href="/" className="breadcrumb-link">
-                Home
-              </Link>
-              <span className="breadcrumb-separator">/</span>
-              <span className="breadcrumb-current">Projects &amp; Architecture Archive</span>
+            <nav className="breadcrumbs" aria-label="Breadcrumbs">
+              <Link href="/">Home</Link>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">Case studies</span>
             </nav>
 
-            <div className="archive-hero-header">
-              <div className="archive-hero-title-group">
-                <span className="section-eyebrow">Production Architectures &amp; Case Studies</span>
-                <h1 className="archive-hero-title">Engineering Projects Archive</h1>
-              </div>
-              <span className="archive-count-badge">
-                {FEATURED_PROJECTS.length} Systems Cataloged
-              </span>
-            </div>
-
-            <p className="archive-hero-lead">
-              A comprehensive technical catalog of production systems engineered for UAE PropTech real estate
-              synchronization, enterprise ATS resume screening &amp; AI candidate governance, peer-to-peer luggage capacity &amp; parcel delivery, European digital tourism,
-              and enterprise fintech compliance. Each deployment includes deep problem analysis, system architecture
-              solutions, and verified performance metrics.
+            <p className="eyebrow">Case studies</p>
+            <h1 className="archive-title">{FEATURED_PROJECTS.length} production systems, in detail</h1>
+            <p className="section-lead">
+              The problem, what I built, the stack and the measurable result for each project — with
+              real screenshots from the running systems.
             </p>
 
-            {/* FILTER & SEARCH TOOLBAR */}
-            <div className="archive-toolbar panel">
-              <div className="archive-filter-pills" role="tablist" aria-label="Project Categories">
+            <div className="archive-toolbar">
+              <div className="filter-pills" role="group" aria-label="Filter by industry">
                 {PROJECT_CATEGORIES.map((cat) => {
                   const count =
                     cat.id === "all"
@@ -135,165 +122,91 @@ export default function ProjectsPage() {
                     <button
                       key={cat.id}
                       type="button"
-                      role="tab"
-                      aria-selected={isActive}
+                      aria-pressed={isActive}
                       className={`filter-pill ${isActive ? "active" : ""}`}
                       onClick={() => setSelectedCategory(cat.id)}
                     >
-                      <span>{cat.label}</span>
+                      {cat.label}
                       <span className="filter-pill-count">{count}</span>
                     </button>
                   );
                 })}
               </div>
 
-              <div className="archive-search-wrap">
-                <div className="search-input-box">
-                  <span className="search-icon" aria-hidden="true">
-                    🔍
-                  </span>
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search stack (e.g. Laravel, Python, Bitrix24, WPS)..."
-                    className="archive-search-input"
-                    aria-label="Filter projects by keyword"
-                  />
-                  {searchQuery && (
-                    <button
-                      type="button"
-                      className="search-clear-btn"
-                      onClick={() => setSearchQuery("")}
-                      aria-label="Clear search"
-                    >
-                      ✕
-                    </button>
-                  )}
-                </div>
-              </div>
+              <label className="search-box">
+                <IconSearch size={17} />
+                <input
+                  type="search"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search by tech, e.g. Laravel, FastAPI, Bitrix24"
+                  aria-label="Search case studies"
+                />
+                {searchQuery && (
+                  <button type="button" className="icon-btn" onClick={() => setSearchQuery("")} aria-label="Clear search">
+                    <IconClose size={16} />
+                  </button>
+                )}
+              </label>
             </div>
 
-            {/* ACTIVE FILTERS SUMMARY */}
-            <div className="archive-results-bar">
-              <span className="results-count">
-                Showing <strong>{filteredProjects.length}</strong> of {FEATURED_PROJECTS.length} engineering case studies
-              </span>
+            <p className="results-bar" aria-live="polite">
+              Showing {filteredProjects.length} of {FEATURED_PROJECTS.length}
               {(selectedCategory !== "all" || searchQuery) && (
-                <button
-                  type="button"
-                  className="reset-filters-btn"
-                  onClick={() => {
-                    setSelectedCategory("all");
-                    setSearchQuery("");
-                  }}
-                >
-                  Reset filters ↺
+                <button type="button" className="text-link" onClick={resetFilters}>
+                  Reset filters
                 </button>
               )}
-            </div>
+            </p>
           </div>
         </section>
 
-        {/* DETAILED CASE STUDIES */}
         {filteredProjects.length > 0 ? (
           <CaseStudies
             projects={filteredProjects}
             galleryTabs={galleryTabs}
             onTabChange={handleGalleryTabChange}
             onOpenLightbox={handleOpenLightbox}
-            showHeader={false}
           />
         ) : (
-          <section className="section empty-results-section">
+          <section className="section">
             <div className="wrap">
-              <div className="empty-panel panel">
-                <span className="empty-icon">🔎</span>
-                <h3>No engineering projects matched your query</h3>
-                <p>
-                  No case studies matched the criteria &ldquo;{searchQuery}&rdquo;. Try clearing your search
-                  filter or exploring other architectural domains.
-                </p>
-                <button
-                  type="button"
-                  className="btn-primary"
-                  onClick={() => {
-                    setSelectedCategory("all");
-                    setSearchQuery("");
-                  }}
-                >
-                  View All Projects
+              <div className="empty-state">
+                <h2>No case studies match &ldquo;{searchQuery}&rdquo;</h2>
+                <p>Try a different technology or clear the filters.</p>
+                <button type="button" className="btn btn-primary" onClick={resetFilters}>
+                  Show all projects
                 </button>
               </div>
             </div>
           </section>
         )}
 
-        {/* BOTTOM ARCHITECTURAL INQUIRY BANNER */}
-        <section className="section archive-consult-section">
+        <section className="section">
           <div className="wrap">
-            <div className="archive-consult-panel panel">
-              <div className="consult-content">
-                <span className="section-eyebrow">Technical Leadership &amp; Engineering</span>
-                <h2>Need High-Throughput System Architecture or Integration Pipelines?</h2>
-                <p>
-                  Whether it&apos;s architecting multi-region inventory synchronization, complex CRM automation,
-                  or high-concurrency API integrations, let&apos;s build resilient systems that perform under load.
-                </p>
-                <div className="consult-actions">
-                  <button
-                    type="button"
-                    className="btn-primary"
-                    onClick={() => setContactOpen(true)}
-                  >
-                    Discuss a Project / Architecture Inquiry
-                  </button>
-                  <button
-                    type="button"
-                    className="btn-secondary"
-                    onClick={() => setDrawerOpen(true)}
-                  >
-                    Ask AI Recruiter Assistant ✨
-                  </button>
-                  <Link href="/" className="btn-link">
-                    <span>Back to Overview</span>
-                    <span aria-hidden="true">↑</span>
-                  </Link>
-                </div>
+            <div className="cta-band">
+              <div>
+                <h2>Want the short version?</h2>
+                <p>The homepage has the two-minute overview — experience, skills and availability.</p>
+              </div>
+              <div className="cta-band-actions">
+                <Link href="/" className="btn btn-secondary">
+                  Back to overview
+                </Link>
+                <button type="button" className="btn btn-primary" onClick={() => setDrawerOpen(true)}>
+                  Ask a question <IconArrowRight size={16} />
+                </button>
               </div>
             </div>
           </div>
         </section>
       </main>
 
-      {/* SITE FOOTER */}
       <SiteFooter onOpenContact={() => setContactOpen(true)} />
+      <MobileActionBar onOpenContact={() => setContactOpen(true)} />
 
-      {/* FLOATING ACTION BUTTON FOR RECRUITER AI ASSISTANT */}
-      <button
-        type="button"
-        className="ai-fab"
-        onClick={() => setDrawerOpen(true)}
-        aria-label="Open AI Recruiter Assistant"
-      >
-        <span className="ai-fab-indicator" />
-        <span className="ai-fab-spark">✨</span>
-        <span className="ai-fab-label">Ask Khuzemah AI</span>
-      </button>
-
-      {/* INTERACTIVE RECRUITER AI ASSISTANT DRAWER */}
-      <RecruiterDrawer
-        isOpen={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
-      />
-
-      {/* DIRECT INQUIRY & CONTACT MODAL */}
-      <ContactModal
-        isOpen={contactOpen}
-        onClose={() => setContactOpen(false)}
-      />
-
-      {/* IN-APP SCREENSHOT LIGHTBOX MODAL */}
+      <RecruiterDrawer isOpen={drawerOpen} onClose={() => setDrawerOpen(false)} />
+      <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
       <LightboxModal
         isOpen={lightboxState.isOpen}
         onClose={handleCloseLightbox}

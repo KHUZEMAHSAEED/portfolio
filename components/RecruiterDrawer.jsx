@@ -2,12 +2,21 @@
 
 import { useEffect, useRef, useState } from "react";
 import { RECRUITER_KNOWLEDGE } from "@/data/portfolioData";
+import { IconClose } from "./Icons";
+
+const QUICK_QUESTIONS = [
+  ["UAE real estate experience", "Tell me about your UAE Real Estate experience"],
+  ["Core stack", "What is your core tech stack and architecture background?"],
+  ["AI & LLM work", "How do you build AI chatbots and integrations?"],
+  ["HRM & WPS payroll", "Tell me about your UAE HRM and WPS payroll platform"],
+  ["Availability & time zone", "What are your notice period and remote timezone availability?"],
+];
 
 export default function RecruiterDrawer({ isOpen, onClose }) {
   const [messages, setMessages] = useState([
     {
       sender: "assistant",
-      text: "Hello! I am Khuzemah's portfolio assistant. Ask me anything about his technical stack, UAE PropTech experience, AI chatbots, or remote availability!",
+      text: "Hi! Pick a topic below or type a keyword (e.g. Laravel, Bitrix24, payroll, availability) and I'll pull up the relevant details from Khuzemah's work.",
     },
   ]);
   const [inputVal, setInputVal] = useState("");
@@ -34,8 +43,11 @@ export default function RecruiterDrawer({ isOpen, onClose }) {
     const userMsg = { sender: "user", text: promptText };
     const query = promptText.toLowerCase();
 
-    let matched = RECRUITER_KNOWLEDGE.find((item) =>
-      item.keywords.some((kw) => query.includes(kw))
+    // Whole-word matching, so short keywords like "ai" don't fire inside "availability".
+    const matched = RECRUITER_KNOWLEDGE.find((item) =>
+      item.keywords.some((kw) =>
+        new RegExp(`\\b${kw.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`).test(query)
+      )
     );
 
     const reply = matched
@@ -73,11 +85,10 @@ export default function RecruiterDrawer({ isOpen, onClose }) {
         <div className="ai-drawer-header">
           <div>
             <div id="drawer-title" className="ai-drawer-title">
-              <span>✨</span>
-              <span>Khuzemah AI Assistant</span>
+              Recruiter Q&amp;A
             </div>
             <span className="ai-drawer-subtitle">
-              Instant recruiter answers grounded in verified production experience
+              Answers drawn from Khuzemah&apos;s CV and case studies
             </span>
           </div>
           <button
@@ -86,7 +97,7 @@ export default function RecruiterDrawer({ isOpen, onClose }) {
             onClick={onClose}
             aria-label="Close Assistant"
           >
-            ✕
+            <IconClose size={18} />
           </button>
         </div>
 
@@ -94,7 +105,7 @@ export default function RecruiterDrawer({ isOpen, onClose }) {
           {messages.map((m, idx) => (
             <div key={idx} className={`ai-msg ai-msg-${m.sender}`}>
               <span className="ai-msg-sender">
-                {m.sender === "user" ? "You" : "Khuzemah AI"}
+                {m.sender === "user" ? "You" : "Portfolio"}
               </span>
               <div className="ai-bubble">
                 <p>{m.text}</p>
@@ -109,7 +120,7 @@ export default function RecruiterDrawer({ isOpen, onClose }) {
                         }
                       }}
                     >
-                      {m.action.label} ↗
+                      {m.action.label} →
                     </a>
                   </div>
                 )}
@@ -119,49 +130,20 @@ export default function RecruiterDrawer({ isOpen, onClose }) {
         </div>
 
         <div className="ai-chips-wrap">
-          <span className="ai-chips-label">Quick Recruiter Questions:</span>
-          <button
-            type="button"
-            className="ai-chip"
-            onClick={() => handleSendPrompt("Tell me about your UAE Real Estate experience")}
-          >
-            🏢 UAE Real Estate &amp; PropTech
-          </button>
-          <button
-            type="button"
-            className="ai-chip"
-            onClick={() => handleSendPrompt("What is your core tech stack and architecture background?")}
-          >
-            🛠️ Core Stack &amp; Architecture
-          </button>
-          <button
-            type="button"
-            className="ai-chip"
-            onClick={() => handleSendPrompt("How do you build AI chatbots and integrations?")}
-          >
-            🤖 AI Chatbots &amp; LLMs
-          </button>
-          <button
-            type="button"
-            className="ai-chip"
-            onClick={() => handleSendPrompt("Tell me about your UAE HRM and WPS payroll platform")}
-          >
-            💼 UAE HRM &amp; WPS Payroll
-          </button>
-          <button
-            type="button"
-            className="ai-chip"
-            onClick={() => handleSendPrompt("What are your notice period and remote timezone availability?")}
-          >
-            🌍 Timezones &amp; Availability
-          </button>
+          <span className="ai-chips-label">Common questions</span>
+          {QUICK_QUESTIONS.map(([label, prompt]) => (
+            <button key={label} type="button" className="ai-chip" onClick={() => handleSendPrompt(prompt)}>
+              {label}
+            </button>
+          ))}
         </div>
 
         <form className="ai-input-wrap" onSubmit={handleSubmitChat}>
           <input
             type="text"
             className="ai-input"
-            placeholder="Ask about stack, projects, notice period..."
+            placeholder="Ask about a skill, project or availability…"
+            aria-label="Your question"
             value={inputVal}
             onChange={(e) => setInputVal(e.target.value)}
           />

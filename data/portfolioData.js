@@ -1,6 +1,229 @@
 // Portfolio datasets extracted from app/page.js
 // Verified against Khuzemah Saeed's production experience and resume.
 
+// Recruiter-facing profile. Anything left empty ("" / null / []) is hidden
+// on the site, so fill these in only with facts you're happy to stand behind.
+export const PROFILE = {
+  name: "Khuzemah Saeed",
+  initials: "KS",
+  title: "Senior Full Stack Developer",
+  specialty: "Backend & AI Engineering",
+  summary:
+    "I build and integrate the platforms businesses run on — property portals, CRMs, payroll, logistics and AI lead automation — using Python, Laravel and Next.js. 6+ years shipping production systems for teams in the UAE, Australia and beyond.",
+  location: "Lahore, Pakistan",
+  timezone: "GMT+5 (PKT)",
+  overlap: "4+ hours with US, EU & Gulf teams",
+  workMode: "Remote",
+  openTo: ["Senior Full Stack", "Backend Engineer", "Lead Engineer"],
+  // Optional — shown only when set. e.g. "Full-time, Contract"
+  employmentType: "Full-time or contract",
+  // Optional — e.g. "30 days" or "Immediate". Recruiters ask this first.
+  noticePeriod: "30 days",
+  // Optional — e.g. "Open to relocating to UAE"
+  relocation: "Remote only",
+  // Optional — e.g. ["English (Professional)", "Urdu (Native)"]
+  languages: ["English", "Urdu"],
+  // Optional — drop a square headshot in /public and set e.g. "/headshot.jpg"
+  photo: "/headshot.jpg",
+  email: "khuzemasaeed@gmail.com",
+  phone: "+92 347 5985699",
+  phoneHref: "+923475985699",
+  whatsapp: "https://wa.me/923475985699",
+  linkedin: "https://www.linkedin.com/in/khuzemah-saeed/",
+  // Count shown as social proof, linking to the recommendations on LinkedIn.
+  linkedinRecommendations: 8,
+  github: "https://github.com/KHUZEMAHSAEED",
+  resume: "/Khuzemah_Saeed_Resume.pdf",
+  coreStack: ["Python", "Laravel / PHP", "Next.js", "React", "MySQL", "REST APIs", "LLM integrations"],
+  education: {
+    degree: "Bachelor of Computer Science",
+    school: "National University of Sciences and Technology (NUST)",
+    city: "Islamabad",
+    years: "2016 — 2020",
+  },
+  // Optional — e.g. [{ name: "AWS Certified Developer", issuer: "Amazon", year: "2025" }]
+  certifications: [],
+};
+
+// LinkedIn recommendations, transcribed verbatim. `pull` is an exact excerpt used as the headline quote.
+// The first entry is featured; the rest follow by relevance to senior roles.
+export const RECOMMENDATIONS = [
+  {
+    name: "Yan Naing Lin",
+    headline: "Software Engineer · Node.js, Python, React, Next.js and TypeScript",
+    relationship: "Worked on the same team",
+    date: "Dec 2025",
+    pull: "When Khuzemah leads a piece of work, it moves forward with stability, clarity, and minimal supervision.",
+    full: [
+      "I've had the opportunity to work with Khuzemah Saeed across multiple projects, and he consistently demonstrates the level of discipline, foresight, and technical maturity you would expect from a senior engineer. His approach combines architectural thinking with a strong delivery mindset, allowing him to move seamlessly from high-level design to hands-on execution.",
+      "Khuzemah has a clear command of modern web technologies, particularly Laravel, PHP ecosystems, API integrations, and scalable backend structures. He anticipates challenges early, aligns stakeholders quickly, and ensures solutions are both technically sound and operationally sustainable. His decisions are grounded in business impact, not just code.",
+      "What I appreciate most is his sense of ownership. When Khuzemah leads a piece of work, it moves forward with stability, clarity, and minimal supervision. He is dependable, composed under pressure, and brings a thoughtful, results-driven energy to every engagement.",
+      "Khuzemah would be an asset to any team looking for an engineer who not only delivers but elevates the overall standard of execution. I recommend him without hesitation.",
+    ],
+  },
+  {
+    name: "Rana Arslan Javaid",
+    headline: "Full Stack Software Engineer · IoT Developer · AWS Certified",
+    relationship: "Managed Khuzemah directly",
+    managed: true,
+    date: "Feb 2024",
+    pull: "He has a natural ability to inspire and lead others, making him an invaluable asset in team environments.",
+    full: [
+      "It was my privilege to manage Khuzemah Saeed, a standout web developer whose dedication and hard work have left a lasting impact on our team. During our time together, Khuzemah's commitment to excellence and his comprehensive skill set in technologies such as Laravel, WordPress, PHP, CodeIgniter, React Js, and Shopify consistently elevated the quality of our web development projects. Khuzemah's contributions extend beyond his individual tasks. He has a natural ability to inspire and lead others, making him an invaluable asset in team environments. His management of multiple web development projects demonstrated not only his organizational skills but also his capacity to uplift and guide his team members toward achieving collective goals. In every aspect of his work, Khuzemah exhibits a level of dedication that is truly rare.",
+    ],
+  },
+  {
+    name: "Bilal Azhar",
+    headline: "Senior Software Engineer · Backend & AI Engineering · Python, FastAPI, Django, Laravel, Next.js",
+    relationship: "Senior colleague",
+    date: "Aug 2026",
+    pull: "He approached every task intelligently, took strong ownership, and delivered quality solutions without compromising production stability.",
+    full: [
+      "I had the pleasure of working with him and was consistently impressed by his technical expertise, reliability, and problem-solving skills. He approached every task intelligently, took strong ownership, and delivered quality solutions without compromising production stability. I highly recommend him as a dependable and skilled software engineer.",
+    ],
+  },
+  {
+    name: "Muhammad Waseem Alam",
+    headline: "Senior Software Engineer · .NET Core, ASP.NET, Angular · CRM & Enterprise Systems",
+    relationship: "Worked together",
+    date: "Oct 2023",
+    pull: "Khuzemah's problem-solving skills, coupled with his creativity, ensure he tackles challenges effectively.",
+    full: [
+      "Khuzemah Saeed is an exceptional talent in Laravel and WordPress development. His in-depth expertise and adaptability in these platforms consistently deliver top-tier solutions. Khuzemah's problem-solving skills, coupled with his creativity, ensure he tackles challenges effectively. He's a fantastic team player, fostering a collaborative environment and offering support to peers. His contributions have been invaluable, showcasing both technical prowess and a great work ethic. I highly recommend Khuzemah for any role requiring a skilled, dedicated, and versatile developer; working with him has been both a pleasure and a lesson in excellence.",
+    ],
+  },
+  {
+    name: "Talal Ghauri",
+    headline: "API architecture, integrations & backend automation with Bitrix24 CRM",
+    relationship: "Worked on the same team",
+    date: "Oct 2023",
+    pull: "His mastery of the Laravel framework, both in front-end and back-end development, has consistently delivered outstanding results.",
+    full: [
+      "I am delighted to provide a strong recommendation for Khuzema Saeed as an exceptional Full Stack Developer, with a primary focus on Laravel development and a strong secondary expertise in Shopify. Khuzema's proficiency in Laravel, along with his versatility in Shopify, is truly commendable. His mastery of the Laravel framework, both in front-end and back-end development, has consistently delivered outstanding results. His ability to design efficient and user-friendly interfaces, optimize website performance, and create custom Laravel solutions sets him apart. Additionally, Khuzema's adaptability and commitment to staying current with the latest trends in Laravel development, while also contributing to Shopify projects, make him a valuable asset to any team. I have no doubt that Khuzema will continue to excel in Full Stack Development with a strong emphasis on Laravel and Shopify, making him an excellent choice for any related project.",
+    ],
+  },
+  {
+    name: "Waqas Ikram",
+    headline: "Technical Project Manager · Scalable Web & E-Commerce Products",
+    relationship: "Managed Khuzemah directly",
+    managed: true,
+    date: "Oct 2023",
+    pull: "He quickly grasped complex concepts and consistently demonstrated a strong work ethic.",
+    full: [
+      "Khuzemah's dedication and passion for learning were evident throughout our collaboration. I had the opportunity to teach him various technologies, including PHP, MySQL, CodeIgniter, Laravel, WordPress, and React. He quickly grasped complex concepts and consistently demonstrated a strong work ethic. His ability to apply these technologies to real-world projects showcased his proficiency and adaptability.",
+      "I have no doubt that Khuzemah's continued growth and expertise in these technologies will make him a valuable asset to any team or project. His commitment to excellence and continuous learning make him a standout professional in the field. I wholeheartedly recommend Khuzemah for any opportunity where his skills and enthusiasm can shine.",
+      "Feel free to reach out to me if you have any questions or need further information about Khuzemah's outstanding abilities.",
+    ],
+  },
+  {
+    name: "Muhammad Asad",
+    headline: "Product Manager · Strategy & UX · LUMS",
+    relationship: "Worked on the same team at Rezaid",
+    date: "Dec 2023",
+    pull: "His contributions significantly enhanced our team's capabilities.",
+    full: [
+      "Khuzemah and I collaborated in the latter part of 2020, marking our entry into the industry as part of the Class of 2020. Our professional journey spanned over a year at Rezaid, where Khuzemah, a key member of my development team, showcased his exceptional skills as a backend developer.",
+      "From the onset, Khuzemah took on pivotal projects, demonstrating proficiency in tech stacks such as PHP, WordPress, and React JS. This proficiency played a crucial role in Rezaid's timely delivery of much-needed products for our clients. Khuzemah's problem-solving acumen proved invaluable, offering support to peers during critical stages of product development.",
+      "I wholeheartedly recommend Khuzemah as an outstanding software engineer with exceptional logic-building skills. His contributions significantly enhanced our team's capabilities.",
+    ],
+  },
+];
+
+// Headline impact numbers. Every figure comes from the resume / case studies.
+export const IMPACT = [
+  { value: "6+", label: "years in production", detail: "Full stack delivery since 2020" },
+  { value: "15,000+", label: "property units synced", detail: "Across Property Finder, Bayut & Dubizzle" },
+  { value: "80%", label: "less manual fulfilment", detail: "Automated courier dispatch at WiseMarket" },
+  { value: "58%", label: "faster page loads", detail: "LCP cut across 15+ e-commerce sites" },
+];
+
+export const DOMAINS = [
+  "UAE real estate & PropTech",
+  "E-commerce & logistics",
+  "HR, payroll & WPS compliance",
+  "AI lead qualification & ATS",
+  "EdTech & LMS",
+  "Payments & subscriptions",
+  "Travel & multilingual CMS",
+];
+
+// Short, scannable card copy for the homepage. Full detail lives in FEATURED_PROJECTS.
+export const PROJECT_CARDS = {
+  "uae-proptech": {
+    name: "UAE Property Portal Sync & AI Lead Hub",
+    oneLiner: "Two-way listing sync with Property Finder, Bayut and Dubizzle, call tracking, and an AI bot that qualifies buyers before they reach the CRM.",
+    outcome: "15,000+ units synced with zero duplicates",
+  },
+  "reelly-luxe": {
+    name: "Reelly Luxe — Off-Plan Portal & Bitrix24 Deal Matching",
+    oneLiner: "React 19 + TypeScript portal on the Reelly API with a secure Node BFF, live currency conversion and one-click proposals logged to Bitrix24.",
+    outcome: "Buyer criteria matched to inventory in < 1s",
+  },
+  "talentfilter-ai": {
+    name: "TalentFilter AI — Explainable Resume Screening",
+    oneLiner: "FastAPI + Next.js ATS that parses PDFs/DOCX, scores candidates with visible evidence, and keeps every hiring decision with a human.",
+    outcome: "Multi-page resumes parsed in < 2s",
+  },
+  "uae-hrm": {
+    name: "UAE HRM & WPS Payroll Platform",
+    oneLiner: "Attendance, leave, loans and end-of-service calculations with one-click, Central Bank-compliant WPS SIF payroll files.",
+    outcome: "300+ employees on automated payroll",
+  },
+  "alkithab-academy": {
+    name: "Al Kithab Academy — Headless Moodle Portal",
+    oneLiner: "Custom Moodle 4.5 plugin that gives students a clean portal for classes, quizzes and certificates without ever touching raw Moodle.",
+    outcome: "8 curricula, 4-step certificate approvals",
+  },
+  "wisemarket": {
+    name: "WiseMarket — 4-Country Marketplace & Logistics",
+    oneLiner: "Laravel + Next.js marketplace with Cin7 / ChannelAdvisor inventory sync, SMS OTP onboarding and automated courier dispatch.",
+    outcome: "50,000+ SKUs across AU, NZ, UAE & PK",
+  },
+  "hash-move": {
+    name: "HashMove — Peer-to-Peer Parcel Delivery",
+    oneLiner: "Custom PHP 8 platform matching travellers' spare luggage with senders, with encrypted ID verification and WhatsApp handoff.",
+    outcome: "Route matching in < 3s",
+  },
+  "slowrise-pizza": {
+    name: "Slow Rise Pizza — Subscriptions & Gifting",
+    oneLiner: "WooCommerce Subscriptions build for $100–$400 masterclass bundles, gift redemption flows and live-class ticketing.",
+    outcome: "Fully automated subscription gifting",
+  },
+  "zenawalk": {
+    name: "ZenaWalk — Multilingual Audio Tours",
+    oneLiner: "Flask + MySQL platform for walking tours of Genoa with a no-code CMS, 5 languages and Cloudflare R2 audio streaming.",
+    outcome: "5 languages with automatic fallback",
+  },
+};
+
+// Homepage order — the strongest, most relevant work first.
+export const HOMEPAGE_PROJECTS = [
+  "uae-proptech",
+  "talentfilter-ai",
+  "reelly-luxe",
+  "uae-hrm",
+  "wisemarket",
+];
+
+export const FAQ = [
+  {
+    q: "What roles are you looking for?",
+    a: "Senior Full Stack, Backend or Lead Engineer roles — ideally where several systems (CRMs, portals, payments, AI) need to work together reliably.",
+  },
+  {
+    q: "Where are you based, and which hours can you work?",
+    a: "Lahore, Pakistan (GMT+5). I've worked remotely with UAE and Australian teams for years and keep 4+ hours of overlap with US, EU and Gulf time zones.",
+  },
+  {
+    q: "What's your strongest stack?",
+    a: "Python (Django / FastAPI) and PHP (Laravel) on the backend, React / Next.js on the frontend, MySQL / PostgreSQL for data — plus deep experience with third-party APIs and LLM integrations.",
+  },
+  {
+    q: "Have you led projects end to end?",
+    a: "Yes. At Saabsoft I build the UAE real estate, CRM automation and HRM/payroll platforms across the whole stack — data model, APIs, UI and integrations — and at WiseMarket I built core marketplace and logistics modules.",
+  },
+];
+
 export const NODES = [
   {
     id: "proptech",
@@ -184,13 +407,13 @@ export const SKILLS = [
 ];
 
 export const PROJECT_CATEGORIES = [
-  { id: "all", label: "All Projects" },
-  { id: "proptech", label: "🏢 UAE PropTech & Portals" },
-  { id: "ai-systems", label: "🤖 Enterprise AI & Governance" },
-  { id: "edtech", label: "🎓 EdTech & Headless LMS" },
-  { id: "ecommerce", label: "📦 P2P Logistics & E-Commerce" },
-  { id: "traveltech", label: "🎧 TravelTech & CMS" },
-  { id: "fintech", label: "💳 Fintech & Enterprise SaaS" },
+  { id: "all", label: "All" },
+  { id: "proptech", label: "UAE PropTech" },
+  { id: "ai-systems", label: "AI & ATS" },
+  { id: "edtech", label: "EdTech & LMS" },
+  { id: "ecommerce", label: "E-commerce & Logistics" },
+  { id: "traveltech", label: "TravelTech & CMS" },
+  { id: "fintech", label: "HR & Payroll SaaS" },
 ];
 
 export const FEATURED_PROJECTS = [
@@ -262,6 +485,7 @@ export const FEATURED_PROJECTS = [
   },
   {
     id: "reelly-luxe",
+    repo: "https://github.com/KHUZEMAHSAEED/reelly-realestate-integration-platform",
     category: "proptech",
     domain: "Luxury PropTech & Bitrix24 CRM Engine",
     role: "Full Stack & PropTech Integration Architect",
@@ -336,6 +560,7 @@ export const FEATURED_PROJECTS = [
   },
   {
     id: "talentfilter-ai",
+    repo: "https://github.com/KHUZEMAHSAEED/ats-screening-platform",
     category: "ai-systems",
     domain: "Enterprise ATS & AI Candidate Governance",
     role: "Lead AI Systems & Backend Architect",
@@ -750,8 +975,16 @@ export const FEATURED_PROJECTS = [
 export const EXPERIENCE = [
   {
     title: "Senior Software Developer",
-    company: "Saabsoft — Remote",
+    company: "Saabsoft",
+    location: "Remote",
+    start: "2024-11",
+    end: null,
     period: "Nov 2024 — Present",
+    highlights: [
+      "Engineered UAE/MENA real estate platforms integrating Property Finder, Bayut, Dubizzle, Xploon and Rightmove.",
+      "Built Bitrix24 CRM automation and an AI lead-qualification chatbot that routes clean leads to brokers in under 3 seconds.",
+      "Delivered a UAE HRM & payroll platform with Central Bank-compliant WPS SIF file generation.",
+    ],
     projects: [
       {
         name: "UAE Real Estate Ecosystem & Portals",
@@ -790,8 +1023,16 @@ export const EXPERIENCE = [
   },
   {
     title: "Senior Software Developer",
-    company: "Oz Techwork / WiseMarket — Lahore, Pakistan",
+    company: "Oz Techwork / WiseMarket",
+    location: "Lahore, Pakistan",
+    start: "2022-08",
+    end: "2024-10",
     period: "Aug 2022 — Oct 2024",
+    highlights: [
+      "Built core Laravel + Next.js modules for a marketplace live in Australia, New Zealand, UAE and Pakistan.",
+      "Automated courier dispatch (TCS, Leopards, M&P), cutting manual fulfilment time by 80%.",
+      "Optimised 15+ WordPress e-commerce sites, reducing LCP by up to 58%.",
+    ],
     projects: [
       {
         name: "WiseMarket International E-Commerce Platform",
@@ -815,8 +1056,15 @@ export const EXPERIENCE = [
   },
   {
     title: "Software Developer",
-    company: "Rezaid — Lahore, Pakistan",
+    company: "Rezaid",
+    location: "Lahore, Pakistan",
+    start: "2020-09",
+    end: "2022-07",
     period: "Sep 2020 — Jul 2022",
+    highlights: [
+      "Built a Laravel + React film-production management platform with HubSpot and Slack automation.",
+      "Developed a role-based Employee Management System for internal and commercial use.",
+    ],
     projects: [
       {
         name: "Film Production Management & Operations Platform",
@@ -1014,31 +1262,31 @@ export const RECRUITER_KNOWLEDGE = [
     keywords: ["zenawalk", "genoa", "genova", "audio", "tour", "multilingual", "r2", "cms"],
     answer:
       "ZenaWalk is a full-stack digital walking tour platform for Genoa (Italy) engineered by Khuzemah. Key systems: Python (Flask) REST API with MySQL, Cloudflare R2 object storage via Boto3 (S3v4) for zero-latency audio streaming, a centralized zero-code CMS (/api/settings/public/), and 5-language localization (Italian, English, French, German, Spanish) with intelligent fallback to Italian.",
-    action: { label: "Inspect ZenaWalk Case Study", href: "#cases" },
+    action: { label: "Inspect ZenaWalk Case Study", href: "/projects#case-zenawalk" },
   },
   {
     keywords: ["stack", "technology", "technologies", "framework", "languages"],
     answer:
       "Khuzemah is a Senior Full Stack & AI Systems Engineer with 6+ years of production experience. Core stack: Python (Django, FastAPI, LLM orchestration), PHP (Laravel, CodeIgniter), React.js, Next.js (App Router), MySQL, Redis, and RESTful API architecture. He specializes in deep third-party integrations (Bitrix24, PropTech, logistics, payments) and practical AI automation.",
-    action: { label: "View Capabilities", href: "#skills" },
+    action: { label: "View skills", href: "/#skills" },
   },
   {
     keywords: ["real estate", "proptech", "property finder", "bayut", "dubai", "uae"],
     answer:
       "At Saabsoft, Khuzemah engineered multiple UAE/MENA real estate platforms handling 15,000+ units. He integrated Property Finder, Bayut, and Dubizzle for automated listing sync, built Bitrix24 CRM lead automation, and implemented Sudonum virtual numbers for lead tracking.",
-    action: { label: "Explore PropTech Case Study", href: "#cases" },
+    action: { label: "Explore PropTech Case Study", href: "/projects#case-uae-proptech" },
   },
   {
     keywords: ["hrm", "payroll", "wps", "attendance", "leaves", "salary", "saabsoft"],
     answer:
       "At Saabsoft, Khuzemah architected a full UAE HRM & Payroll platform covering biometric attendance CSV ingestion, automated overtime and late deductions, multi-tier leave approval pipelines, employee loan reconciliations, and compliant 1-click UAE Central Bank Wages Protection System (WPS) SIF file generation.",
-    action: { label: "Inspect HRM Case Study", href: "#cases" },
+    action: { label: "Inspect HRM Case Study", href: "/projects#case-uae-hrm" },
   },
   {
     keywords: ["ai", "chatbot", "llm", "intelligence", "gpt", "openai"],
     answer:
       "Khuzemah builds operational AI systems that drive revenue. For UAE real estate, he built an AI conversational lead qualifier using Python and LLM APIs that captures budget, preferred property type, and investment readiness before routing clean leads directly into Bitrix24 CRM in under 30 seconds.",
-    action: { label: "View Architecture Diagram", href: "#top" },
+    action: { label: "Explore TalentFilter AI", href: "/projects#case-talentfilter-ai" },
   },
   {
     keywords: ["remote", "availability", "notice", "location", "timezone", "hire"],
@@ -1049,7 +1297,7 @@ export const RECRUITER_KNOWLEDGE = [
   {
     keywords: ["education", "degree", "university", "nust"],
     answer:
-      "Khuzemah holds a Bachelor of Science in Computer Science (2016 — 2020) from the National University of Sciences and Technology (NUST), Islamabad — Pakistan's top-ranked engineering institution.",
+      "Khuzemah holds a Bachelor of Computer Science (2016 — 2020) from the National University of Sciences and Technology (NUST), Islamabad.",
   },
   {
     keywords: ["contact", "email", "phone", "reach", "hire"],
@@ -1057,4 +1305,22 @@ export const RECRUITER_KNOWLEDGE = [
       "You can reach Khuzemah directly at khuzemasaeed@gmail.com or via phone/WhatsApp at +92 347 5985699. His LinkedIn is linkedin.com/in/khuzemah-saeed.",
     action: { label: "Email Directly", href: "mailto:khuzemasaeed@gmail.com" },
   },
+];
+
+// Skills highlighted as primary on the homepage skills matrix.
+export const CORE_SKILLS = [
+  "Python",
+  "Django",
+  "FastAPI",
+  "PHP 8+",
+  "Laravel",
+  "RESTful APIs",
+  "React.js",
+  "Next.js (App Router)",
+  "LLM API Integrations",
+  "Workflow Automation",
+  "MySQL",
+  "PostgreSQL",
+  "Bitrix24 CRM",
+  "Property Finder API",
 ];

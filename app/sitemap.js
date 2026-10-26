@@ -1,7 +1,6 @@
 export default function sitemap() {
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://khuzemahsaeed.vercel.app");
+    process.env.NEXT_PUBLIC_SITE_URL || "https://khuzemah.growthpulse.space";
 
   return [
     {

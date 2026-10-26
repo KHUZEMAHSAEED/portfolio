@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import CopyButton from "./CopyButton";
+import { PROFILE } from "@/data/portfolioData";
+import { IconClose, IconCheck, IconMail, IconWhatsApp } from "./Icons";
 
 export default function ContactModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
@@ -93,46 +95,43 @@ export default function ContactModal({ isOpen, onClose }) {
       aria-labelledby="contact-modal-title"
       ref={modalRef}
     >
-      <div className="contact-modal panel" onClick={(e) => e.stopPropagation()}>
+      <div className="contact-modal" onClick={(e) => e.stopPropagation()}>
         <div className="contact-modal-head">
           <div>
-            <div className="status-badge" style={{ marginBottom: "8px" }}>
-              <span className="status-dot-pulse" />
-              <span>Direct Channel</span>
-            </div>
             <h3 id="contact-modal-title" className="contact-modal-title">
-              Get in Touch with Khuzemah
+              Get in touch
             </h3>
             <p className="contact-modal-sub">
-              Discuss senior engineering roles, architecture consulting, or remote opportunities.
+              Roles, interviews or a quick intro call — send a note and I&apos;ll get back to you.
             </p>
           </div>
           <button
             type="button"
-            className="ai-close-btn"
+            className="icon-btn"
             onClick={onClose}
-            aria-label="Close Contact Dialog"
+            aria-label="Close contact dialog"
           >
-            ✕
+            <IconClose size={18} />
           </button>
         </div>
 
-        {/* Quick Contact Strip */}
         <div className="contact-quick-strip">
           <div className="quick-contact-chip">
-            <span>✉️ khuzemasaeed@gmail.com</span>
-            <CopyButton text="khuzemasaeed@gmail.com" label="email" />
+            <IconMail size={16} />
+            <a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>
+            <CopyButton text={PROFILE.email} label="email" />
           </div>
           <div className="quick-contact-chip">
-            <span>📞 +92 347 5985699</span>
-            <CopyButton text="+92 347 5985699" label="phone" />
+            <IconWhatsApp size={16} />
+            <a href={PROFILE.whatsapp} target="_blank" rel="noreferrer">{PROFILE.phone}</a>
+            <CopyButton text={PROFILE.phone} label="phone" />
           </div>
         </div>
 
         {status === "success" ? (
           <div className="contact-success-box">
-            <span className="success-icon">✅</span>
-            <h4>Message Dispatched!</h4>
+            <span className="success-icon"><IconCheck size={22} /></span>
+            <h4>Message sent</h4>
             <p>{responseMsg}</p>
             <button
               type="button"
@@ -141,16 +140,14 @@ export default function ContactModal({ isOpen, onClose }) {
                 setStatus("idle");
                 onClose();
               }}
-              style={{ marginTop: "16px" }}
             >
-              Close Window
+              Close
             </button>
           </div>
         ) : status === "fallback" ? (
           <div className="contact-fallback-box">
-            <span className="info-icon">ℹ️</span>
-            <h4>Direct Email Draft Ready</h4>
-            <p style={{ fontSize: "13px", color: "var(--muted)" }}>{responseMsg}</p>
+            <h4>Your email draft is ready</h4>
+            <p>{responseMsg}</p>
             <div className="draft-actions">
               <a
                 className="btn btn-primary"
@@ -160,21 +157,21 @@ export default function ContactModal({ isOpen, onClose }) {
                 target="_blank"
                 rel="noreferrer"
               >
-                🚀 Open in Mail Client
+                Open in mail app
               </a>
               <CopyButton
                 text={draftData?.body || formData.message}
-                label="Message Draft"
-                className="btn btn-ghost"
+                label="message draft"
+                idleText="Copy draft"
+                className="btn btn-secondary"
               />
             </div>
             <button
               type="button"
               className="btn btn-ghost"
               onClick={() => setStatus("idle")}
-              style={{ marginTop: "12px", width: "100%" }}
             >
-              Back to Form
+              Back to form
             </button>
           </div>
         ) : (
@@ -185,33 +182,34 @@ export default function ContactModal({ isOpen, onClose }) {
               name="honeypot"
               value={formData.honeypot}
               onChange={handleChange}
-              style={{ display: "none" }}
+              className="visually-hidden"
+              aria-hidden="true"
               tabIndex={-1}
               autoComplete="off"
             />
 
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="contact-name">Your Name *</label>
+                <label htmlFor="contact-name">Your name *</label>
                 <input
                   id="contact-name"
                   type="text"
                   name="name"
                   required
-                  placeholder="e.g. Alex Vance"
+                  placeholder="Alex Vance"
                   value={formData.name}
                   onChange={handleChange}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="contact-email">Email Address *</label>
+                <label htmlFor="contact-email">Work email *</label>
                 <input
                   id="contact-email"
                   type="email"
                   name="email"
                   required
-                  placeholder="e.g. alex@company.com"
+                  placeholder="alex@company.com"
                   value={formData.email}
                   onChange={handleChange}
                 />
@@ -219,12 +217,12 @@ export default function ContactModal({ isOpen, onClose }) {
             </div>
 
             <div className="form-group">
-              <label htmlFor="contact-subject">Subject</label>
+              <label htmlFor="contact-subject">Role / subject</label>
               <input
                 id="contact-subject"
                 type="text"
                 name="subject"
-                placeholder="e.g. Senior Full Stack / Lead Systems Role"
+                placeholder="Senior Full Stack Engineer — Company"
                 value={formData.subject}
                 onChange={handleChange}
               />
@@ -237,7 +235,7 @@ export default function ContactModal({ isOpen, onClose }) {
                 name="message"
                 rows="4"
                 required
-                placeholder="Briefly describe the role, team, or platform architecture..."
+                placeholder="A line or two about the role, team and next steps…"
                 value={formData.message}
                 onChange={handleChange}
               />
@@ -253,7 +251,7 @@ export default function ContactModal({ isOpen, onClose }) {
                 className="btn btn-primary"
                 disabled={status === "loading"}
               >
-                {status === "loading" ? "Dispatching..." : "Send Message"}
+                {status === "loading" ? "Sending…" : "Send message"}
               </button>
 
               {calLink && (
@@ -263,7 +261,7 @@ export default function ContactModal({ isOpen, onClose }) {
                   rel="noreferrer"
                   className="btn btn-ghost"
                 >
-                  📅 Book 15-min Call
+                  Book a 15-min call
                 </a>
               )}
             </div>

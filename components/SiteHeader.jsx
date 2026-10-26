@@ -1,54 +1,89 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { PROFILE } from "@/data/portfolioData";
+import { IconDownload, IconMenu, IconClose } from "./Icons";
+
+const NAV = [
+  { href: "#work", label: "Work" },
+  { href: "#experience", label: "Experience" },
+  { href: "#skills", label: "Skills" },
+  { href: "#about", label: "About" },
+  { href: "#faq", label: "FAQ" },
+];
 
 export default function SiteHeader({ onOpenContact }) {
   const pathname = usePathname();
-  const isProjectsPage = pathname === "/projects";
+  const isHome = pathname === "/";
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e) => e.key === "Escape" && setMenuOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [menuOpen]);
+
+  const navHref = (href) => (isHome ? href : `/${href}`);
 
   return (
-    <header className="site-header">
-      <div className="wrap">
-        <Link className="mark" href="/">
-          <span className="dot" />
-          Khuzemah Saeed
+    <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
+      <div className="wrap header-inner">
+        <Link className="brand" href="/" aria-label={`${PROFILE.name} — home`}>
+          <span className="brand-mark" aria-hidden="true">{PROFILE.initials}</span>
+          <span className="brand-text">
+            <span className="brand-name">{PROFILE.name}</span>
+            <span className="brand-role">{PROFILE.title}</span>
+          </span>
         </Link>
-        <nav className="header-links">
-          {isProjectsPage ? (
-            <>
-              <Link href="/">Overview</Link>
-              <Link href="/projects" className="active-nav-link">
-                Projects &amp; Archive
-              </Link>
-              <Link href="/#skills">Capabilities</Link>
-              <Link href="/#work">Experience</Link>
-            </>
-          ) : (
-            <>
-              <a href="#selected-work">Selected Work</a>
-              <Link href="/projects">Projects &amp; Archive</Link>
-              <a href="#skills">Capabilities</a>
-              <a href="#work">Experience</a>
-            </>
-          )}
+
+        <nav className={`header-nav ${menuOpen ? "is-open" : ""}`} aria-label="Primary">
+          {NAV.map((item) => (
+            <a key={item.href} href={navHref(item.href)} onClick={() => setMenuOpen(false)}>
+              {item.label}
+            </a>
+          ))}
+          <Link
+            href="/projects"
+            className={pathname === "/projects" ? "is-active" : ""}
+            onClick={() => setMenuOpen(false)}
+          >
+            All projects
+          </Link>
+        </nav>
+
+        <div className="header-actions">
           <a
-            href="/Khuzemah_Saeed_Resume.pdf"
+            className="btn btn-ghost btn-sm hide-sm"
+            href={PROFILE.resume}
             download="Khuzemah_Saeed_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="always-show"
           >
-            Resume (PDF)
+            <IconDownload size={16} />
+            <span>CV</span>
           </a>
-          <button
-            type="button"
-            className="header-contact-btn always-show"
-            onClick={onOpenContact}
-          >
+          <button type="button" className="btn btn-primary btn-sm" onClick={onOpenContact}>
             Contact
           </button>
-        </nav>
+          <button
+            type="button"
+            className="menu-toggle"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            {menuOpen ? <IconClose size={20} /> : <IconMenu size={20} />}
+          </button>
+        </div>
       </div>
     </header>
   );

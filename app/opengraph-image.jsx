@@ -1,12 +1,14 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Khuzemah Saeed — Senior Full Stack & AI Systems Engineer";
+export const alt = "Khuzemah Saeed — Senior Full Stack Developer, Backend & AI Engineering";
 export const size = {
   width: 1200,
   height: 630,
 };
 export const contentType = "image/png";
+
+const STACK = ["Python", "Laravel", "Next.js", "React", "MySQL", "LLM integrations"];
 
 export default function Image() {
   return new ImageResponse(
@@ -18,169 +20,80 @@ export default function Image() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#101014",
-          padding: "64px 80px",
+          backgroundColor: "#F7F6F2",
+          padding: "72px 80px",
           fontFamily: "system-ui, -apple-system, sans-serif",
-          position: "relative",
-          overflow: "hidden",
+          color: "#15171A",
         }}
       >
-        {/* Cinematic ambient background glow */}
-        <div
-          style={{
-            position: "absolute",
-            top: "-120px",
-            right: "-100px",
-            width: "550px",
-            height: "550px",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(139, 92, 246, 0.28) 0%, rgba(59, 130, 246, 0.12) 50%, transparent 70%)",
-            filter: "blur(40px)",
-          }}
-        />
-
-        {/* Top Header Badge */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            position: "relative",
-            zIndex: 2,
-          }}
-        >
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "10px",
-              background: "rgba(25, 25, 32, 0.8)",
-              padding: "10px 22px",
-              borderRadius: "40px",
-              border: "1px solid rgba(139, 92, 246, 0.3)",
-              boxShadow: "0 0 20px rgba(139, 92, 246, 0.15)",
+              justifyContent: "center",
+              width: "64px",
+              height: "64px",
+              borderRadius: "16px",
+              backgroundColor: "#15171A",
+              color: "#F7F6F2",
+              fontSize: "24px",
+              fontWeight: 600,
             }}
           >
-            <div
-              style={{
-                width: "8px",
-                height: "8px",
-                borderRadius: "50%",
-                backgroundColor: "#8B5CF6",
-                boxShadow: "0 0 10px #8B5CF6",
-              }}
-            />
-            <span
-              style={{
-                color: "#F5F5F7",
-                fontSize: "16px",
-                fontWeight: "600",
-                letterSpacing: "0.5px",
-              }}
-            >
-              Senior Full Stack &amp; AI Systems Engineer
-            </span>
+            KS
           </div>
-
           <div
             style={{
               display: "flex",
               alignItems: "center",
-              color: "#A1A1B0",
-              fontSize: "16px",
-              letterSpacing: "0.3px",
+              gap: "12px",
+              padding: "10px 22px",
+              borderRadius: "999px",
+              backgroundColor: "#E3F3E8",
+              color: "#15803D",
+              fontSize: "22px",
+              fontWeight: 600,
             }}
           >
-            Lahore, PK · Remote Worldwide (GMT+5)
+            <div style={{ width: "12px", height: "12px", borderRadius: "50%", backgroundColor: "#15803D" }} />
+            Open to senior roles · Remote
           </div>
         </div>
 
-        {/* Center Editorial Title */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "16px",
-            position: "relative",
-            zIndex: 2,
-          }}
-        >
-          <div
-            style={{
-              fontSize: "64px",
-              fontWeight: "800",
-              color: "#F5F5F7",
-              letterSpacing: "-1.5px",
-              lineHeight: "1.05",
-            }}
-          >
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ fontSize: "96px", fontWeight: 700, letterSpacing: "-4px", lineHeight: 1 }}>
             Khuzemah Saeed
           </div>
-          <div
-            style={{
-              fontSize: "30px",
-              fontWeight: "600",
-              background: "linear-gradient(90deg, #8B5CF6 0%, #60A5FA 100%)",
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              color: "transparent",
-            }}
-          >
-            High-Concurreny Platforms · Enterprise Integrations · Operational AI
+          <div style={{ display: "flex", marginTop: "24px", fontSize: "40px", fontWeight: 600 }}>
+            Senior Full Stack Developer
+            <span style={{ color: "#8A8F98", fontWeight: 500, marginLeft: "16px" }}>/ Backend &amp; AI</span>
           </div>
-          <div
-            style={{
-              fontSize: "20px",
-              color: "#A1A1B0",
-              maxWidth: "960px",
-              lineHeight: "1.45",
-            }}
-          >
-            6+ years engineering mission-critical systems across UAE PropTech, global marketplaces,
-            and HRM. Bitrix24 · Property Finder · Cin7 ERP · WPS Central Bank Payroll · LangChain &amp; OpenAI
+          <div style={{ marginTop: "20px", fontSize: "28px", color: "#454A52" }}>
+            6+ years · Property portals, CRMs, payroll, logistics &amp; AI automation
           </div>
         </div>
 
-        {/* Bottom Tag Strip */}
-        <div
-          style={{
-            display: "flex",
-            gap: "12px",
-            flexWrap: "wrap",
-            position: "relative",
-            zIndex: 2,
-          }}
-        >
-          {[
-            "Python",
-            "Laravel",
-            "Next.js",
-            "Bitrix24 CRM",
-            "Property Finder API",
-            "Cin7 ERP",
-            "WPS Banking SIF",
-            "OpenAI API",
-          ].map((tag) => (
+        <div style={{ display: "flex", gap: "12px" }}>
+          {STACK.map((s) => (
             <div
-              key={tag}
+              key={s}
               style={{
-                background: "rgba(25, 25, 32, 0.9)",
-                color: "#E2E8F0",
-                padding: "8px 18px",
-                borderRadius: "8px",
-                fontSize: "15px",
-                fontWeight: "500",
-                border: "1px solid rgba(255, 255, 255, 0.08)",
+                display: "flex",
+                padding: "10px 20px",
+                borderRadius: "999px",
+                backgroundColor: "#E8ECFB",
+                color: "#1D3AA6",
+                fontSize: "22px",
+                fontWeight: 600,
               }}
             >
-              {tag}
+              {s}
             </div>
           ))}
         </div>
       </div>
     ),
-    {
-      ...size,
-    }
+    { ...size }
   );
 }
