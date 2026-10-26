@@ -1267,7 +1267,7 @@ export const RECRUITER_KNOWLEDGE = [
   {
     keywords: ["stack", "technology", "technologies", "framework", "languages"],
     answer:
-      "Khuzemah is a Senior Full Stack & AI Systems Engineer with 6+ years of production experience. Core stack: Python (Django, FastAPI, LLM orchestration), PHP (Laravel, CodeIgniter), React.js, Next.js (App Router), MySQL, Redis, and RESTful API architecture. He specializes in deep third-party integrations (Bitrix24, PropTech, logistics, payments) and practical AI automation.",
+      "Khuzemah is a Senior Full Stack Developer (Backend & AI) with 6+ years of production experience. Core stack: Python (Django, FastAPI, LLM orchestration), PHP (Laravel, CodeIgniter), React.js, Next.js (App Router), MySQL, Redis, and RESTful API architecture. He specializes in deep third-party integrations (Bitrix24, PropTech, logistics, payments) and practical AI automation.",
     action: { label: "View skills", href: "/#skills" },
   },
   {

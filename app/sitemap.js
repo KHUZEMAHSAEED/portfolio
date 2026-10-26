@@ -1,6 +1,7 @@
+import { SITE_URL } from "@/lib/site";
+
 export default function sitemap() {
-  const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://khuzemah.growthpulse.space";
+  const baseUrl = SITE_URL;
 
   return [
     {

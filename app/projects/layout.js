@@ -1,12 +1,14 @@
 export const metadata = {
   title: "Case Studies | Khuzemah Saeed — Senior Full Stack Developer",
   description:
-    "Explore in-depth architectural case studies by Khuzemah Saeed — from UAE PropTech real estate synchronization to multilingual European digital tourism, cross-border e-commerce, and fintech compliance.",
+    "Nine production systems by Khuzemah Saeed — UAE property portal sync, Bitrix24 CRM automation, WPS payroll, an explainable ATS, marketplaces and more — with the problem, stack, results and real screenshots.",
+  alternates: { canonical: "/projects" },
   openGraph: {
-    title: "Engineering Projects & Architecture Archive | Khuzemah Saeed",
+    title: "Case Studies | Khuzemah Saeed",
     description:
-      "Production systems engineered for real-world operations with verified metrics, third-party API pipelines, and cloud infrastructures.",
+      "The problem, what was built, the stack and the measurable result for nine production systems — with real screenshots.",
     type: "website",
+    url: "/projects",
   },
 };
 

@@ -1,6 +1,7 @@
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,18 +17,21 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://khuzemah.growthpulse.space";
+const siteUrl = SITE_URL;
+const DESCRIPTION =
+  "Senior Full Stack Developer (Backend & AI) with 6+ years building property portals, CRM integrations, payroll and AI lead automation with Python, Laravel and Next.js. Open to remote senior roles.";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: "Khuzemah Saeed — Senior Full Stack Developer (Backend & AI)",
-  description:
-    "Senior Full Stack & AI Systems Engineer with 6+ years specializing in Python, Laravel, Next.js, enterprise CRM integrations, and AI workflow automation across UAE real estate, e-commerce, and HRM.",
+  description: DESCRIPTION,
+  alternates: { canonical: "/" },
   keywords: [
     "Khuzemah Saeed",
     "Senior Full Stack Developer",
-    "AI Systems Engineer",
+    "Backend Engineer",
+    "AI Engineer",
+    "Remote Senior Developer",
     "Python Developer",
     "Laravel Developer",
     "Next.js Developer",
@@ -41,8 +45,7 @@ export const metadata = {
   authors: [{ name: "Khuzemah Saeed" }],
   openGraph: {
     title: "Khuzemah Saeed — Senior Full Stack Developer (Backend & AI)",
-    description:
-      "6+ years architecting scalable platforms, enterprise integrations (Bitrix24, Property Finder, Cin7), and AI automations. NUST CS graduate.",
+    description: DESCRIPTION,
     type: "profile",
     locale: "en_US",
     url: siteUrl,
@@ -52,8 +55,7 @@ export const metadata = {
     card: "summary_large_image",
     creator: "@KhuzemahSaeed",
     title: "Khuzemah Saeed — Senior Full Stack Developer (Backend & AI)",
-    description:
-      "6+ years architecting scalable platforms, enterprise integrations (Bitrix24, Property Finder, Cin7), and AI automations.",
+    description: DESCRIPTION,
   },
 };
 
@@ -61,7 +63,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Khuzemah Saeed",
-  jobTitle: "Senior Full Stack & AI Systems Engineer",
+  jobTitle: "Senior Full Stack Developer",
+  image: `${siteUrl}/headshot.jpg`,
+  worksFor: { "@type": "Organization", name: "Saabsoft" },
   email: "mailto:khuzemasaeed@gmail.com",
   address: {
     "@type": "PostalAddress",

@@ -52,7 +52,7 @@ export default function RecruiterDrawer({ isOpen, onClose }) {
 
     const reply = matched
       ? matched.answer
-      : `Khuzemah is a Senior Full Stack & AI Systems Engineer (6+ years) experienced in Laravel, Python, Next.js, and complex third-party platforms (Property Finder, Bitrix24, Cin7). For specific inquiries, email him at khuzemasaeed@gmail.com or call +92 347 5985699.`;
+      : `Khuzemah is a Senior Full Stack Developer (Backend & AI, 6+ years) experienced in Laravel, Python, Next.js, and complex third-party platforms (Property Finder, Bitrix24, Cin7). For specific inquiries, email him at khuzemasaeed@gmail.com or call +92 347 5985699.`;
 
     const action = matched?.action || null;
 
