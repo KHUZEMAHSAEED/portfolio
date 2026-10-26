@@ -30,7 +30,8 @@ function getTransporter() {
       host: process.env.SMTP_HOST,
       port,
       secure: process.env.SMTP_SECURE ? process.env.SMTP_SECURE === "true" : port === 465,
-      auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+      // Google shows app passwords as "abcd efgh ijkl mnop"; accept it pasted either way.
+      auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS.replace(/\s+/g, "") },
     });
   }
   return transporter;
@@ -171,7 +172,7 @@ export async function POST(request) {
     return NextResponse.json({
       success: false,
       configured: false,
-      message: "Direct delivery isn't set up yet, so here's your message as an email draft:",
+      message: "One last step: send it from your own email app so it reaches Khuzemah's inbox directly.",
       draftSubject: clean.subject || `Inquiry from ${clean.name}`,
       draftBody: `Hi Khuzemah,\n\n${clean.message}\n\nBest regards,\n${clean.name}\n${clean.email}`,
     });

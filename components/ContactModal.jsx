@@ -74,7 +74,7 @@ export default function ContactModal({ isOpen, onClose }) {
     } catch (err) {
       console.error("Submission error:", err);
       setStatus("fallback");
-      setResponseMsg("Network dispatch unavailable. You can launch your mail client with this draft directly:");
+      setResponseMsg("We couldn't reach the server, so send it from your own email app instead:");
       setDraftData({
         subject: formData.subject || "Senior Engineering Opportunity",
         body: `Hi Khuzemah,\n\n${formData.message}\n\nBest regards,\n${formData.name}\n${formData.email}`,
@@ -146,7 +146,7 @@ export default function ContactModal({ isOpen, onClose }) {
           </div>
         ) : status === "fallback" ? (
           <div className="contact-fallback-box">
-            <h4>Your email draft is ready</h4>
+            <h4>Your message is ready to send</h4>
             <p>{responseMsg}</p>
             <div className="draft-actions">
               <a
