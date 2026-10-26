@@ -76,7 +76,7 @@ export default function WiseMarketVisual() {
                   Bi-directional SKU stock reconciliation worker handling 50,000+ catalog items with idempotent locking to prevent overselling.
                 </p>
                 <div className="wm-core-tags">
-                  <span>99.9% Sync Uptime</span>
+                  <span>Idempotent Locking</span>
                   <span>Dead-Letter Retries</span>
                   <span>Rate Limiter</span>
                 </div>
@@ -184,7 +184,7 @@ export default function WiseMarketVisual() {
                 <span className="wm-node-sub">Direct telecom carrier bindings</span>
               </div>
               <div className="wm-node-box brand-accent">
-                <span className="wm-flag">Zero-Trust Fraud Shield</span>
+                <span className="wm-flag">OTP Abuse Protection</span>
                 <span className="wm-node-sub">Anti-bot cooldown timers</span>
               </div>
             </div>

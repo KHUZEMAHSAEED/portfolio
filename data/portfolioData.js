@@ -152,7 +152,7 @@ export const PROJECT_CARDS = {
   "uae-proptech": {
     name: "UAE Property Portal Sync & AI Lead Hub",
     oneLiner: "Two-way listing sync with Property Finder, Bayut and Dubizzle, call tracking, and an AI bot that qualifies buyers before they reach the CRM.",
-    outcome: "15,000+ units synced with zero duplicates",
+    outcome: "15,000+ units synced across 3 portals",
   },
   "reelly-luxe": {
     name: "Reelly Luxe — Off-Plan Portal & Bitrix24 Deal Matching",
@@ -236,7 +236,7 @@ export const NODES = [
     badge: "PropTech Integration",
     role: "Bi-directional listing & lead ingestion",
     stack: "Laravel · XML Feeds · Webhooks · Sudonum",
-    impact: "Synced 15,000+ units across Dubai & Abu Dhabi with zero duplicate listings.",
+    impact: "Synced 15,000+ units across Dubai & Abu Dhabi with automated duplicate prevention.",
   },
   {
     id: "bitrix",
@@ -262,7 +262,7 @@ export const NODES = [
     badge: "Fintech & Payments",
     role: "Secure payment gateway orchestration",
     stack: "Stripe Connect · PayPal SDK · Webhooks",
-    impact: "Zero-failure subscription & escrow checkout flows with automated reconciliation.",
+    impact: "Subscription and checkout flows with webhook-driven reconciliation.",
   },
   {
     id: "supplychain",
@@ -433,9 +433,9 @@ export const FEATURED_PROJECTS = [
     solution:
       "Architected automated XML/JSON sync pipelines with strict deduplication schemas, webhook retry queues, and a Python-powered conversational bot capturing buyer budget, property type, and tenure.",
     metrics: [
-      { num: "15,000+", label: "Units Synchronized" },
-      { num: "< 30s", label: "AI Lead Response Time" },
-      { num: "100%", label: "Deduplication Reliability" },
+      { num: "15,000+", label: "Units synchronized" },
+      { num: "< 30s", label: "AI lead response time" },
+      { num: "3 portals", label: "Property Finder, Bayut & Dubizzle" },
     ],
     previewImage: "/projects/real-estate/unit-matrix-2d-view.png",
     gallery: [
@@ -500,10 +500,9 @@ export const FEATURED_PROJECTS = [
     solution:
       "Engineered a secure Node.js/TypeScript BFF gateway with server-side in-memory caching and strict key masking, paired with a React 19/TypeScript frontend. Built a dual-mode interface supporting both high-net-worth public browsing and embedded Bitrix24 CRM deal mode with one-click inventory attachment, WhatsApp VIP proposal dispatch, and activity timeline logging.",
     metrics: [
-      { num: "100%", label: "Key Security (Masked BFF)" },
-      { num: "4 Currencies", label: "Live Conversion (AED/USD/EUR/GBP)" },
-      { num: "< 1s", label: "CRM Deal Matching" },
-      { num: "Zero", label: "Credential Exposure" },
+      { num: "4 currencies", label: "Live conversion (AED / USD / EUR / GBP)" },
+      { num: "< 1s", label: "CRM deal matching" },
+      { num: "Server-side", label: "API keys kept behind a Node BFF" },
     ],
     previewImage: "/projects/reelly/reelly-catalog-grid.png",
     gallery: [
@@ -531,7 +530,7 @@ export const FEATURED_PROJECTS = [
       {
         id: "reelly-bitrix",
         title: "Bitrix24 CRM Deal Matching Workspace",
-        desc: "Embedded CRM workspace reading active deal criteria (Client: Sheikh Mohammed Al-Qasimi, Budget: AED 35M, 4+ BR), filtering matching inventory in real-time with one-click deal attachment.",
+        desc: "Embedded CRM workspace reading active deal criteria (e.g. budget AED 35M, 4+ bedrooms), filtering matching inventory in real-time with one-click deal attachment.",
         src: "/projects/reelly/reelly-bitrix-mode.png",
         tabLabel: "💼 Bitrix24 Deal Mode",
       },
@@ -545,7 +544,7 @@ export const FEATURED_PROJECTS = [
       {
         id: "reelly-settings",
         title: "BFF Gateway Security & API Key Masking Architecture",
-        desc: "Production security diagnostics verifying upstream Reelly v2.0 gateway health, endpoint latency, and complete server-side masking (re_...****) with zero client-side credential exposure.",
+        desc: "Production security diagnostics verifying upstream Reelly v2.0 gateway health, endpoint latency, and server-side key masking (re_...****) so credentials never reach the browser.",
         src: "/projects/reelly/reelly-settings-modal.png",
         tabLabel: "🔒 BFF Security & Key Masking",
       },
@@ -569,16 +568,16 @@ export const FEATURED_PROJECTS = [
     shortDescription:
       "High-throughput resume ingestion and deterministic scoring platform parsing PDFs/DOCX, extracting structured qualifications, and enforcing mandatory Human-in-the-Loop decision governance under EU AI Act & EEOC compliance standards.",
     summary:
-      "Enterprise-grade Applicant Tracking System (ATS) combining FastAPI, PyMuPDF, and Next.js 14 App Router with strict Human-in-the-Loop (HITL) decision governance. Built on deterministic word-boundary parsing, explainable evidence extractions, and zero automated rejections. Features an interactive GRC audit center aligned with Deloitte Tech Risk Standards, EU AI Act High-Risk Employment AI requirements, and EEOC Four-Fifths compliance auditing.",
+      "Applicant Tracking System (ATS) built with FastAPI, PyMuPDF and the Next.js 14 App Router, designed so software recommends and people decide. Scoring is deterministic and explainable — every match points to the resume text behind it — and the system never auto-rejects a candidate. An audit view tracks EEOC four-fifths adverse-impact ratios, with the human-in-the-loop design shaped by EU AI Act guidance for high-risk hiring tools.",
     problem:
       "Recruiting teams face thousands of unstructured candidate resumes per opening, leading to slow hiring cycles, biased heuristic rejections, and legal exposure under modern high-risk AI employment regulations (EEOC, EU AI Act, GDPR Art. 22).",
     solution:
-      "Architected a deterministic, 100% explainable screening pipeline that decouples automated advisory recommendations from human HR decisions. Integrated PyMuPDF for resilient multi-page parsing, magic-byte inspection, SHA-256 deduplication, and an interactive GRC audit center verifying statutory compliance.",
+      "Architected a deterministic, explainable screening pipeline that decouples automated advisory recommendations from human HR decisions. Integrated PyMuPDF for resilient multi-page parsing, magic-byte inspection, SHA-256 deduplication, and an audit view for monitoring bias across hiring decisions.",
     metrics: [
-      { num: "100%", label: "Explainable Match Evidence" },
-      { num: "Zero", label: "Automated Rejections (HITL)" },
-      { num: "4 Statutory", label: "Standards Aligned (EEOC/EU AI/GDPR)" },
-      { num: "< 2s", label: "Multi-Page Resume Parsing" },
+      { num: "Every score", label: "Backed by quoted resume evidence" },
+      { num: "Human", label: "Final decision on every candidate" },
+      { num: "4/5ths", label: "EEOC adverse-impact check built in" },
+      { num: "< 2s", label: "Multi-page resume parsing" },
     ],
     previewImage: "/projects/talentfilter/talentfilter-dashboard.png",
     gallery: [
@@ -598,7 +597,7 @@ export const FEATURED_PROJECTS = [
       },
       {
         id: "tf-detail",
-        title: "100% Explainable Match Breakdown & Resume Evidence",
+        title: "Explainable Match Breakdown & Resume Evidence",
         desc: "Deep candidate qualification dossier verifying mandatory competencies (Python, FastAPI, Docker, PostgreSQL) with exact text evidence snippets, bonus skill credits, and duration clarification flags.",
         src: "/projects/talentfilter/talentfilter-candidate-detail.png",
         tabLabel: "🔍 Explainable Scoring & Evidence",
@@ -619,8 +618,8 @@ export const FEATURED_PROJECTS = [
       },
       {
         id: "tf-audit",
-        title: "Governance, Risk & Compliance (GRC) Audit Center",
-        desc: "Enterprise compliance center aligned with Deloitte Tech Risk Standards, monitoring EEOC Four-Fifths disparate impact ratios, EU AI Act High-Risk requirements, and immutable audit logs.",
+        title: "Bias Monitoring & Audit View",
+        desc: "Audit view monitoring EEOC four-fifths adverse-impact ratios across hiring decisions, backed by an immutable decision log.",
         src: "/projects/talentfilter/talentfilter-audit.png",
         tabLabel: "🛡️ GRC & AI Bias Compliance",
       },
@@ -634,7 +633,7 @@ export const FEATURED_PROJECTS = [
     stack: "PHP 8+ · WordPress Core API · Custom OOP Plugins · Vanilla JS (ES6+) · REST API · AES-256 Storage · WhatsApp E.164 · PWA",
     title: "HashMove — Peer-to-Peer Luggage Capacity & Cross-Border Parcel Delivery Platform",
     shortDescription:
-      "Production-engineered peer-to-peer parcel delivery directory connecting international travelers with spare luggage capacity to senders, featuring automated route matching, AES-256 encrypted ID verification, and zero-fee WhatsApp handoffs.",
+      "Peer-to-peer parcel delivery directory connecting international travelers with spare luggage capacity to senders, featuring automated route matching, AES-256 encrypted ID verification, and zero-fee WhatsApp handoffs.",
     summary:
       "Full-featured peer-to-peer parcel delivery ecosystem engineered in Deep Navy (#0A192F) and Emerald Green (#10B981), featuring custom OOP plugin architecture (`hash-move-core`), bi-directional route/date proximity matching, encrypted government ID verification, and mandatory Open Box safety inspection workflows.",
     problem:
@@ -642,10 +641,10 @@ export const FEATURED_PROJECTS = [
     solution:
       "Architected a custom PHP 8/WordPress core engine featuring CPTs (`hm_traveler`, `hm_parcel`), an automated route/date matching engine, secure AES-256 encrypted storage for government ID credentials (CNIC/Passport) bypassing web accessibility, zero-middleman prefilled WhatsApp routing, and mandatory Open Box safety declarations.",
     metrics: [
-      { num: "50%+", label: "Cheaper Than Air Express" },
-      { num: "< 3s", label: "Automated Route Matching" },
-      { num: "100%", label: "Encrypted ID Storage (.htaccess)" },
-      { num: "Zero", label: "Third-Party Bloat (Pure Vanilla JS)" },
+      { num: "50%+", label: "Cheaper than air express (est.)" },
+      { num: "< 3s", label: "Automated route matching" },
+      { num: "AES-256", label: "Encrypted ID document storage" },
+      { num: "Vanilla JS", label: "No front-end framework or plugin bloat" },
     ],
     previewImage: "/projects/hash-move/hashmove-homepage.png",
     gallery: [
@@ -710,16 +709,16 @@ export const FEATURED_PROJECTS = [
     shortDescription:
       "Enterprise Islamic EdTech platform and custom student portal engineered on Moodle 4.5.13+ LTS core, enforcing the strict 'Zero-Redirect In-Portal Sandbox' rule with reverse-chronological record books, 4-tier certificate approvals, and headless timed quizzes.",
     summary:
-      "Enterprise Islamic EdTech platform and custom student portal (`local_alkithabportal`) engineered on Moodle 4.5.13+ (LTS). Enforces the strict 'Zero-Redirect In-Portal Sandbox' architectural invariant — students never encounter raw Moodle backend interfaces. 100% of the student journey runs within an emerald/mint (#14B8A6) and dark navy (#0F2744) portal interface featuring dynamic course curricula, reverse-chronological attendance record books with teacher remarks, headless quiz runners, multi-tier certificate approvals, and automated cloud backup synchronization.",
+      "Enterprise Islamic EdTech platform and custom student portal (`local_alkithabportal`) engineered on Moodle 4.5.13+ (LTS). Enforces a strict 'Zero-Redirect In-Portal Sandbox' rule — students never encounter raw Moodle backend interfaces. The whole student journey runs within an emerald/mint (#14B8A6) and dark navy (#0F2744) portal interface featuring dynamic course curricula, reverse-chronological attendance record books with teacher remarks, headless quiz runners, multi-tier certificate approvals, and automated cloud backup synchronization.",
     problem:
       "Traditional LMS setups like out-of-the-box Moodle present steep cognitive friction for young Islamic studies students: cluttered navigation bars, jarring page redirects to `/course/view.php` or `/mod/quiz/`, disorienting chronologies, and confusing assessment feedback lacking teacher audio/recitation context.",
     solution:
       "Architected a custom headless student portal plugin (`local_alkithabportal`) that completely decouples Moodle's core database (`mdl_quiz`, `mdl_assign`, `mdl_grade_grades`) from the presentation tier. Engineered reverse-chronological session record books, universal dropdown state persistence, headless modal quiz execution and question breakdowns, and an automated 4-stage certificate verification checklist with zero native redirects.",
     metrics: [
-      { num: "100%", label: "In-Portal Sandbox (Zero Moodle Leakage)" },
-      { num: "8 Curricula", label: "Multi-Subject Islamic Foundations" },
-      { num: "4-Tier", label: "Certificate Approval Gates" },
-      { num: "< 1s", label: "Headless Quiz Evaluation & Telemetry" },
+      { num: "One portal", label: "Students never see raw Moodle pages" },
+      { num: "8 Curricula", label: "Multi-subject Islamic foundations" },
+      { num: "4-Tier", label: "Certificate approval gates" },
+      { num: "< 1s", label: "Headless quiz evaluation & telemetry" },
     ],
     previewImage: "/projects/alkithab/alkithab-student-home.png",
     gallery: [
@@ -798,16 +797,16 @@ export const FEATURED_PROJECTS = [
     shortDescription:
       "Production D2C culinary education platform engineered for artisan masterclasses, recurring course bundle subscriptions ($100–$400), automated subscription gifting, and virtual livestream ticketing.",
     summary:
-      "Enterprise-grade culinary e-commerce platform engineered for artisan pizza authority Noel Brohner (`slowrisepizza.com`). Built on an optimized PHP 8+ WordPress and WooCommerce Subscriptions core, the platform powers tiered video course subscriptions, on-demand masterclass streaming, and an automated Subscription Gifting Engine with interactive recipient email validation, personalized gifting messages, scheduled deliveries, and automated multi-party transaction notifications.",
+      "Culinary e-commerce platform built for artisan pizza authority Noel Brohner (`slowrisepizza.com`). Built on an optimized PHP 8+ WordPress and WooCommerce Subscriptions core, the platform powers tiered video course subscriptions, on-demand masterclass streaming, and an automated Subscription Gifting Engine with interactive recipient email validation, personalized gifting messages, scheduled deliveries, and automated multi-party transaction notifications.",
     problem:
       "High-ticket artisan culinary masterclasses ($100–$400) face unique checkout friction: students frequently purchase courses as gifts for friends and family without an automated way to schedule delivery, pre-assign recipient credentials, or grant time-gated access to streaming curriculum without exposing the purchaser's personal billing account.",
     solution:
-      "Engineered a customized WooCommerce Subscriptions & Gifting architecture with automated 3-way email dispatching (Recipient voucher, Purchaser confirmation, and Admin audit ledger). Implemented time-gated on-demand video bundle streaming (2-month access windows), real-time virtual live masterclass scheduling via The Events Calendar Pro & Event Tickets Plus, and decoupled recipient redemption with zero account credential leakage.",
+      "Engineered a customized WooCommerce Subscriptions & Gifting architecture with automated 3-way email dispatching (Recipient voucher, Purchaser confirmation, and Admin audit ledger). Implemented time-gated on-demand video bundle streaming (2-month access windows), real-time virtual live masterclass scheduling via The Events Calendar Pro & Event Tickets Plus, and recipient redemption that never exposes the purchaser's account.",
     metrics: [
-      { num: "100%", label: "Automated Subscription Gifting" },
-      { num: "$100 – $400", label: "Tiered Course Subscriptions" },
-      { num: "3-Way", label: "Automated Email Notification Engine" },
-      { num: "< 2s", label: "On-Demand Video Curriculum Delivery" },
+      { num: "Automated", label: "Gift scheduling & redemption" },
+      { num: "$100 – $400", label: "Tiered course subscriptions" },
+      { num: "3-Way", label: "Automated email notification engine" },
+      { num: "< 2s", label: "On-demand video curriculum delivery" },
     ],
     previewImage: "/projects/slowrise/slowrise-subscription-gifting.png",
     gallery: [
@@ -863,18 +862,18 @@ export const FEATURED_PROJECTS = [
     stack: "Python (Flask) · MySQL · Cloudflare R2 · OpenRouteService · Boto3 · Vanilla JS (ES6+) · Stripe",
     title: "ZenaWalk — Multilingual Audio Tour Platform & Centralized CMS Engine",
     shortDescription:
-      "Pedestrian walking tour platform for Genoa (Italy) featuring zero-code central CMS, 5-language localization with Italian fallback, and Cloudflare R2 audio streaming.",
+      "Pedestrian walking tour platform for Genoa (Italy) featuring a no-code central CMS, 5-language localization with Italian fallback, and Cloudflare R2 audio streaming.",
     summary:
-      "Full-stack digital walking tour ecosystem for Genoa (Italy), featuring a centralized zero-code homepage CMS, 5-language localization with intelligent fallback to Italian, and Cloudflare R2 media streaming for high-definition audio guides and walking routes.",
+      "Full-stack digital walking tour ecosystem for Genoa (Italy), featuring a centralized no-code homepage CMS, 5-language localization with intelligent fallback to Italian, and Cloudflare R2 media streaming for high-definition audio guides and walking routes.",
     problem:
-      "Tour creators and certified guides required a centralized way to manage texts, media, and audio commentary across 5 languages (Italian, English, French, German, Spanish) without developer intervention or redeployment, while serving heavy audio/image payloads globally with zero streaming latency.",
+      "Tour creators and certified guides required a centralized way to manage texts, media, and audio commentary across 5 languages (Italian, English, French, German, Spanish) without developer intervention or redeployment, while serving heavy audio and image files quickly to visitors worldwide.",
     solution:
       "Architected a Python/Flask REST backend with idempotent MySQL migrations (zw_settings, zw_translations), integrated Cloudflare R2 object storage via Boto3 with S3v4 signing for zero-egress audio distribution, built an OpenRouteService GPS walking route engine, and engineered a dynamic translation engine with Italian fallback.",
     metrics: [
-      { num: "5", label: "Supported Languages (IT/EN/FR/DE/ES)" },
-      { num: "10+", label: "Curated Walking Routes" },
-      { num: "100%", label: "Cloudflare R2 CDN Streaming" },
-      { num: "Zero-Code", label: "CMS Publishing & Fallback" },
+      { num: "5", label: "Supported languages (IT/EN/FR/DE/ES)" },
+      { num: "10+", label: "Curated walking routes" },
+      { num: "Cloudflare R2", label: "Audio & media served from the edge" },
+      { num: "No-code", label: "Content publishing with Italian fallback" },
     ],
     previewImage: "/projects/zenawalk/genova-hero.jpg",
     gallery: [
@@ -904,9 +903,9 @@ export const FEATURED_PROJECTS = [
     solution:
       "Built an event-driven inventory synchronization worker, automated SMS OTP customer verification, and unified courier dispatch engine for TCS, Leopards, and M&P with automated label printing and tracking webhooks.",
     metrics: [
-      { num: "50,000+", label: "Catalog SKUs Managed" },
-      { num: "4", label: "International Markets" },
-      { num: "99.9%", label: "Inventory Sync Uptime" },
+      { num: "50,000+", label: "Catalog SKUs managed" },
+      { num: "4", label: "International markets" },
+      { num: "80%", label: "Less manual fulfilment work" },
     ],
     previewImage: null,
     isArchitectureVisual: true,
@@ -917,19 +916,19 @@ export const FEATURED_PROJECTS = [
     domain: "Enterprise SaaS & Fintech Compliance",
     role: "Full Stack Engineer",
     stack: "Laravel · Next.js · MySQL · AWS S3 · WPS Banking Specs",
-    title: "UAE Enterprise HRM & WPS Compliant Payroll Platform",
+    title: "UAE Enterprise HRM & WPS Payroll Platform",
     shortDescription:
-      "Enterprise workforce management and 100% compliant UAE Central Bank Wages Protection System (WPS) automated SIF payroll generation.",
+      "Workforce management with automated SIF payroll files in the UAE Central Bank Wages Protection System (WPS) format.",
     summary:
       "Comprehensive workforce management and automated payroll platform compliant with the UAE Ministry of Human Resources and Emiratisation (MOHRE) Wages Protection System (WPS).",
     problem:
       "Manual payroll calculation with complex variable overtime, deductions, gratuity, and strict UAE central bank WPS formatting led to payroll delays and compliance penalties.",
     solution:
-      "Architected deterministic payroll engine calculating leaves, loans, and end-of-service benefits, generating certified banking SIF files with 100% regulatory audit compliance.",
+      "Architected deterministic payroll engine calculating leaves, loans, and end-of-service benefits, generating WPS-format SIF files ready for bank upload.",
     metrics: [
-      { num: "300+", label: "Employees Managed" },
-      { num: "100%", label: "WPS SIF Audit Compliance" },
-      { num: "Zero", label: "Calculation Discrepancies" },
+      { num: "300+", label: "Employees managed" },
+      { num: "1-click", label: "WPS SIF file generation" },
+      { num: "Automated", label: "Leave, loan & gratuity calculations" },
     ],
     previewImage: "/projects/hrm/hrm-wps-payslips-payroll.png",
     gallery: [
@@ -1038,7 +1037,7 @@ export const EXPERIENCE = [
         name: "WiseMarket International E-Commerce Platform",
         stack: "Laravel · Next.js · MySQL · REST APIs · SMS Gateways",
         points: [
-          "Developed mission-critical backend modules for a multi-regional marketplace serving Australia, Pakistan, UAE, and New Zealand.",
+          "Developed core backend modules for a multi-regional marketplace serving Australia, Pakistan, UAE, and New Zealand.",
           "Engineered automated courier dispatch integrations for TCS, Leopards, and M&P, slashing manual fulfillment processing time by 80%.",
           "Designed resilient SMS OTP authentication architecture with fraud-prevention rate limiting for user activation.",
           "Integrated Cin7 and ChannelAdvisor for multi-channel inventory synchronization across regional warehouses.",
@@ -1243,25 +1242,25 @@ export const RECRUITER_KNOWLEDGE = [
   {
     keywords: ["reelly", "reelly luxe", "off-plan", "luxury", "sobha", "emaar", "binghatti", "omniyat"],
     answer:
-      "Reelly Luxe is an ultra-luxury real estate platform and Bitrix24 CRM deal matching engine architected by Khuzemah. Built with React 19, TypeScript, and a Node.js/Express BFF gateway with masked key security, it integrates the Reelly API v2.0 with Bitrix24 CRM deals. Features an Obsidian & Gold design system, Leaflet Dark Matter map with gold coordinate pins, multi-currency engine (AED/USD/EUR/GBP), luxury Dossier payment plan schedules, and automated WhatsApp VIP client proposal dispatching directly into CRM deal timelines.",
+      "Reelly Luxe is a luxury off-plan real estate platform and Bitrix24 CRM deal matching engine architected by Khuzemah. Built with React 19, TypeScript, and a Node.js/Express BFF gateway with masked key security, it integrates the Reelly API v2.0 with Bitrix24 CRM deals. Features an Obsidian & Gold design system, Leaflet Dark Matter map with gold coordinate pins, multi-currency engine (AED/USD/EUR/GBP), luxury Dossier payment plan schedules, and automated WhatsApp VIP client proposal dispatching directly into CRM deal timelines.",
     action: { label: "Inspect Reelly Luxe Case Study", href: "/projects#case-reelly-luxe" },
   },
   {
     keywords: ["talentfilter", "ats", "resume", "screening", "python-scrapper", "hitl", "governance", "fastapi", "pymupdf"],
     answer:
-      "TalentFilter AI is an enterprise ATS resume screening and candidate governance system architected by Khuzemah. Built with FastAPI (Python 3.13), Next.js 14 App Router, and PostgreSQL/SQLite, it features deterministic keyword/synonym matching, PyMuPDF extraction, 100% explainable qualification scores with exact text evidence snippets, and mandatory Human-in-the-Loop (HITL) governance compliant with EEOC 4/5ths rules, EU AI Act, and Deloitte Tech Risk Standards.",
+      "TalentFilter AI is an enterprise ATS resume screening and candidate governance system architected by Khuzemah. Built with FastAPI (Python 3.13), Next.js 14 App Router, and PostgreSQL/SQLite, it features deterministic keyword/synonym matching, PyMuPDF extraction, explainable qualification scores with exact text evidence snippets, and mandatory human-in-the-loop review, with EEOC four-fifths bias monitoring built in.",
     action: { label: "Inspect TalentFilter AI Case Study", href: "/projects#case-talentfilter-ai" },
   },
   {
     keywords: ["hashmove", "hash-move", "parcel", "luggage", "traveler", "p2p", "delivery"],
     answer:
-      "HashMove is a production-engineered peer-to-peer parcel delivery directory connecting international travelers with spare luggage capacity to parcel senders. Architected by Khuzemah with custom PHP 8 OOP plugin (hash-move-core), automated route matching, AES-256 encrypted ID storage for CNIC/passport uploads, and zero-fee direct WhatsApp chat handoffs.",
+      "HashMove is a peer-to-peer parcel delivery directory connecting international travelers with spare luggage capacity to parcel senders. Architected by Khuzemah with custom PHP 8 OOP plugin (hash-move-core), automated route matching, AES-256 encrypted ID storage for CNIC/passport uploads, and zero-fee direct WhatsApp chat handoffs.",
     action: { label: "Inspect HashMove Case Study", href: "/projects#case-hash-move" },
   },
   {
     keywords: ["zenawalk", "genoa", "genova", "audio", "tour", "multilingual", "r2", "cms"],
     answer:
-      "ZenaWalk is a full-stack digital walking tour platform for Genoa (Italy) engineered by Khuzemah. Key systems: Python (Flask) REST API with MySQL, Cloudflare R2 object storage via Boto3 (S3v4) for zero-latency audio streaming, a centralized zero-code CMS (/api/settings/public/), and 5-language localization (Italian, English, French, German, Spanish) with intelligent fallback to Italian.",
+      "ZenaWalk is a full-stack digital walking tour platform for Genoa (Italy) engineered by Khuzemah. Key systems: Python (Flask) REST API with MySQL, Cloudflare R2 object storage via Boto3 (S3v4) for fast audio streaming, a centralized no-code CMS (/api/settings/public/), and 5-language localization (Italian, English, French, German, Spanish) with intelligent fallback to Italian.",
     action: { label: "Inspect ZenaWalk Case Study", href: "/projects#case-zenawalk" },
   },
   {

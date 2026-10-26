@@ -230,7 +230,7 @@ export default function ZenaWalkVisual() {
               </div>
               <div className="wm-node-box brand-accent">
                 <span className="wm-flag">Sub-Second Streaming</span>
-                <span className="wm-node-sub">Zero-buffering audio playback on mobile</span>
+                <span className="wm-node-sub">Smooth audio playback on mobile</span>
               </div>
               <div className="wm-node-box brand-accent">
                 <span className="wm-flag">Byte-Range Requests</span>
