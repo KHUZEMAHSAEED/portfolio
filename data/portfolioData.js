@@ -189,6 +189,11 @@ export const PROJECT_CARDS = {
     oneLiner: "WooCommerce Subscriptions build for $100–$400 masterclass bundles, gift redemption flows and live-class ticketing.",
     outcome: "Fully automated subscription gifting",
   },
+  "crediblock": {
+    name: "CrediPost — Secure WordPress Curation Plugin",
+    oneLiner: "Pulls an article or video into WordPress, lets editors prune it with undo, and publishes across a Multisite network — rewritten for security.",
+    outcome: "Every AJAX endpoint nonce- and capability-checked",
+  },
   "zenawalk": {
     name: "ZenaWalk — Multilingual Audio Tours",
     oneLiner: "Flask + MySQL platform for walking tours of Genoa with a no-code CMS, 5 languages and Cloudflare R2 audio streaming.",
@@ -414,9 +419,10 @@ export const PROJECT_CATEGORIES = [
   { id: "ecommerce", label: "E-commerce & Logistics" },
   { id: "traveltech", label: "TravelTech & CMS" },
   { id: "fintech", label: "HR & Payroll SaaS" },
+  { id: "wordpress", label: "WordPress Plugins" },
 ];
 
-export const FEATURED_PROJECTS = [
+const ALL_PROJECTS = [
   {
     id: "uae-proptech",
     category: "proptech",
@@ -855,6 +861,30 @@ export const FEATURED_PROJECTS = [
     ],
   },
   {
+    id: "crediblock",
+    repo: "https://github.com/KHUZEMAHSAEED/crediblock",
+    category: "wordpress",
+    domain: "WordPress Plugin Engineering & Security",
+    role: "Original Author (Rezaid) · v2.0 Rewrite",
+    stack: "PHP 7.4–8.3 · WordPress Plugin API · DOMDocument / DOMXPath · WordPress Multisite · oEmbed · jQuery (core) · AJAX · i18n",
+    title: "CrediPost (Crediblock) — Secure Content Curation & Multisite Publishing Plugin",
+    shortDescription:
+      "WordPress plugin that pulls an external article or video into the editor, lets editors strip unwanted blocks with undo, and publishes to any site in a Multisite network.",
+    summary:
+      "Content curation plugin for WordPress editors: paste a URL, get a clean, readable version of the article (or a responsive video embed), remove any paragraph or image with one click, then publish as a draft, for review, or live — on the current site or any subsite in a Multisite network. Khuzemah built the original plugin for Crediblock while at Rezaid, and later rewrote it from the ground up as v2.0, focused on security, maintainability and modern PHP.",
+    problem:
+      "The original v1 — written early in Khuzemah's career — scraped pages with a 1,000-line regex parser, shipped its own copies of jQuery that clashed with WordPress and other plugins, and exposed AJAX actions without request verification — fragile, hard to maintain, and open to SSRF, CSRF and stored-XSS issues.",
+    solution:
+      "Rebuilt the plugin on the standard WordPress plugin boilerplate structure. Fetching now goes through wp_safe_remote_get(), which refuses internal and loopback addresses; parsing uses DOMDocument and DOMXPath to drop scripts, navigation, sidebars and comments while keeping headings, paragraphs, lists, quotes and images, with relative URLs resolved to absolute ones. Every AJAX endpoint checks a nonce and the user's capability, all saved content passes through wp_kses_post(), Multisite publishing verifies permission on the target subsite, and assets load only on the plugin's own screen.",
+    metrics: [
+      { num: "1,034 → 441", label: "Lines in the rewritten scraper" },
+      { num: "3 of 3", label: "AJAX endpoints with nonce & capability checks" },
+      { num: "PHP 7.4–8.3", label: "Supported runtime range" },
+      { num: "Multisite", label: "Publish to any subsite, permission-checked" },
+    ],
+    previewImage: null,
+  },
+  {
     id: "zenawalk",
     category: "traveltech",
     domain: "TravelTech & Multilingual CMS Platforms",
@@ -971,6 +1001,28 @@ export const FEATURED_PROJECTS = [
   },
 ];
 
+// Case-study order, strongest first for senior full stack / backend roles:
+// scale and AI work, then public code, then smaller builds.
+const PROJECT_ORDER = [
+  "uae-proptech",
+  "talentfilter-ai",
+  "reelly-luxe",
+  "uae-hrm",
+  "wisemarket",
+  "crediblock",
+  "alkithab-academy",
+  "hash-move",
+  "zenawalk",
+  "slowrise-pizza",
+];
+
+const projectRank = (id) => {
+  const i = PROJECT_ORDER.indexOf(id);
+  return i === -1 ? PROJECT_ORDER.length : i;
+};
+
+export const FEATURED_PROJECTS = [...ALL_PROJECTS].sort((a, b) => projectRank(a.id) - projectRank(b.id));
+
 export const EXPERIENCE = [
   {
     title: "Senior Software Developer",
@@ -1085,6 +1137,7 @@ export const EXPERIENCE = [
         stack: "WordPress · PHP · Custom Plugins",
         points: [
           "Engineered bespoke plugins and optimized database queries for commercial clients across diverse industries.",
+          "Built CrediPost for Crediblock — a WordPress plugin for curating external articles and videos and publishing them across a Multisite network (rebuilt as v2.0 in 2026, now public on GitHub).",
         ],
       },
     ],
@@ -1256,6 +1309,12 @@ export const RECRUITER_KNOWLEDGE = [
     answer:
       "HashMove is a peer-to-peer parcel delivery directory connecting international travelers with spare luggage capacity to parcel senders. Architected by Khuzemah with custom PHP 8 OOP plugin (hash-move-core), automated route matching, AES-256 encrypted ID storage for CNIC/passport uploads, and zero-fee direct WhatsApp chat handoffs.",
     action: { label: "Inspect HashMove Case Study", href: "/projects#case-hash-move" },
+  },
+  {
+    keywords: ["crediblock", "credipost", "wordpress plugin", "plugin", "scraper", "curation", "multisite", "ssrf"],
+    answer:
+      "CrediPost is a WordPress content-curation plugin Khuzemah originally built for Crediblock while at Rezaid, and later rebuilt from the ground up as v2.0. Editors paste a URL, get a clean version of the article or a responsive video embed, remove unwanted blocks with undo, and publish to the current site or any subsite in a Multisite network. The rewrite replaced a 1,000-line regex scraper with DOMDocument/XPath parsing, routes fetching through wp_safe_remote_get() to block SSRF, adds nonce and capability checks to every AJAX endpoint, sanitises saved content with wp_kses_post(), and supports PHP 7.4 to 8.3. The code is public on GitHub.",
+    action: { label: "Inspect CrediPost Case Study", href: "/projects#case-crediblock" },
   },
   {
     keywords: ["zenawalk", "genoa", "genova", "audio", "tour", "multilingual", "r2", "cms"],

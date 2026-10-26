@@ -4,6 +4,7 @@ import Image from "next/image";
 import { PROJECT_CARDS } from "@/data/portfolioData";
 import WiseMarketVisual from "./WiseMarketVisual";
 import ZenaWalkVisual from "./ZenaWalkVisual";
+import CrediPostVisual from "./CrediPostVisual";
 import { IconGitHub, IconZoom } from "./Icons";
 
 // Gallery tab labels in the data lead with an emoji; the redesigned UI is text-only.
@@ -128,6 +129,7 @@ export default function CaseStudies({ projects = [], galleryTabs = {}, onTabChan
 
                 {proj.id === "zenawalk" && <ZenaWalkVisual />}
                 {proj.id === "wisemarket" && <WiseMarketVisual />}
+                {proj.id === "crediblock" && <CrediPostVisual />}
               </article>
             );
           })}

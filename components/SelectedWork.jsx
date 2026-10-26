@@ -117,7 +117,7 @@ export default function SelectedWork({ onOpenLightbox }) {
 
         <div className="work-more">
           <p>
-            Also: a headless Moodle LMS, peer-to-peer logistics, D2C subscriptions and a multilingual travel CMS.
+            Also: a secure WordPress publishing plugin, a headless Moodle LMS, peer-to-peer logistics, D2C subscriptions and a multilingual travel CMS.
           </p>
           <Link href="/projects" className="btn btn-secondary">
             Browse all case studies <IconArrowRight size={16} />
