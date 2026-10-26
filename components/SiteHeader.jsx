@@ -1,17 +1,37 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 export default function SiteHeader({ onOpenContact }) {
+  const pathname = usePathname();
+  const isProjectsPage = pathname === "/projects";
+
   return (
     <header className="site-header">
       <div className="wrap">
-        <a className="mark" href="#top">
+        <Link className="mark" href="/">
           <span className="dot" />
           Khuzemah Saeed
-        </a>
+        </Link>
         <nav className="header-links">
-          <a href="#cases">Case Studies</a>
-          <a href="#work">Experience</a>
-          <a href="#skills">Capabilities</a>
+          {isProjectsPage ? (
+            <>
+              <Link href="/">Overview</Link>
+              <Link href="/projects" className="active-nav-link">
+                Projects &amp; Archive
+              </Link>
+              <Link href="/#skills">Capabilities</Link>
+              <Link href="/#work">Experience</Link>
+            </>
+          ) : (
+            <>
+              <a href="#selected-work">Selected Work</a>
+              <Link href="/projects">Projects &amp; Archive</Link>
+              <a href="#skills">Capabilities</a>
+              <a href="#work">Experience</a>
+            </>
+          )}
           <a
             href="/Khuzemah_Saeed_Resume.pdf"
             download="Khuzemah_Saeed_Resume.pdf"

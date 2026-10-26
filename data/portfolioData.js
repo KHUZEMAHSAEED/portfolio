@@ -179,13 +179,24 @@ export const SKILLS = [
   },
 ];
 
+export const PROJECT_CATEGORIES = [
+  { id: "all", label: "All Projects" },
+  { id: "proptech", label: "🏢 UAE PropTech & Portals" },
+  { id: "traveltech", label: "🎧 TravelTech & CMS" },
+  { id: "ecommerce", label: "📦 E-Commerce & Logistics" },
+  { id: "fintech", label: "💳 Fintech & Enterprise SaaS" },
+];
+
 export const FEATURED_PROJECTS = [
   {
     id: "uae-proptech",
+    category: "proptech",
     domain: "UAE PropTech & Real Estate",
     role: "Lead Systems Architect",
     stack: "Laravel · Next.js · Python · Bitrix24 · Sudonum · XML/JSON",
     title: "UAE Real Estate Portal Synchronization & AI Lead Qualification Hub",
+    shortDescription:
+      "Enterprise infrastructure powering bi-directional listing synchronization, real-time telephony tracking, and conversational AI lead qualification across UAE property portals.",
     summary:
       "Enterprise infrastructure powering bi-directional listing synchronization, real-time call tracking, and intelligent AI lead pre-qualification across the UAE's major real estate portals.",
     problem:
@@ -197,6 +208,7 @@ export const FEATURED_PROJECTS = [
       { num: "< 30s", label: "AI Lead Response Time" },
       { num: "100%", label: "Deduplication Reliability" },
     ],
+    previewImage: "/projects/real-estate/unit-matrix-2d-view.png",
     gallery: [
       {
         id: "unit-matrix",
@@ -244,10 +256,13 @@ export const FEATURED_PROJECTS = [
   },
   {
     id: "zenawalk",
+    category: "traveltech",
     domain: "TravelTech & Multilingual CMS Platforms",
     role: "Full Stack & Systems Engineer",
     stack: "Python (Flask) · MySQL · Cloudflare R2 · OpenRouteService · Boto3 · Vanilla JS (ES6+) · Stripe",
     title: "ZenaWalk — Multilingual Audio Tour Platform & Centralized CMS Engine",
+    shortDescription:
+      "Pedestrian walking tour platform for Genoa (Italy) featuring zero-code central CMS, 5-language localization with Italian fallback, and Cloudflare R2 audio streaming.",
     summary:
       "Full-stack digital walking tour ecosystem for Genoa (Italy), featuring a centralized zero-code homepage CMS, 5-language localization with intelligent fallback to Italian, and Cloudflare R2 media streaming for high-definition audio guides and walking routes.",
     problem:
@@ -260,6 +275,7 @@ export const FEATURED_PROJECTS = [
       { num: "100%", label: "Cloudflare R2 CDN Streaming" },
       { num: "Zero-Code", label: "CMS Publishing & Fallback" },
     ],
+    previewImage: "/projects/zenawalk/genova-hero.jpg",
     gallery: [
       {
         id: "zenawalk-hero",
@@ -273,10 +289,13 @@ export const FEATURED_PROJECTS = [
   },
   {
     id: "wisemarket",
+    category: "ecommerce",
     domain: "Global E-Commerce & Logistics",
     role: "Senior Full Stack Developer",
     stack: "Laravel · Next.js · MySQL · Cin7 · ChannelAdvisor · Courier APIs",
     title: "WiseMarket 4-Country Marketplace & Logistics Automation Engine",
+    shortDescription:
+      "Cross-border e-commerce backbone operating across Australia, New Zealand, UAE, and Pakistan with automated courier API dispatch (TCS, Leopards, M&P) and Cin7 sync.",
     summary:
       "High-scale e-commerce backbone operating across Australia, New Zealand, UAE, and Pakistan, orchestrating cross-border inventory and automated dispatch across 3 courier logistics APIs.",
     problem:
@@ -288,14 +307,18 @@ export const FEATURED_PROJECTS = [
       { num: "4", label: "International Markets" },
       { num: "99.9%", label: "Inventory Sync Uptime" },
     ],
+    previewImage: null,
     isArchitectureVisual: true,
   },
   {
     id: "uae-hrm",
+    category: "fintech",
     domain: "Enterprise SaaS & Fintech Compliance",
     role: "Full Stack Engineer",
     stack: "Laravel · Next.js · MySQL · AWS S3 · WPS Banking Specs",
     title: "UAE Enterprise HRM & WPS Compliant Payroll Platform",
+    shortDescription:
+      "Enterprise workforce management and 100% compliant UAE Central Bank Wages Protection System (WPS) automated SIF payroll generation.",
     summary:
       "Comprehensive workforce management and automated payroll platform compliant with the UAE Ministry of Human Resources and Emiratisation (MOHRE) Wages Protection System (WPS).",
     problem:
@@ -307,6 +330,7 @@ export const FEATURED_PROJECTS = [
       { num: "100%", label: "WPS SIF Audit Compliance" },
       { num: "Zero", label: "Calculation Discrepancies" },
     ],
+    previewImage: "/projects/hrm/hrm-wps-payslips-payroll.png",
     gallery: [
       {
         id: "hrm-wps",

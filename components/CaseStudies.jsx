@@ -9,22 +9,29 @@ export default function CaseStudies({
   galleryTabs = {},
   onTabChange,
   onOpenLightbox,
+  showHeader = true,
+  sectionIndex = "01",
+  title = "Featured Case Studies",
+  lead = "Deep architectural dives into production systems handling multilingual digital travel platforms, multi-portal real estate synchronization, cross-border e-commerce, and strict fintech compliance.",
 }) {
   return (
-    <section id="cases" className="section">
+    <section id="cases" className="section case-studies-section">
       <div className="wrap">
-        <div className="section-head">
-          <h2>Featured Case Studies</h2>
-          <span className="section-index">01</span>
-        </div>
-        <p style={{ color: "var(--text-secondary)", maxWidth: "68ch", marginBottom: "36px", fontSize: "16px" }}>
-          Deep architectural dives into production systems handling multilingual digital travel platforms,
-          multi-portal real estate synchronization, cross-border e-commerce, and strict fintech compliance.
-        </p>
+        {showHeader && (
+          <>
+            <div className="section-head">
+              <h2>{title}</h2>
+              <span className="section-index">{sectionIndex}</span>
+            </div>
+            <p style={{ color: "var(--text-secondary)", maxWidth: "68ch", marginBottom: "36px", fontSize: "16px" }}>
+              {lead}
+            </p>
+          </>
+        )}
 
         <div className="case-grid">
           {projects.map((proj) => (
-            <article className="case-card panel" key={proj.id}>
+            <article className="case-card panel" key={proj.id} id={`case-${proj.id}`}>
               <div className="case-card-top">
                 <div className="case-badges">
                   <span className="case-badge badge-domain">{proj.domain}</span>

@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { NODES, FEATURED_PROJECTS } from "@/data/portfolioData";
+import { NODES } from "@/data/portfolioData";
 import SiteHeader from "@/components/SiteHeader";
 import Hero from "@/components/Hero";
 import IntegrationHub from "@/components/IntegrationHub";
 import MetricsStrip from "@/components/MetricsStrip";
-import CaseStudies from "@/components/CaseStudies";
+import SelectedWork from "@/components/SelectedWork";
 import Capabilities from "@/components/Capabilities";
 import IntegrationsEcosystem from "@/components/IntegrationsEcosystem";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
@@ -18,11 +18,6 @@ import LightboxModal from "@/components/LightboxModal";
 
 export default function Home() {
   const [activeNode, setActiveNode] = useState(NODES[1]); // Default to Bitrix24
-  const [galleryTabs, setGalleryTabs] = useState({
-    "uae-proptech": 0,
-    zenawalk: 0,
-    "uae-hrm": 0,
-  });
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
   const [lightboxState, setLightboxState] = useState({
@@ -30,13 +25,6 @@ export default function Home() {
     items: [],
     currentIndex: 0,
   });
-
-  const handleGalleryTabChange = (projectId, tabIndex) => {
-    setGalleryTabs((prev) => ({
-      ...prev,
-      [projectId]: tabIndex,
-    }));
-  };
 
   const handleOpenLightbox = (items, index) => {
     setLightboxState({
@@ -81,13 +69,8 @@ export default function Home() {
           <MetricsStrip />
         </section>
 
-        {/* FEATURED CASE STUDIES */}
-        <CaseStudies
-          projects={FEATURED_PROJECTS}
-          galleryTabs={galleryTabs}
-          onTabChange={handleGalleryTabChange}
-          onOpenLightbox={handleOpenLightbox}
-        />
+        {/* SELECTED FLAGSHIP WORK */}
+        <SelectedWork onOpenLightbox={handleOpenLightbox} />
 
         {/* TECHNICAL CAPABILITIES */}
         <Capabilities />
