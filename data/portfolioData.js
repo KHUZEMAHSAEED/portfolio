@@ -182,8 +182,8 @@ export const SKILLS = [
 export const PROJECT_CATEGORIES = [
   { id: "all", label: "All Projects" },
   { id: "proptech", label: "🏢 UAE PropTech & Portals" },
+  { id: "ecommerce", label: "📦 P2P Logistics & E-Commerce" },
   { id: "traveltech", label: "🎧 TravelTech & CMS" },
-  { id: "ecommerce", label: "📦 E-Commerce & Logistics" },
   { id: "fintech", label: "💳 Fintech & Enterprise SaaS" },
 ];
 
@@ -251,6 +251,80 @@ export const FEATURED_PROJECTS = [
         desc: "Multi-step property creation wizard featuring automated watermark injection, high-res photo sequencing, and optimized cloud CDN delivery.",
         src: "/projects/real-estate/media-gallery-watermark.png",
         tabLabel: "🖼️ Media & Watermarking",
+      },
+    ],
+  },
+  {
+    id: "hash-move",
+    category: "ecommerce",
+    domain: "P2P Logistics & Luggage Capacity Marketplace",
+    role: "Lead Full Stack & Custom Architecture Engineer",
+    stack: "PHP 8+ · WordPress Core API · Custom OOP Plugins · Vanilla JS (ES6+) · REST API · AES-256 Storage · WhatsApp E.164 · PWA",
+    title: "HashMove — Peer-to-Peer Luggage Capacity & Cross-Border Parcel Delivery Platform",
+    shortDescription:
+      "Production-engineered peer-to-peer parcel delivery directory connecting international travelers with spare luggage capacity to senders, featuring automated route matching, AES-256 encrypted ID verification, and zero-fee WhatsApp handoffs.",
+    summary:
+      "Full-featured peer-to-peer parcel delivery ecosystem engineered in Deep Navy (#0A192F) and Emerald Green (#10B981), featuring custom OOP plugin architecture (`hash-move-core`), bi-directional route/date proximity matching, encrypted government ID verification, and mandatory Open Box safety inspection workflows.",
+    problem:
+      "Cross-border express couriers between Pakistan, the UAE, Saudi Arabia, and the UK charge exorbitant rates ($25+/kg) with 5–7 day delays, while international travelers fly with underutilized luggage allowances without a secure, identity-verified peer matching framework.",
+    solution:
+      "Architected a custom PHP 8/WordPress core engine featuring CPTs (`hm_traveler`, `hm_parcel`), an automated route/date matching engine, secure AES-256 encrypted storage for government ID credentials (CNIC/Passport) bypassing web accessibility, zero-middleman prefilled WhatsApp routing, and mandatory Open Box safety declarations.",
+    metrics: [
+      { num: "50%+", label: "Cheaper Than Air Express" },
+      { num: "< 3s", label: "Automated Route Matching" },
+      { num: "100%", label: "Encrypted ID Storage (.htaccess)" },
+      { num: "Zero", label: "Third-Party Bloat (Pure Vanilla JS)" },
+    ],
+    previewImage: "/projects/hash-move/hashmove-homepage.png",
+    gallery: [
+      {
+        id: "hashmove-hero",
+        title: "HashMove P2P Marketplace Hero & Live Route Search",
+        desc: "High-conversion landing experience in Deep Navy (#0A192F) and Emerald Green (#10B981) highlighting 0% platform fee, encrypted verification, live ticket preview, and instant route queries.",
+        src: "/projects/hash-move/hashmove-homepage.png",
+        tabLabel: "📦 Hero & Route Search",
+      },
+      {
+        id: "hashmove-directory",
+        title: "Interactive Traveler & Parcel Directory with Route Matrix",
+        desc: "Real-time searchable directory with origin/destination city filters (KHI, LHE, DXB, RUH, ISB, LHR), transport modes (Flight, Train, Bus), price/kg rates, and direct WhatsApp contact.",
+        src: "/projects/hash-move/hashmove-directory.png",
+        tabLabel: "✈️ Travelers Directory",
+      },
+      {
+        id: "hashmove-parcel-requests",
+        title: "Active Parcel Requests Board & Baggage Matchmaker",
+        desc: "Sender marketplace displaying live parcel delivery requests with verified sender badges, destination deadlines, parcel descriptions, weight allocations, and pre-negotiated budgets.",
+        src: "/projects/hash-move/hashmove-parcel-requests.png",
+        tabLabel: "📬 Parcel Requests Board",
+      },
+      {
+        id: "hashmove-traveler-form",
+        title: "4-Step Traveler Offer Workflow & Live Ticket Preview",
+        desc: "Multi-step listing wizard capturing route dates, weight allowance, expected fee/kg, live dynamic ticket card preview, and encrypted CNIC/Passport photo upload.",
+        src: "/projects/hash-move/hashmove-traveler-form.png",
+        tabLabel: "📝 Post a Trip Wizard",
+      },
+      {
+        id: "hashmove-parcel-form",
+        title: "Sender Parcel Request Portal & Category Specification",
+        desc: "Structured sender workflow specifying parcel categories (Documents, Clothes, Gifts, Prescription Medicines), weight, budget, and mandatory prohibited items declaration.",
+        src: "/projects/hash-move/hashmove-parcel-form.png",
+        tabLabel: "📋 Send a Parcel Form",
+      },
+      {
+        id: "hashmove-open-box",
+        title: "Open Box Safety & Legal Compliance Architecture",
+        desc: "Strict compliance framework mandating physical inspection of every parcel prior to travel to eliminate illicit baggage risk and enforce aviation security laws.",
+        src: "/projects/hash-move/hashmove-open-box-policy.png",
+        tabLabel: "🛡️ Safety & Inspection",
+      },
+      {
+        id: "hashmove-mobile",
+        title: "Mobile PWA Experience & Native App Tab Bar",
+        desc: "Mobile-first responsive architecture with custom bottom navigation bar, quick listing tiles, and offline-capable Service Worker caching.",
+        src: "/projects/hash-move/hashmove-mobile.png",
+        tabLabel: "📱 Mobile App & PWA",
       },
     ],
   },
@@ -574,6 +648,12 @@ export const INTEGRATIONS_DATA = [
 ];
 
 export const RECRUITER_KNOWLEDGE = [
+  {
+    keywords: ["hashmove", "hash-move", "parcel", "luggage", "traveler", "p2p", "delivery"],
+    answer:
+      "HashMove is a production-engineered peer-to-peer parcel delivery directory connecting international travelers with spare luggage capacity to parcel senders. Architected by Khuzemah with custom PHP 8 OOP plugin (hash-move-core), automated route matching, AES-256 encrypted ID storage for CNIC/passport uploads, and zero-fee direct WhatsApp chat handoffs.",
+    action: { label: "Inspect HashMove Case Study", href: "/projects#case-hash-move" },
+  },
   {
     keywords: ["zenawalk", "genoa", "genova", "audio", "tour", "multilingual", "r2", "cms"],
     answer:
