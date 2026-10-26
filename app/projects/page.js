@@ -18,6 +18,7 @@ export default function ProjectsPage() {
     "reelly-luxe": 0,
     "talentfilter-ai": 0,
     "alkithab-academy": 0,
+    "slowrise-pizza": 0,
     "hash-move": 0,
     zenawalk: 0,
     "uae-hrm": 0,

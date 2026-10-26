@@ -160,6 +160,7 @@ export const SKILLS = [
     items: [
       "Bitrix24 CRM",
       "HubSpot",
+      "WooCommerce Subscriptions & Gifting",
       "Headless Moodle 4.5 (LTS)",
       "Custom LMS Portals",
       "Property Finder API",
@@ -563,6 +564,73 @@ export const FEATURED_PROJECTS = [
     ],
   },
   {
+    id: "slowrise-pizza",
+    category: "ecommerce",
+    domain: "D2C Subscriptions & Artisan FoodTech",
+    role: "Lead Full Stack & Subscription Systems Architect",
+    stack: "PHP 8+ · WordPress Core · WooCommerce Subscriptions · Subscriptions Gifting · The Events Calendar Pro · Event Tickets Plus · Stripe / PayPal SDK · OceanWP Child Theme · REST API",
+    title: "Slow Rise Pizza — D2C Artisan Masterclass Subscriptions & Recurring Gifting Engine",
+    shortDescription:
+      "Production D2C culinary education platform engineered for artisan masterclasses, recurring course bundle subscriptions ($100–$400), automated subscription gifting, and virtual livestream ticketing.",
+    summary:
+      "Enterprise-grade culinary e-commerce platform engineered for artisan pizza authority Noel Brohner (`slowrisepizza.com`). Built on an optimized PHP 8+ WordPress and WooCommerce Subscriptions core, the platform powers tiered video course subscriptions, on-demand masterclass streaming, and an automated Subscription Gifting Engine with interactive recipient email validation, personalized gifting messages, scheduled deliveries, and automated multi-party transaction notifications.",
+    problem:
+      "High-ticket artisan culinary masterclasses ($100–$400) face unique checkout friction: students frequently purchase courses as gifts for friends and family without an automated way to schedule delivery, pre-assign recipient credentials, or grant time-gated access to streaming curriculum without exposing the purchaser's personal billing account.",
+    solution:
+      "Engineered a customized WooCommerce Subscriptions & Gifting architecture with automated 3-way email dispatching (Recipient voucher, Purchaser confirmation, and Admin audit ledger). Implemented time-gated on-demand video bundle streaming (2-month access windows), real-time virtual live masterclass scheduling via The Events Calendar Pro & Event Tickets Plus, and decoupled recipient redemption with zero account credential leakage.",
+    metrics: [
+      { num: "100%", label: "Automated Subscription Gifting" },
+      { num: "$100 – $400", label: "Tiered Course Subscriptions" },
+      { num: "3-Way", label: "Automated Email Notification Engine" },
+      { num: "< 2s", label: "On-Demand Video Curriculum Delivery" },
+    ],
+    previewImage: "/projects/slowrise/slowrise-subscription-gifting.png",
+    gallery: [
+      {
+        id: "slowrise-gifting",
+        title: "Interactive Subscription & Course Gifting Engine",
+        desc: "In-line subscription gifting workflow featuring dynamic 'This is a gift' checkbox, recipient email validation, recipient name assignment, personalized congratulatory message, and automated gift redemption tracking.",
+        src: "/projects/slowrise/slowrise-subscription-gifting.png",
+        tabLabel: "🎁 Subscription Gifting",
+      },
+      {
+        id: "slowrise-hero",
+        title: "Artisan Pizza Authority & Digital Academy Hero",
+        desc: "Clean high-conversion landing page presenting master baker Noel Brohner's consulting credentials (Food & Wine 'dough guru', Bestia 'mad scientist'), direct on-demand video access, and live class registration.",
+        src: "/projects/slowrise/slowrise-homepage.png",
+        tabLabel: "🍕 Brand & Masterclasses",
+      },
+      {
+        id: "slowrise-ondemand",
+        title: "On-Demand Video Course Library & Tiered Bundles",
+        desc: "Filterable video masterclass catalog featuring Level 1 & Level 2 3-class bundles ($300–$400), hands-on beginner seminars, and artisan sourdough gas-fired deck oven deep dives with 2-month streaming windows.",
+        src: "/projects/slowrise/slowrise-ondemand-classes.png",
+        tabLabel: "📚 On-Demand Bundles",
+      },
+      {
+        id: "slowrise-calendar",
+        title: "Interactive Live Masterclass Schedule & Ticket RSVPs",
+        desc: "Real-time livestream class schedule integrated with The Events Calendar Pro, Event Tickets Plus, and Zoom virtual conferencing with iCal feed subscriptions.",
+        src: "/projects/slowrise/slowrise-events-calendar.png",
+        tabLabel: "📅 Virtual Live Schedule",
+      },
+      {
+        id: "slowrise-single",
+        title: "Artisan Masterclass Detail & Gifting Checkbox",
+        desc: "Comprehensive class curriculum breakdown (Artisan New York & Sicilian-Style pizza in professional bread ovens, $200.00) with rating reviews, ingredient guides, and one-click gifting selection.",
+        src: "/projects/slowrise/slowrise-class-single.png",
+        tabLabel: "🧑‍🍳 Single Class & Gifting",
+      },
+      {
+        id: "slowrise-overview",
+        title: "Dual Learning Pathways: On-Demand & Gift-A-Class",
+        desc: "High-engagement storefront navigation directing students into On-Demand & Gift-A-Class channels alongside live class registrations and customer reviews.",
+        src: "/projects/slowrise/slowrise-classes-gift-overview.png",
+        tabLabel: "✨ Gifting & Reviews",
+      },
+    ],
+  },
+  {
     id: "zenawalk",
     category: "traveltech",
     domain: "TravelTech & Multilingual CMS Platforms",
@@ -897,9 +965,27 @@ export const INTEGRATIONS_DATA = [
     color: "#4285F4",
     id: "gdrive",
   },
+  {
+    name: "WooCommerce Subscriptions",
+    category: "Recurring Billing & Gifting",
+    color: "#96588A",
+    id: "woo-sub",
+  },
+  {
+    name: "The Events Calendar Pro",
+    category: "Virtual Event Ticketing",
+    color: "#334AFF",
+    id: "events-calendar",
+  },
 ];
 
 export const RECRUITER_KNOWLEDGE = [
+  {
+    keywords: ["slowrise", "slow rise", "pizza", "subscription", "gifting", "noel brohner", "foodtech", "d2c", "woocommerce subscriptions"],
+    answer:
+      "Slow Rise Pizza Co. (slowrisepizza.com) is an artisan culinary masterclass and subscription platform engineered by Khuzemah. Built with PHP 8, custom WordPress/OceanWP architecture, and WooCommerce Subscriptions & Gifting, it specializes in recurring course bundle subscriptions ($100–$400) and an automated Subscription Gifting Engine with recipient email verification, personalized gifting notes, scheduled delivery, automated 3-way notification workflows (Recipient, Purchaser, Admin), and virtual live masterclass ticketing via The Events Calendar Pro.",
+    action: { label: "Inspect Slow Rise Pizza Case Study", href: "/projects#case-slowrise-pizza" },
+  },
   {
     keywords: ["alkithab", "alkithab academy", "moodle", "edtech", "lms", "learning portal", "zero-redirect", "quiz"],
     answer:
