@@ -17,7 +17,7 @@ export default function SelectedWork({ onOpenLightbox }) {
         </div>
         <p className="section-lead">
           Production systems engineered for real-world operations — from multi-portal UAE real estate
-          synchronization and luxury off-plan CRM engines to enterprise ATS candidate governance, peer-to-peer luggage logistics, and fintech compliance.
+          synchronization and luxury off-plan CRM engines to enterprise ATS candidate governance, headless EdTech LMS sandboxes, peer-to-peer luggage logistics, and fintech compliance.
         </p>
 
         <div className="selected-work-grid">

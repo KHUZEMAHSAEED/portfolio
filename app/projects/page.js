@@ -17,6 +17,7 @@ export default function ProjectsPage() {
     "uae-proptech": 0,
     "reelly-luxe": 0,
     "talentfilter-ai": 0,
+    "alkithab-academy": 0,
     "hash-move": 0,
     zenawalk: 0,
     "uae-hrm": 0,

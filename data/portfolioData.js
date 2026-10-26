@@ -160,6 +160,8 @@ export const SKILLS = [
     items: [
       "Bitrix24 CRM",
       "HubSpot",
+      "Headless Moodle 4.5 (LTS)",
+      "Custom LMS Portals",
       "Property Finder API",
       "Bayut / Dubizzle API",
       "Cin7 Inventory",
@@ -170,6 +172,7 @@ export const SKILLS = [
     group: "Cloud, DevOps & Tools",
     items: [
       "AWS S3 & EC2",
+      "Google Drive API Sync",
       "Git / GitHub / Bitbucket",
       "Docker Basics",
       "Postman",
@@ -183,6 +186,7 @@ export const PROJECT_CATEGORIES = [
   { id: "all", label: "All Projects" },
   { id: "proptech", label: "🏢 UAE PropTech & Portals" },
   { id: "ai-systems", label: "🤖 Enterprise AI & Governance" },
+  { id: "edtech", label: "🎓 EdTech & Headless LMS" },
   { id: "ecommerce", label: "📦 P2P Logistics & E-Commerce" },
   { id: "traveltech", label: "🎧 TravelTech & CMS" },
   { id: "fintech", label: "💳 Fintech & Enterprise SaaS" },
@@ -467,6 +471,94 @@ export const FEATURED_PROJECTS = [
         desc: "Mobile-first responsive architecture with custom bottom navigation bar, quick listing tiles, and offline-capable Service Worker caching.",
         src: "/projects/hash-move/hashmove-mobile.png",
         tabLabel: "📱 Mobile App & PWA",
+      },
+    ],
+  },
+  {
+    id: "alkithab-academy",
+    category: "edtech",
+    domain: "EdTech & Headless LMS Engineering",
+    role: "Lead Portal Architect & Full Stack Engineer",
+    stack: "PHP 8+ · Moodle 4.5.13+ (LTS Core) · Custom Moodle Plugin (local_alkithabportal) · Vanilla JS (ES6+) · REST / AJAX · Mustache Templates · Google Drive Sync · Zoom / Google Meet API",
+    title: "Al Kithab Academy — Headless Student Learning Portal & Zero-Redirect LMS Sandbox",
+    shortDescription:
+      "Enterprise Islamic EdTech platform and custom student portal engineered on Moodle 4.5.13+ LTS core, enforcing the strict 'Zero-Redirect In-Portal Sandbox' rule with reverse-chronological record books, 4-tier certificate approvals, and headless timed quizzes.",
+    summary:
+      "Enterprise Islamic EdTech platform and custom student portal (`local_alkithabportal`) engineered on Moodle 4.5.13+ (LTS). Enforces the strict 'Zero-Redirect In-Portal Sandbox' architectural invariant — students never encounter raw Moodle backend interfaces. 100% of the student journey runs within an emerald/mint (#14B8A6) and dark navy (#0F2744) portal interface featuring dynamic course curricula, reverse-chronological attendance record books with teacher remarks, headless quiz runners, multi-tier certificate approvals, and automated cloud backup synchronization.",
+    problem:
+      "Traditional LMS setups like out-of-the-box Moodle present steep cognitive friction for young Islamic studies students: cluttered navigation bars, jarring page redirects to `/course/view.php` or `/mod/quiz/`, disorienting chronologies, and confusing assessment feedback lacking teacher audio/recitation context.",
+    solution:
+      "Architected a custom headless student portal plugin (`local_alkithabportal`) that completely decouples Moodle's core database (`mdl_quiz`, `mdl_assign`, `mdl_grade_grades`) from the presentation tier. Engineered reverse-chronological session record books, universal dropdown state persistence, headless modal quiz execution and question breakdowns, and an automated 4-stage certificate verification checklist with zero native redirects.",
+    metrics: [
+      { num: "100%", label: "In-Portal Sandbox (Zero Moodle Leakage)" },
+      { num: "8 Curricula", label: "Multi-Subject Islamic Foundations" },
+      { num: "4-Tier", label: "Certificate Approval Gates" },
+      { num: "< 1s", label: "Headless Quiz Evaluation & Telemetry" },
+    ],
+    previewImage: "/projects/alkithab/alkithab-student-home.png",
+    gallery: [
+      {
+        id: "alkithab-home",
+        title: "Student Home & Interactive Learning Pathway",
+        desc: "Centralized student dashboard featuring daily Islamic reflections, next class timetable with direct join launcher, tuition fee balance overview ($120), and prerequisite learning pathway graph.",
+        src: "/projects/alkithab/alkithab-student-home.png",
+        tabLabel: "🏠 Student Dashboard",
+      },
+      {
+        id: "alkithab-assessments",
+        title: "Square Assessments Grid & Oral Recitation Rubric",
+        desc: "4-column responsive square card grid tracking unlocked quizzes with status pills, scores (10/10, 9/10), unlock/closed deadlines, and an oral assessment breakdown evaluating Pronunciation, Fluency, and Accuracy.",
+        src: "/projects/alkithab/alkithab-assessments-grid.png",
+        tabLabel: "📝 Assessments Grid",
+      },
+      {
+        id: "alkithab-quiz",
+        title: "Zero-Redirect In-Portal Timed Quiz Runner",
+        desc: "Headless modal quiz runner executing directly inside the portal without navigating to Moodle /mod/quiz/. Features clean radio option selections, timed attempts, and asynchronous AJAX submission.",
+        src: "/projects/alkithab/alkithab-quiz-modal.png",
+        tabLabel: "⚡ Headless Quiz Runner",
+      },
+      {
+        id: "alkithab-result",
+        title: "In-Portal Question Breakdown & Scoring Telemetry",
+        desc: "Instant post-submission audit breakdown displaying immediate grade (3/3), question-by-question correctness pills, submitted answers, and audit notification for teachers and administrators.",
+        src: "/projects/alkithab/alkithab-quiz-result.png",
+        tabLabel: "📊 Instant Quiz Results",
+      },
+      {
+        id: "alkithab-recordbook",
+        title: "Reverse-Chronological Record Book & Video Archive",
+        desc: "Live class attendance ledger ordering sessions newest-first, rendering multi-subject lines (Qur'an Reading Practice + 99 Names of Allah), Present/Late/Absent status pills, teacher remarks callouts, and cloud video links.",
+        src: "/projects/alkithab/alkithab-classes-recordbook.png",
+        tabLabel: "📖 Attendance Record Book",
+      },
+      {
+        id: "alkithab-certs",
+        title: "Certificates Grid & 4-Gate Approval Workflow",
+        desc: "Course completion milestone checklist enforcing all 4 signoffs (Course Content, Assessment, Teacher Approval, Headmistress Approval) before unlocking dynamic PDF certificate downloads.",
+        src: "/projects/alkithab/alkithab-certificates-grid.png",
+        tabLabel: "🎓 4-Tier Certificates",
+      },
+      {
+        id: "alkithab-shop",
+        title: "Curriculum Catalog & Prerequisite Learning Engine",
+        desc: "Interactive course shop and study materials catalog with structured progression paths (Beginner Level Sarf → Advanced Level Nahw → Balaghah) and instant enrollment checks.",
+        src: "/projects/alkithab/alkithab-shop-catalogue.png",
+        tabLabel: "🛍️ Curriculum & Shop",
+      },
+      {
+        id: "alkithab-course",
+        title: "Chapter Syllabus & Lesson Resource Unlock Gating",
+        desc: "Dynamic course dashboard with universal dropdown accordions, tutor profile, and sequential lesson resource locks (Worksheets and quizzes unlock only after teacher conducts the live class).",
+        src: "/projects/alkithab/alkithab-course-detail.png",
+        tabLabel: "📚 Course Detail & Gating",
+      },
+      {
+        id: "alkithab-portal",
+        title: "Public Academy Storefront & Course Discovery",
+        desc: "High-conversion public portal for staging.alkithabacademy.com featuring course catalogs, faculty credentials, structured learning pathways, and direct student registration.",
+        src: "/projects/alkithab/alkithab-portal-home.png",
+        tabLabel: "🌐 Public Web Storefront",
       },
     ],
   },
@@ -793,9 +885,27 @@ export const INTEGRATIONS_DATA = [
     color: "#C5A059",
     id: "reelly",
   },
+  {
+    name: "Moodle 4.5 Core",
+    category: "Headless LMS Engine",
+    color: "#F98012",
+    id: "moodle",
+  },
+  {
+    name: "Google Drive API",
+    category: "Automated Cloud Backup",
+    color: "#4285F4",
+    id: "gdrive",
+  },
 ];
 
 export const RECRUITER_KNOWLEDGE = [
+  {
+    keywords: ["alkithab", "alkithab academy", "moodle", "edtech", "lms", "learning portal", "zero-redirect", "quiz"],
+    answer:
+      "Al Kithab Academy is an enterprise EdTech platform and headless student learning portal engineered by Khuzemah. Built on Moodle 4.5.13+ (LTS) core and a custom plugin (local_alkithabportal), it enforces the strict 'Zero-Redirect In-Portal Sandbox' rule — students never see raw Moodle pages. Features an emerald & navy UI (#14B8A6, #0F2744), reverse-chronological attendance record books with teacher remarks, headless timed quiz modals with instant grading telemetry, 4-tier certificate approval workflows (Course Content, Assessment, Teacher Approval, Headmistress Approval), and automated Google Drive cloud backup synchronization.",
+    action: { label: "Inspect Al Kithab Academy Case Study", href: "/projects#case-alkithab-academy" },
+  },
   {
     keywords: ["reelly", "reelly luxe", "off-plan", "luxury", "sobha", "emaar", "binghatti", "omniyat"],
     answer:
