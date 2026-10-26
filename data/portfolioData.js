@@ -182,6 +182,7 @@ export const SKILLS = [
 export const PROJECT_CATEGORIES = [
   { id: "all", label: "All Projects" },
   { id: "proptech", label: "🏢 UAE PropTech & Portals" },
+  { id: "ai-systems", label: "🤖 Enterprise AI & Governance" },
   { id: "ecommerce", label: "📦 P2P Logistics & E-Commerce" },
   { id: "traveltech", label: "🎧 TravelTech & CMS" },
   { id: "fintech", label: "💳 Fintech & Enterprise SaaS" },
@@ -325,6 +326,73 @@ export const FEATURED_PROJECTS = [
         desc: "Global investor pricing engine dynamically converting off-plan development prices, unit rates, and deposit schedules across AED, USD ($), EUR (€), and GBP (£).",
         src: "/projects/reelly/reelly-currency-switcher.png",
         tabLabel: "💱 Multi-Currency Engine",
+      },
+    ],
+  },
+  {
+    id: "talentfilter-ai",
+    category: "ai-systems",
+    domain: "Enterprise ATS & AI Candidate Governance",
+    role: "Lead AI Systems & Backend Architect",
+    stack: "Python 3.11/3.13 · FastAPI · Next.js 14 · TypeScript · PostgreSQL / SQLite · PyMuPDF · Pydantic v2 · Celery / Redis · JWT / bcrypt",
+    title: "TalentFilter AI — Enterprise ATS Resume Screening & Human-in-the-Loop Governance System",
+    shortDescription:
+      "High-throughput resume ingestion and deterministic scoring platform parsing PDFs/DOCX, extracting structured qualifications, and enforcing mandatory Human-in-the-Loop decision governance under EU AI Act & EEOC compliance standards.",
+    summary:
+      "Enterprise-grade Applicant Tracking System (ATS) combining FastAPI, PyMuPDF, and Next.js 14 App Router with strict Human-in-the-Loop (HITL) decision governance. Built on deterministic word-boundary parsing, explainable evidence extractions, and zero automated rejections. Features an interactive GRC audit center aligned with Deloitte Tech Risk Standards, EU AI Act High-Risk Employment AI requirements, and EEOC Four-Fifths compliance auditing.",
+    problem:
+      "Recruiting teams face thousands of unstructured candidate resumes per opening, leading to slow hiring cycles, biased heuristic rejections, and legal exposure under modern high-risk AI employment regulations (EEOC, EU AI Act, GDPR Art. 22).",
+    solution:
+      "Architected a deterministic, 100% explainable screening pipeline that decouples automated advisory recommendations from human HR decisions. Integrated PyMuPDF for resilient multi-page parsing, magic-byte inspection, SHA-256 deduplication, and an interactive GRC audit center verifying statutory compliance.",
+    metrics: [
+      { num: "100%", label: "Explainable Match Evidence" },
+      { num: "Zero", label: "Automated Rejections (HITL)" },
+      { num: "4 Statutory", label: "Standards Aligned (EEOC/EU AI/GDPR)" },
+      { num: "< 2s", label: "Multi-Page Resume Parsing" },
+    ],
+    previewImage: "/projects/talentfilter/talentfilter-dashboard.png",
+    gallery: [
+      {
+        id: "tf-dashboard",
+        title: "Executive ATS Screening Dashboard & Operational Metrics",
+        desc: "Enterprise recruitment cockpit displaying real-time processing statistics, deterministic match tiers, pipeline throughput, and candidate review queues.",
+        src: "/projects/talentfilter/talentfilter-dashboard.png",
+        tabLabel: "📊 Screening Dashboard",
+      },
+      {
+        id: "tf-candidates",
+        title: "Candidate Screening Directory & Blind Review Interface",
+        desc: "Filterable candidate directory featuring blind review anonymization toggles, deterministic qualification percentages (0-100%), and decoupled human decision status.",
+        src: "/projects/talentfilter/talentfilter-candidates.png",
+        tabLabel: "👥 Candidate Directory",
+      },
+      {
+        id: "tf-detail",
+        title: "100% Explainable Match Breakdown & Resume Evidence",
+        desc: "Deep candidate qualification dossier verifying mandatory competencies (Python, FastAPI, Docker, PostgreSQL) with exact text evidence snippets, bonus skill credits, and duration clarification flags.",
+        src: "/projects/talentfilter/talentfilter-candidate-detail.png",
+        tabLabel: "🔍 Explainable Scoring & Evidence",
+      },
+      {
+        id: "tf-jobs",
+        title: "Job Openings & Screening Criteria Engine",
+        desc: "Configurable job screening criteria manager supporting minimum experience thresholds, required skill weights, and automated talent rediscovery across candidate pools.",
+        src: "/projects/talentfilter/talentfilter-jobs.png",
+        tabLabel: "💼 Screening Criteria Engine",
+      },
+      {
+        id: "tf-upload",
+        title: "Multi-File Batch Resume Parser & Ingestion Queue",
+        desc: "Drag-and-drop batch ingestion portal supporting multi-page PDF and DOCX documents with magic-byte validation and SHA-256 duplicate detection.",
+        src: "/projects/talentfilter/talentfilter-upload.png",
+        tabLabel: "📥 Batch Ingestion Portal",
+      },
+      {
+        id: "tf-audit",
+        title: "Governance, Risk & Compliance (GRC) Audit Center",
+        desc: "Enterprise compliance center aligned with Deloitte Tech Risk Standards, monitoring EEOC Four-Fifths disparate impact ratios, EU AI Act High-Risk requirements, and immutable audit logs.",
+        src: "/projects/talentfilter/talentfilter-audit.png",
+        tabLabel: "🛡️ GRC & AI Bias Compliance",
       },
     ],
   },
@@ -733,6 +801,12 @@ export const RECRUITER_KNOWLEDGE = [
     answer:
       "Reelly Luxe is an ultra-luxury real estate platform and Bitrix24 CRM deal matching engine architected by Khuzemah. Built with React 19, TypeScript, and a Node.js/Express BFF gateway with masked key security, it integrates the Reelly API v2.0 with Bitrix24 CRM deals. Features an Obsidian & Gold design system, Leaflet Dark Matter map with gold coordinate pins, multi-currency engine (AED/USD/EUR/GBP), luxury Dossier payment plan schedules, and automated WhatsApp VIP client proposal dispatching directly into CRM deal timelines.",
     action: { label: "Inspect Reelly Luxe Case Study", href: "/projects#case-reelly-luxe" },
+  },
+  {
+    keywords: ["talentfilter", "ats", "resume", "screening", "python-scrapper", "hitl", "governance", "fastapi", "pymupdf"],
+    answer:
+      "TalentFilter AI is an enterprise ATS resume screening and candidate governance system architected by Khuzemah. Built with FastAPI (Python 3.13), Next.js 14 App Router, and PostgreSQL/SQLite, it features deterministic keyword/synonym matching, PyMuPDF extraction, 100% explainable qualification scores with exact text evidence snippets, and mandatory Human-in-the-Loop (HITL) governance compliant with EEOC 4/5ths rules, EU AI Act, and Deloitte Tech Risk Standards.",
+    action: { label: "Inspect TalentFilter AI Case Study", href: "/projects#case-talentfilter-ai" },
   },
   {
     keywords: ["hashmove", "hash-move", "parcel", "luggage", "traveler", "p2p", "delivery"],

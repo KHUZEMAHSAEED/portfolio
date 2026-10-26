@@ -16,6 +16,7 @@ export default function ProjectsPage() {
   const [galleryTabs, setGalleryTabs] = useState({
     "uae-proptech": 0,
     "reelly-luxe": 0,
+    "talentfilter-ai": 0,
     "hash-move": 0,
     zenawalk: 0,
     "uae-hrm": 0,
@@ -113,7 +114,7 @@ export default function ProjectsPage() {
 
             <p className="archive-hero-lead">
               A comprehensive technical catalog of production systems engineered for UAE PropTech real estate
-              synchronization, peer-to-peer luggage capacity &amp; parcel delivery, European digital tourism,
+              synchronization, enterprise ATS resume screening &amp; AI candidate governance, peer-to-peer luggage capacity &amp; parcel delivery, European digital tourism,
               and enterprise fintech compliance. Each deployment includes deep problem analysis, system architecture
               solutions, and verified performance metrics.
             </p>
