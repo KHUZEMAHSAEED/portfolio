@@ -255,6 +255,80 @@ export const FEATURED_PROJECTS = [
     ],
   },
   {
+    id: "reelly-luxe",
+    category: "proptech",
+    domain: "Luxury PropTech & Bitrix24 CRM Engine",
+    role: "Full Stack & PropTech Integration Architect",
+    stack: "React 19 · TypeScript 5 · Node.js / Express (BFF) · Vite · Leaflet (Dark Matter) · Reelly API v2.0 · Bitrix24 CRM · Multi-Currency",
+    title: "Reelly Luxe — High-Net-Worth Real Estate Portal & Bitrix24 CRM Deal Matching Engine",
+    shortDescription:
+      "Enterprise real estate platform unifying Reelly API v2.0 off-plan feeds with Bitrix24 CRM, featuring dual-mode luxury discovery, Leaflet dark maps, live currency conversions, and automated VIP proposal generation.",
+    summary:
+      "Full-stack off-plan real estate ecosystem engineered in Obsidian & Gold (#0A0B10, #C5A059), bridging the Reelly API v2.0 with Bitrix24 CRM deals. Features an interactive Dark Matter map with gold coordinate pins, multi-currency pricing (AED, USD, EUR, GBP), financial payment schedule breakdown, and an automated broker workspace that matches buyer criteria and syncs proposal dispatches directly into Bitrix24 CRM activity timelines.",
+    problem:
+      "Luxury UAE brokerage teams waste hours manually cross-referencing developer off-plan launches against CRM deals, converting foreign currencies for international buyers, and calculating complex payment milestones without direct CRM synchronization.",
+    solution:
+      "Engineered a secure Node.js/TypeScript BFF gateway with server-side in-memory caching and strict key masking, paired with a React 19/TypeScript frontend. Built a dual-mode interface supporting both high-net-worth public browsing and embedded Bitrix24 CRM deal mode with one-click inventory attachment, WhatsApp VIP proposal dispatch, and activity timeline logging.",
+    metrics: [
+      { num: "100%", label: "Key Security (Masked BFF)" },
+      { num: "4 Currencies", label: "Live Conversion (AED/USD/EUR/GBP)" },
+      { num: "< 1s", label: "CRM Deal Matching" },
+      { num: "Zero", label: "Credential Exposure" },
+    ],
+    previewImage: "/projects/reelly/reelly-catalog-grid.png",
+    gallery: [
+      {
+        id: "reelly-catalog",
+        title: "Obsidian & Gold Luxury Off-Plan Catalog Grid",
+        desc: "Curated high-net-worth property discovery catalog (Sobha SeaHaven, Bugatti Residences, The Lana by Dorchester, Creek Waters 2, Bvlgari Lighthouse) with live pricing, handover milestones, and developer badges.",
+        src: "/projects/reelly/reelly-catalog-grid.png",
+        tabLabel: "🏛️ Luxury Catalog Grid",
+      },
+      {
+        id: "reelly-split",
+        title: "Split Portal View & Synchronized Dark Map",
+        desc: "Interactive split layout combining searchable property cards with synchronized Leaflet CartoDB Dark Matter map pins, coordinate auto-fit, and glowing gold price markers.",
+        src: "/projects/reelly/reelly-split-portal.png",
+        tabLabel: "🗺️ Split View & Dark Map",
+      },
+      {
+        id: "reelly-dossier",
+        title: "Project Dossier Modal & Payment Plan Milestones",
+        desc: "High-net-worth project inspection modal featuring multi-photo gallery, amenities matrix, floor plans, 8.2% gross ROI calculator, and structured milestone schedules (20% booking, 40% construction, 40% handover).",
+        src: "/projects/reelly/reelly-project-modal.png",
+        tabLabel: "📋 Project Dossier & ROI",
+      },
+      {
+        id: "reelly-bitrix",
+        title: "Bitrix24 CRM Deal Matching Workspace",
+        desc: "Embedded CRM workspace reading active deal criteria (Client: Sheikh Mohammed Al-Qasimi, Budget: AED 35M, 4+ BR), filtering matching inventory in real-time with one-click deal attachment.",
+        src: "/projects/reelly/reelly-bitrix-mode.png",
+        tabLabel: "💼 Bitrix24 Deal Mode",
+      },
+      {
+        id: "reelly-proposal",
+        title: "Bitrix24 VIP Client Proposal & Timeline Activity Sync",
+        desc: "Broker dispatch modal formatting customized luxury property links, prefilling client WhatsApp messages, and recording instant activity notes directly into Bitrix24 deal timelines.",
+        src: "/projects/reelly/reelly-proposal-modal.png",
+        tabLabel: "📲 VIP Proposal & Timeline",
+      },
+      {
+        id: "reelly-settings",
+        title: "BFF Gateway Security & API Key Masking Architecture",
+        desc: "Production security diagnostics verifying upstream Reelly v2.0 gateway health, endpoint latency, and complete server-side masking (re_...****) with zero client-side credential exposure.",
+        src: "/projects/reelly/reelly-settings-modal.png",
+        tabLabel: "🔒 BFF Security & Key Masking",
+      },
+      {
+        id: "reelly-currency",
+        title: "Real-Time Multi-Currency Engine (USD / EUR / GBP / AED)",
+        desc: "Global investor pricing engine dynamically converting off-plan development prices, unit rates, and deposit schedules across AED, USD ($), EUR (€), and GBP (£).",
+        src: "/projects/reelly/reelly-currency-switcher.png",
+        tabLabel: "💱 Multi-Currency Engine",
+      },
+    ],
+  },
+  {
     id: "hash-move",
     category: "ecommerce",
     domain: "P2P Logistics & Luggage Capacity Marketplace",
@@ -645,9 +719,21 @@ export const INTEGRATIONS_DATA = [
     color: "#10A37F",
     id: "openai",
   },
+  {
+    name: "Reelly API v2.0",
+    category: "UAE Off-Plan Data",
+    color: "#C5A059",
+    id: "reelly",
+  },
 ];
 
 export const RECRUITER_KNOWLEDGE = [
+  {
+    keywords: ["reelly", "reelly luxe", "off-plan", "luxury", "sobha", "emaar", "binghatti", "omniyat"],
+    answer:
+      "Reelly Luxe is an ultra-luxury real estate platform and Bitrix24 CRM deal matching engine architected by Khuzemah. Built with React 19, TypeScript, and a Node.js/Express BFF gateway with masked key security, it integrates the Reelly API v2.0 with Bitrix24 CRM deals. Features an Obsidian & Gold design system, Leaflet Dark Matter map with gold coordinate pins, multi-currency engine (AED/USD/EUR/GBP), luxury Dossier payment plan schedules, and automated WhatsApp VIP client proposal dispatching directly into CRM deal timelines.",
+    action: { label: "Inspect Reelly Luxe Case Study", href: "/projects#case-reelly-luxe" },
+  },
   {
     keywords: ["hashmove", "hash-move", "parcel", "luggage", "traveler", "p2p", "delivery"],
     answer:

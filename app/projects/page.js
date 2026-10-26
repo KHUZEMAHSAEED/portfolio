@@ -15,6 +15,7 @@ export default function ProjectsPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [galleryTabs, setGalleryTabs] = useState({
     "uae-proptech": 0,
+    "reelly-luxe": 0,
     "hash-move": 0,
     zenawalk: 0,
     "uae-hrm": 0,

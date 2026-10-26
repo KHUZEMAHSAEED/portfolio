@@ -17,12 +17,12 @@ export default function SelectedWork({ onOpenLightbox }) {
         </div>
         <p className="section-lead">
           Production systems engineered for real-world operations — from multi-portal UAE real estate
-          synchronization to peer-to-peer luggage logistics, multilingual European digital tourism, and fintech compliance.
+          synchronization and luxury off-plan CRM engines to peer-to-peer luggage logistics, European digital tourism, and enterprise fintech compliance.
         </p>
 
         <div className="selected-work-grid">
           {FEATURED_PROJECTS.map((proj, idx) => {
-            const isWide = idx === 0;
+            const isWide = idx === 0 || idx === 5;
             return (
               <article
                 key={proj.id}
