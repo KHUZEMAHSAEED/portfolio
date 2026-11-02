@@ -208,6 +208,7 @@ export const HOMEPAGE_PROJECTS = [
   "reelly-luxe",
   "uae-hrm",
   "wisemarket",
+  "zenawalk",
 ];
 
 export const FAQ = [
@@ -427,9 +428,9 @@ const ALL_PROJECTS = [
     id: "uae-proptech",
     category: "proptech",
     domain: "UAE PropTech & Real Estate",
-    role: "Lead Systems Architect",
+    role: "Full Stack Developer",
     stack: "Laravel · Next.js · Python · Bitrix24 · Sudonum · XML/JSON",
-    title: "UAE Real Estate Portal Synchronization & AI Lead Qualification Hub",
+    title: "UAE Property Portal Sync & AI Lead Qualification",
     shortDescription:
       "Enterprise infrastructure powering bi-directional listing synchronization, real-time telephony tracking, and conversational AI lead qualification across UAE property portals.",
     summary:
@@ -494,9 +495,9 @@ const ALL_PROJECTS = [
     repo: "https://github.com/KHUZEMAHSAEED/reelly-realestate-integration-platform",
     category: "proptech",
     domain: "Luxury PropTech & Bitrix24 CRM Engine",
-    role: "Full Stack & PropTech Integration Architect",
+    role: "Full Stack Developer",
     stack: "React 19 · TypeScript 5 · Node.js / Express (BFF) · Vite · Leaflet (Dark Matter) · Reelly API v2.0 · Bitrix24 CRM · Multi-Currency",
-    title: "Reelly Luxe — High-Net-Worth Real Estate Portal & Bitrix24 CRM Deal Matching Engine",
+    title: "Reelly Luxe — Off-Plan Property Portal with Bitrix24 Deal Matching",
     shortDescription:
       "Enterprise real estate platform unifying Reelly API v2.0 off-plan feeds with Bitrix24 CRM, featuring dual-mode luxury discovery, Leaflet dark maps, live currency conversions, and automated VIP proposal generation.",
     summary:
@@ -568,9 +569,9 @@ const ALL_PROJECTS = [
     repo: "https://github.com/KHUZEMAHSAEED/ats-screening-platform",
     category: "ai-systems",
     domain: "Enterprise ATS & AI Candidate Governance",
-    role: "Lead AI Systems & Backend Architect",
+    role: "Backend & AI Developer",
     stack: "Python 3.11/3.13 · FastAPI · Next.js 14 · TypeScript · PostgreSQL / SQLite · PyMuPDF · Pydantic v2 · Celery / Redis · JWT / bcrypt",
-    title: "TalentFilter AI — Enterprise ATS Resume Screening & Human-in-the-Loop Governance System",
+    title: "TalentFilter AI — Resume Screening ATS with Human Review",
     shortDescription:
       "High-throughput resume ingestion and deterministic scoring platform parsing PDFs/DOCX, extracting structured qualifications, and enforcing mandatory Human-in-the-Loop decision governance under EU AI Act & EEOC compliance standards.",
     summary:
@@ -635,10 +636,10 @@ const ALL_PROJECTS = [
     id: "hash-move",
     category: "ecommerce",
     domain: "P2P Logistics & Luggage Capacity Marketplace",
-    role: "Lead Full Stack & Custom Architecture Engineer",
+    role: "Full Stack Developer",
     stack: "PHP 8+ · WordPress Core API · Custom OOP Plugins · Vanilla JS (ES6+) · REST API · AES-256 Storage · WhatsApp E.164 · PWA",
     liveUrl: "https://hash-move.com",
-    title: "HashMove — Peer-to-Peer Luggage Capacity & Cross-Border Parcel Delivery Platform",
+    title: "HashMove — Peer-to-Peer Parcel Delivery via Travellers' Spare Luggage",
     shortDescription:
       "Peer-to-peer parcel delivery directory connecting international travelers with spare luggage capacity to senders, featuring automated route matching, AES-256 encrypted ID verification, and zero-fee WhatsApp handoffs.",
     summary:
@@ -710,10 +711,10 @@ const ALL_PROJECTS = [
     id: "alkithab-academy",
     category: "edtech",
     domain: "EdTech & Headless LMS Engineering",
-    role: "Lead Portal Architect & Full Stack Engineer",
+    role: "Full Stack Developer",
     stack: "PHP 8+ · Moodle 4.5.13+ (LTS Core) · Custom Moodle Plugin (local_alkithabportal) · Vanilla JS (ES6+) · REST / AJAX · Mustache Templates · Google Drive Sync · Zoom / Google Meet API",
     liveUrl: "https://alkithabacademy.com",
-    title: "Al Kithab Academy — Headless Student Learning Portal & Zero-Redirect LMS Sandbox",
+    title: "Al Kithab Academy — Student Learning Portal Built on Moodle",
     shortDescription:
       "Enterprise Islamic EdTech platform and custom student portal engineered on Moodle 4.5.13+ LTS core, enforcing the strict 'Zero-Redirect In-Portal Sandbox' rule with reverse-chronological record books, 4-tier certificate approvals, and headless timed quizzes.",
     summary:
@@ -799,10 +800,10 @@ const ALL_PROJECTS = [
     id: "slowrise-pizza",
     category: "ecommerce",
     domain: "D2C Subscriptions & Artisan FoodTech",
-    role: "Lead Full Stack & Subscription Systems Architect",
+    role: "WordPress & WooCommerce Developer",
     stack: "PHP 8+ · WordPress Core · WooCommerce Subscriptions · Subscriptions Gifting · The Events Calendar Pro · Event Tickets Plus · Stripe / PayPal SDK · OceanWP Child Theme · REST API",
     liveUrl: "https://slowrisepizza.com",
-    title: "Slow Rise Pizza — D2C Artisan Masterclass Subscriptions & Recurring Gifting Engine",
+    title: "Slow Rise Pizza — Masterclass Subscriptions & Gift Bundles",
     shortDescription:
       "Production D2C culinary education platform engineered for artisan masterclasses, recurring course bundle subscriptions ($100–$400), automated subscription gifting, and virtual livestream ticketing.",
     summary:
@@ -891,10 +892,10 @@ const ALL_PROJECTS = [
     id: "zenawalk",
     category: "traveltech",
     domain: "TravelTech & Multilingual CMS Platforms",
-    role: "Full Stack & Systems Engineer",
+    role: "Full Stack Developer",
     stack: "Python (Flask) · MySQL · Cloudflare R2 · OpenRouteService · Boto3 · Vanilla JS (ES6+) · Stripe",
     liveUrl: "https://zenawalk.com",
-    title: "ZenaWalk — Multilingual Audio Tour Platform & Centralized CMS Engine",
+    title: "ZenaWalk — Multilingual Audio Walking Tours with a No-Code CMS",
     shortDescription:
       "Pedestrian walking tour platform for Genoa (Italy) featuring a no-code central CMS, 5-language localization with Italian fallback, and Cloudflare R2 audio streaming.",
     summary:
@@ -927,7 +928,7 @@ const ALL_PROJECTS = [
     domain: "Global E-Commerce & Logistics",
     role: "Senior Full Stack Developer",
     stack: "Laravel · Next.js · MySQL · Cin7 · ChannelAdvisor · Courier APIs",
-    title: "WiseMarket 4-Country Marketplace & Logistics Automation Engine",
+    title: "WiseMarket — 4-Country Marketplace & Courier Automation",
     shortDescription:
       "Cross-border e-commerce backbone operating across Australia, New Zealand, UAE, and Pakistan with automated courier API dispatch (TCS, Leopards, M&P) and Cin7 sync.",
     summary:
@@ -948,9 +949,9 @@ const ALL_PROJECTS = [
     id: "uae-hrm",
     category: "fintech",
     domain: "Enterprise SaaS & Fintech Compliance",
-    role: "Full Stack Engineer",
+    role: "Full Stack Developer",
     stack: "Laravel · Next.js · MySQL · AWS S3 · WPS Banking Specs",
-    title: "UAE Enterprise HRM & WPS Payroll Platform",
+    title: "UAE HRM & WPS Payroll Platform",
     shortDescription:
       "Workforce management with automated SIF payroll files in the UAE Central Bank Wages Protection System (WPS) format.",
     summary:

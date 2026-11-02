@@ -28,6 +28,8 @@ function ArchitecturePreview() {
 
 export default function SelectedWork({ onOpenLightbox }) {
   const projects = HOMEPAGE_PROJECTS.map((id) => byId[id]).filter(Boolean);
+  // The first card spans the grid; if the rest leave an orphan in the 2-column grid, widen the last one too.
+  const lastIsWide = projects.length > 1 && (projects.length - 1) % 2 === 1;
 
   return (
     <section id="work" className="section" aria-labelledby="work-title">
@@ -49,9 +51,10 @@ export default function SelectedWork({ onOpenLightbox }) {
             const card = PROJECT_CARDS[proj.id] || {};
             const stack = proj.stack.split("·").map((t) => t.trim()).slice(0, 5);
             const hasGallery = proj.gallery && proj.gallery.length > 0;
+            const isWide = idx === 0 || (lastIsWide && idx === projects.length - 1);
 
             return (
-              <article key={proj.id} className={`work-card ${idx === 0 ? "is-featured" : ""}`}>
+              <article key={proj.id} className={`work-card ${isWide ? "is-featured" : ""}`}>
                 <div className="work-media">
                   {proj.previewImage ? (
                     <button
@@ -122,7 +125,7 @@ export default function SelectedWork({ onOpenLightbox }) {
 
         <div className="work-more">
           <p>
-            Also: a secure WordPress publishing plugin, a headless Moodle LMS, peer-to-peer logistics, D2C subscriptions and a multilingual travel CMS.
+            Also: a secure WordPress publishing plugin, a headless Moodle LMS, peer-to-peer logistics and D2C subscriptions.
           </p>
           <Link href="/projects" className="btn btn-secondary">
             Browse all case studies <IconArrowRight size={16} />
