@@ -497,6 +497,7 @@ const ALL_PROJECTS = [
     domain: "Luxury PropTech & Bitrix24 CRM Engine",
     role: "Full Stack Developer",
     stack: "React 19 · TypeScript 5 · Node.js / Express (BFF) · Vite · Leaflet (Dark Matter) · Reelly API v2.0 · Bitrix24 CRM · Multi-Currency",
+    liveUrl: "https://reelly-khuzemah.vercel.app",
     title: "Reelly Luxe — Off-Plan Property Portal with Bitrix24 Deal Matching",
     shortDescription:
       "Enterprise real estate platform unifying Reelly API v2.0 off-plan feeds with Bitrix24 CRM, featuring dual-mode luxury discovery, Leaflet dark maps, live currency conversions, and automated VIP proposal generation.",
