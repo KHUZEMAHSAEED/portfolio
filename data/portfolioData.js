@@ -637,6 +637,7 @@ const ALL_PROJECTS = [
     domain: "P2P Logistics & Luggage Capacity Marketplace",
     role: "Lead Full Stack & Custom Architecture Engineer",
     stack: "PHP 8+ · WordPress Core API · Custom OOP Plugins · Vanilla JS (ES6+) · REST API · AES-256 Storage · WhatsApp E.164 · PWA",
+    liveUrl: "https://hash-move.com",
     title: "HashMove — Peer-to-Peer Luggage Capacity & Cross-Border Parcel Delivery Platform",
     shortDescription:
       "Peer-to-peer parcel delivery directory connecting international travelers with spare luggage capacity to senders, featuring automated route matching, AES-256 encrypted ID verification, and zero-fee WhatsApp handoffs.",
@@ -711,6 +712,7 @@ const ALL_PROJECTS = [
     domain: "EdTech & Headless LMS Engineering",
     role: "Lead Portal Architect & Full Stack Engineer",
     stack: "PHP 8+ · Moodle 4.5.13+ (LTS Core) · Custom Moodle Plugin (local_alkithabportal) · Vanilla JS (ES6+) · REST / AJAX · Mustache Templates · Google Drive Sync · Zoom / Google Meet API",
+    liveUrl: "https://alkithabacademy.com",
     title: "Al Kithab Academy — Headless Student Learning Portal & Zero-Redirect LMS Sandbox",
     shortDescription:
       "Enterprise Islamic EdTech platform and custom student portal engineered on Moodle 4.5.13+ LTS core, enforcing the strict 'Zero-Redirect In-Portal Sandbox' rule with reverse-chronological record books, 4-tier certificate approvals, and headless timed quizzes.",
@@ -799,6 +801,7 @@ const ALL_PROJECTS = [
     domain: "D2C Subscriptions & Artisan FoodTech",
     role: "Lead Full Stack & Subscription Systems Architect",
     stack: "PHP 8+ · WordPress Core · WooCommerce Subscriptions · Subscriptions Gifting · The Events Calendar Pro · Event Tickets Plus · Stripe / PayPal SDK · OceanWP Child Theme · REST API",
+    liveUrl: "https://slowrisepizza.com",
     title: "Slow Rise Pizza — D2C Artisan Masterclass Subscriptions & Recurring Gifting Engine",
     shortDescription:
       "Production D2C culinary education platform engineered for artisan masterclasses, recurring course bundle subscriptions ($100–$400), automated subscription gifting, and virtual livestream ticketing.",
@@ -890,6 +893,7 @@ const ALL_PROJECTS = [
     domain: "TravelTech & Multilingual CMS Platforms",
     role: "Full Stack & Systems Engineer",
     stack: "Python (Flask) · MySQL · Cloudflare R2 · OpenRouteService · Boto3 · Vanilla JS (ES6+) · Stripe",
+    liveUrl: "https://zenawalk.com",
     title: "ZenaWalk — Multilingual Audio Tour Platform & Centralized CMS Engine",
     shortDescription:
       "Pedestrian walking tour platform for Genoa (Italy) featuring a no-code central CMS, 5-language localization with Italian fallback, and Cloudflare R2 audio streaming.",

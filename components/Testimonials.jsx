@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { PROFILE, RECOMMENDATIONS } from "@/data/portfolioData";
 import SectionHeading from "./SectionHeading";
 import { IconArrowUpRight, IconChevronDown } from "./Icons";
@@ -34,12 +37,18 @@ function Attribution({ rec }) {
   );
 }
 
+// Cards shown under the featured quote before the "Show all" toggle.
+const INITIAL_VISIBLE = 3;
+
 export default function Testimonials() {
+  const [showAll, setShowAll] = useState(false);
   if (!RECOMMENDATIONS.length) return null;
 
   const [featured, ...rest] = RECOMMENDATIONS;
   const managers = RECOMMENDATIONS.filter((r) => r.managed).length;
   const total = Math.max(PROFILE.linkedinRecommendations || 0, RECOMMENDATIONS.length);
+  const visible = showAll ? rest : rest.slice(0, INITIAL_VISIBLE);
+  const hidden = rest.length - INITIAL_VISIBLE;
 
   return (
     <section id="recommendations" className="section" aria-labelledby="recs-title">
@@ -76,8 +85,8 @@ export default function Testimonials() {
           <Attribution rec={featured} />
         </figure>
 
-        <div className="rec-grid">
-          {rest.map((rec) => (
+        <div className="rec-grid" id="rec-grid">
+          {visible.map((rec) => (
             <figure className="rec-card" key={rec.name}>
               <blockquote>
                 <p className="rec-pull">&ldquo;{rec.pull}&rdquo;</p>
@@ -95,6 +104,21 @@ export default function Testimonials() {
             </figure>
           ))}
         </div>
+
+        {hidden > 0 && (
+          <div className="rec-more">
+            <button
+              type="button"
+              className="btn btn-secondary"
+              aria-expanded={showAll}
+              aria-controls="rec-grid"
+              onClick={() => setShowAll((v) => !v)}
+            >
+              {showAll ? "Show fewer" : `Show ${hidden} more`}
+              <IconChevronDown size={16} className={showAll ? "is-flipped" : ""} />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

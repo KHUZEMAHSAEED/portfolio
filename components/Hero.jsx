@@ -56,10 +56,19 @@ export default function Hero({ onOpenContact }) {
     <section className="hero" aria-labelledby="hero-title">
       <div className="wrap hero-grid">
         <div className="hero-main">
-          <p className="availability">
-            <span className="availability-dot" aria-hidden="true" />
-            Open to senior roles · Remote
-          </p>
+          <div className="hero-identity">
+            <div className="hero-portrait">
+              {PROFILE.photo ? (
+                <Image src={PROFILE.photo} alt={PROFILE.name} width={240} height={240} priority />
+              ) : (
+                <span aria-hidden="true">{PROFILE.initials}</span>
+              )}
+            </div>
+            <p className="availability">
+              <span className="availability-dot" aria-hidden="true" />
+              Open to senior roles · Remote
+            </p>
+          </div>
 
           <h1 id="hero-title" className="hero-title">
             {PROFILE.name}
@@ -119,13 +128,6 @@ export default function Hero({ onOpenContact }) {
 
         <aside className="snapshot" aria-label="Hiring snapshot">
           <div className="snapshot-head">
-            <div className="snapshot-avatar" aria-hidden={!PROFILE.photo}>
-              {PROFILE.photo ? (
-                <Image src={PROFILE.photo} alt={PROFILE.name} width={112} height={112} priority />
-              ) : (
-                <span>{PROFILE.initials}</span>
-              )}
-            </div>
             <div>
               <p className="snapshot-eyebrow">Hiring snapshot</p>
               <p className="snapshot-years">

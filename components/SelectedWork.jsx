@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FEATURED_PROJECTS, PROJECT_CARDS, HOMEPAGE_PROJECTS } from "@/data/portfolioData";
 import SectionHeading from "./SectionHeading";
-import { IconArrowRight, IconCheck, IconGitHub, IconZoom } from "./Icons";
+import { IconArrowRight, IconCheck, IconGitHub, IconGlobe, IconZoom } from "./Icons";
 
 const byId = Object.fromEntries(FEATURED_PROJECTS.map((p) => [p.id, p]));
 
@@ -103,6 +103,11 @@ export default function SelectedWork({ onOpenLightbox }) {
                     <p className="work-role">
                       <span>Role</span> {proj.role}
                     </p>
+                    {proj.liveUrl && (
+                      <a className="text-link work-repo" href={proj.liveUrl} target="_blank" rel="noreferrer">
+                        <IconGlobe size={16} /> Live site
+                      </a>
+                    )}
                     {proj.repo && (
                       <a className="text-link work-repo" href={proj.repo} target="_blank" rel="noreferrer">
                         <IconGitHub size={16} /> Code

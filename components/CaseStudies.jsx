@@ -5,7 +5,7 @@ import { PROJECT_CARDS } from "@/data/portfolioData";
 import WiseMarketVisual from "./WiseMarketVisual";
 import ZenaWalkVisual from "./ZenaWalkVisual";
 import CrediPostVisual from "./CrediPostVisual";
-import { IconGitHub, IconZoom } from "./Icons";
+import { IconArrowUpRight, IconGitHub, IconGlobe, IconZoom } from "./Icons";
 
 // Gallery tab labels in the data lead with an emoji; the redesigned UI is text-only.
 const cleanLabel = (label) => label.replace(/^[^\p{L}\p{N}]+/u, "");
@@ -31,6 +31,17 @@ export default function CaseStudies({ projects = [], galleryTabs = {}, onTabChan
                       <dt>Role</dt>
                       <dd>{proj.role}</dd>
                     </div>
+                    {proj.liveUrl && (
+                      <div>
+                        <dt>Live site</dt>
+                        <dd>
+                          <a className="text-link" href={proj.liveUrl} target="_blank" rel="noreferrer">
+                            <IconGlobe size={16} /> {proj.liveUrl.replace(/^https?:\/\//, "")}
+                            <IconArrowUpRight size={14} />
+                          </a>
+                        </dd>
+                      </div>
+                    )}
                     {proj.repo && (
                       <div>
                         <dt>Source</dt>

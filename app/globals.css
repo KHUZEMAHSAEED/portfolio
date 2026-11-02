@@ -582,7 +582,68 @@ ol {
    Hero
 --------------------------------------------------- */
 .hero {
+  position: relative;
+  isolation: isolate;
   padding: 72px 0 64px;
+  overflow: hidden;
+}
+
+/* Soft accent glow behind the hero so the first screen has some depth */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -20% -10% auto;
+  height: 120%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(40% 50% at 18% 20%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%),
+    radial-gradient(35% 45% at 85% 35%, color-mix(in srgb, #7c5cff 12%, transparent), transparent 70%);
+}
+
+.hero-identity {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 28px;
+}
+
+.hero-identity .availability {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .hero-identity {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+}
+
+.hero-portrait {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(88px, 11vw, 120px);
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(140deg, var(--accent), #6e86e8);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 22px;
+  box-shadow:
+    0 0 0 4px var(--bg),
+    0 0 0 6px color-mix(in srgb, var(--accent) 55%, transparent),
+    0 18px 48px -12px color-mix(in srgb, var(--accent) 60%, transparent);
+}
+
+.hero-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-grid {
@@ -727,28 +788,6 @@ ol {
   gap: 16px;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--line);
-}
-
-.snapshot-avatar {
-  display: grid;
-  place-items: center;
-  width: 76px;
-  height: 76px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  box-shadow: 0 0 0 3px var(--surface), 0 0 0 4px var(--line);
-  overflow: hidden;
-  background: linear-gradient(140deg, var(--accent), #6e86e8);
-  color: #fff;
-  font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 18px;
-}
-
-.snapshot-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .snapshot-eyebrow {
@@ -1580,6 +1619,23 @@ ol {
   font-weight: 650;
 }
 
+.skills-tabs {
+  margin-bottom: 20px;
+}
+
+.skills-grid.is-single {
+  grid-template-columns: 1fr;
+}
+
+.skills-grid.is-single .skills-group {
+  padding: 32px;
+}
+
+.skills-grid.is-single .chip {
+  font-size: 15px;
+  padding: 6px 14px;
+}
+
 @media (max-width: 960px) {
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1812,6 +1868,20 @@ ol {
 .rec-grid {
   columns: 3 300px;
   column-gap: 24px;
+}
+
+.rec-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.rec-more svg {
+  transition: transform 0.2s var(--ease);
+}
+
+.rec-more svg.is-flipped {
+  transform: rotate(180deg);
 }
 
 .rec-card {
