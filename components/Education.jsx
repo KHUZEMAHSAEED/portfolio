@@ -79,7 +79,13 @@ export default function Education() {
                     <li key={c.name}>
                       <IconCheck size={16} />
                       <span>
-                        {c.name}
+                        {c.url ? (
+                          <a className="text-link" href={c.url} target="_blank" rel="noreferrer">
+                            {c.name}
+                          </a>
+                        ) : (
+                          c.name
+                        )}
                         <small>
                           {c.issuer}
                           {c.year && ` · ${c.year}`}

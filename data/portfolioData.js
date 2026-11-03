@@ -41,8 +41,12 @@ export const PROFILE = {
     city: "Islamabad",
     years: "2016 — 2020",
   },
-  // Optional — e.g. [{ name: "AWS Certified Developer", issuer: "Amazon", year: "2025" }]
-  certifications: [],
+  // e.g. { name: "AWS Certified Developer", issuer: "Amazon", year: "2025", url: "https://..." } — url is optional
+  certifications: [
+    { name: "Claude Code 101", issuer: "Anthropic · Claude Academy", year: "2026" },
+    { name: "Claude 101", issuer: "Anthropic · Claude Academy", year: "2026" },
+    { name: "AI Fluency: Framework & Foundations", issuer: "Anthropic · Claude Academy", year: "2026" },
+  ],
 };
 
 // LinkedIn recommendations, transcribed verbatim. `pull` is an exact excerpt used as the headline quote.
