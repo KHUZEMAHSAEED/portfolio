@@ -94,21 +94,19 @@ export default function Education() {
                   <div>
                     <h3 className="card-title">Certifications</h3>
                     <p className="cert-subtitle">
-                      {certifications.length} Credentials · Anthropic Claude Academy
+                      {certifications.length} Verified Credentials · Anthropic Claude Academy
                     </p>
                   </div>
-                  {PROFILE.linkedin && (
-                    <a
-                      className="cert-verify-link"
-                      href={PROFILE.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                      title="Verify credentials on LinkedIn"
-                    >
-                      <span>Verify on LinkedIn</span>
-                      <IconArrowUpRight size={13} />
-                    </a>
-                  )}
+                  <a
+                    className="cert-verify-link"
+                    href={PROFILE.linkedinCertifications || "https://www.linkedin.com/in/khuzemah-saeed/details/certifications/"}
+                    target="_blank"
+                    rel="noreferrer"
+                    title="View all verified certificates on LinkedIn"
+                  >
+                    <span>View all on LinkedIn</span>
+                    <IconArrowUpRight size={13} />
+                  </a>
                 </div>
 
                 <div className="cert-tabs" role="tablist" aria-label="Filter certifications by expertise">
@@ -143,8 +141,15 @@ export default function Education() {
                       <IconCheck size={16} />
                       <div className="cert-item-content">
                         {c.url ? (
-                          <a className="text-link" href={c.url} target="_blank" rel="noreferrer">
-                            {c.name}
+                          <a
+                            className="text-link cert-name-link"
+                            href={c.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            title={`View ${c.name} certificate on LinkedIn`}
+                          >
+                            <span>{c.name}</span>
+                            <IconArrowUpRight size={12} className="cert-link-arrow" />
                           </a>
                         ) : (
                           c.name
@@ -153,6 +158,17 @@ export default function Education() {
                           <span>{c.issuer}</span>
                           {c.year && <span>· {c.year}</span>}
                           {c.tag && <span className="cert-tag">{c.tag}</span>}
+                          {c.pdf && (
+                            <a
+                              className="cert-pdf-link"
+                              href={c.pdf}
+                              target="_blank"
+                              rel="noreferrer"
+                              title={`View official ${c.name} certificate PDF`}
+                            >
+                              PDF ↗
+                            </a>
+                          )}
                         </span>
                       </div>
                     </li>

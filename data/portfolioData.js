@@ -30,6 +30,7 @@ export const PROFILE = {
   phoneHref: "+923475985699",
   whatsapp: "https://wa.me/923475985699",
   linkedin: "https://www.linkedin.com/in/khuzemah-saeed/",
+  linkedinCertifications: "https://www.linkedin.com/in/khuzemah-saeed/details/certifications/",
   // Count shown as social proof, linking to the recommendations on LinkedIn.
   linkedinRecommendations: 8,
   github: "https://github.com/KHUZEMAHSAEED",
@@ -41,7 +42,8 @@ export const PROFILE = {
     city: "Islamabad",
     years: "2016 — 2020",
   },
-  // Verified certifications from Anthropic · Claude Academy, prioritized by Backend & AI Engineering expertise.
+  // Verified certificates from Anthropic · Claude Academy, prioritized by Backend & AI Engineering expertise.
+  // Each entry includes the official cryptographic verification link and local PDF certificate.
   certifications: [
     {
       name: "Tool Use with the Messages API",
@@ -49,7 +51,8 @@ export const PROFILE = {
       year: "2026",
       category: "AI & Agents",
       tag: "Function Calling & Tools",
-      url: "https://academy.claude.com/courses/tool-use-with-the-messages-api",
+      url: "https://academy.claude.com/verify/63516ebfd79b594c281a16018efd9f99",
+      pdf: "/certificates/claude-academy-badge-tool-use-with-the-messages-api.pdf",
     },
     {
       name: "Model Context Protocol: Advanced Topics",
@@ -57,7 +60,8 @@ export const PROFILE = {
       year: "2026",
       category: "AI & Agents",
       tag: "Advanced MCP Architecture",
-      url: "https://academy.claude.com/courses/model-context-protocol-advanced-topics",
+      url: "https://academy.claude.com/verify/c59382827046ae221c8975aa357e3053",
+      pdf: "/certificates/claude-academy-badge-model-context-protocol-advanced-topics.pdf",
     },
     {
       name: "Introduction to Model Context Protocol",
@@ -65,7 +69,8 @@ export const PROFILE = {
       year: "2026",
       category: "AI & Agents",
       tag: "MCP Client & Server Standards",
-      url: "https://academy.claude.com/courses/introduction-to-model-context-protocol",
+      url: "https://academy.claude.com/verify/699b3b79d812242ea5f64b0f766f9f25",
+      pdf: "/certificates/claude-academy-badge-introduction-to-model-context-protocol.pdf",
     },
     {
       name: "Building with the Claude API",
@@ -73,7 +78,17 @@ export const PROFILE = {
       year: "2026",
       category: "AI & Agents",
       tag: "Streaming & Structured Outputs",
-      url: "https://academy.claude.com/courses/building-with-the-claude-api",
+      url: "https://academy.claude.com/verify/9bcc5cc3bc2644fa08572155ca93beca",
+      pdf: "/certificates/claude-academy-badge-building-with-the-claude-api.pdf",
+    },
+    {
+      name: "Building Effective Human-Agent Teams",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "AI & Agents",
+      tag: "Human-Agent Orchestration",
+      url: "https://academy.claude.com/verify/850e58e72c36336e7851bb88033cda39",
+      pdf: "/certificates/claude-academy-badge-building-effective-human-agent-teams.pdf",
     },
     {
       name: "Introduction to Claude Cowork",
@@ -81,31 +96,8 @@ export const PROFILE = {
       year: "2026",
       category: "AI & Agents",
       tag: "Agent Task Delegation",
-      url: "https://academy.claude.com/courses/introduction-to-claude-cowork",
-    },
-    {
-      name: "Building with the Claude API on Amazon Bedrock",
-      issuer: "Anthropic · Claude Academy",
-      year: "2026",
-      category: "Cloud & Enterprise",
-      tag: "AWS Bedrock Infrastructure",
-      url: "https://academy.claude.com/courses/claude-with-amazon-bedrock",
-    },
-    {
-      name: "Claude on Google Cloud (Vertex AI)",
-      issuer: "Anthropic · Claude Academy",
-      year: "2026",
-      category: "Cloud & Enterprise",
-      tag: "GCP Vertex AI Scaling",
-      url: "https://academy.claude.com/courses/claude-with-google-cloud-s-vertex-ai",
-    },
-    {
-      name: "Deploying Claude Enterprise with Confidence",
-      issuer: "Anthropic · Claude Academy",
-      year: "2026",
-      category: "Cloud & Enterprise",
-      tag: "Enterprise Governance & Security",
-      url: "https://academy.claude.com/courses/deploying-claude-enterprise-with-confidence",
+      url: "https://academy.claude.com/verify/db4c8af3db5ca5bb4da485383ab0a1dc",
+      pdf: "/certificates/claude-academy-badge-introduction-to-claude-cowork.pdf",
     },
     {
       name: "Claude Code in Action",
@@ -113,7 +105,17 @@ export const PROFILE = {
       year: "2026",
       category: "Developer Tooling",
       tag: "Production CLI Agent Workflows",
-      url: "https://academy.claude.com/courses/claude-code-in-action",
+      url: "https://academy.claude.com/verify/c3149a242d24e27b6b46132d5c7ed9fc",
+      pdf: "/certificates/claude-academy-badge-claude-code-in-action.pdf",
+    },
+    {
+      name: "Deploying Claude Enterprise with Confidence",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "Foundations & Enterprise",
+      tag: "Enterprise Governance & Security",
+      url: "https://academy.claude.com/verify/5de3296e4a7afa694df359f1d52ada8d",
+      pdf: "/certificates/claude-academy-badge-deploying-claude-enterprise-with-confidence.pdf",
     },
     {
       name: "Claude Platform 101",
@@ -121,7 +123,8 @@ export const PROFILE = {
       year: "2026",
       category: "Developer Tooling",
       tag: "Console & Rate Limit Architecture",
-      url: "https://academy.claude.com/courses/claude-platform-101",
+      url: "https://academy.claude.com/verify/a7efd9e40425e2ab53a31e5646179fd5",
+      pdf: "/certificates/claude-academy-badge-claude-platform-101.pdf",
     },
     {
       name: "Claude Code 101",
@@ -129,31 +132,44 @@ export const PROFILE = {
       year: "2026",
       category: "Developer Tooling",
       tag: "Agentic Engineering CLI",
-      url: "https://academy.claude.com/courses/claude-code-101",
-    },
-    {
-      name: "Claude 101",
-      issuer: "Anthropic · Claude Academy",
-      year: "2026",
-      category: "Foundations",
-      tag: "Core Prompting & Artifacts",
-      url: "https://academy.claude.com/courses/claude-101",
+      url: "https://academy.claude.com/verify/43b574f88dc99ec886104d0d613928f1",
+      pdf: "/certificates/claude-academy-badge-claude-code-101.pdf",
     },
     {
       name: "Introduction to Claude Tag",
       issuer: "Anthropic · Claude Academy",
       year: "2026",
-      category: "Foundations",
-      tag: "Team Collaboration",
-      url: "https://academy.claude.com/courses/introduction-to-claude-tag",
+      category: "Developer Tooling",
+      tag: "Team Collaboration & Workspaces",
+      url: "https://academy.claude.com/verify/1029cb90b595135ae73356dac0ecf1f2",
+      pdf: "/certificates/claude-academy-badge-introduction-to-claude-tag.pdf",
+    },
+    {
+      name: "Claude 101",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "Foundations & Enterprise",
+      tag: "Core Prompting & Artifacts",
+      url: "https://academy.claude.com/verify/34a9b3d5d95b308f224c51ad4ae1b63a",
+      pdf: "/certificates/claude-academy-badge-claude-101.pdf",
+    },
+    {
+      name: "AI Capabilities and Limitations",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "Foundations & Enterprise",
+      tag: "Working Memory & Context Limits",
+      url: "https://academy.claude.com/verify/e99d9576925e12402ee2fa80c6cac4ff",
+      pdf: "/certificates/claude-academy-badge-ai-capabilities-and-limitations.pdf",
     },
     {
       name: "AI Fluency: Framework and Foundations",
       issuer: "Anthropic · Claude Academy",
       year: "2026",
-      category: "Foundations",
+      category: "Foundations & Enterprise",
       tag: "4D Collaboration Framework",
-      url: "https://academy.claude.com/courses/ai-fluency-framework-foundations",
+      url: "https://academy.claude.com/verify/91127a9e4027b8dea453752dddb34080",
+      pdf: "/certificates/claude-academy-badge-ai-fluency-framework-foundations.pdf",
     },
   ],
 };
@@ -161,9 +177,8 @@ export const PROFILE = {
 export const CERTIFICATION_CATEGORIES = [
   "All",
   "AI & Agents",
-  "Cloud & Enterprise",
   "Developer Tooling",
-  "Foundations",
+  "Foundations & Enterprise",
 ];
 
 // LinkedIn recommendations, transcribed verbatim. `pull` is an exact excerpt used as the headline quote.
@@ -1487,8 +1502,8 @@ export const RECRUITER_KNOWLEDGE = [
   {
     keywords: ["certifications", "certs", "certified", "claude academy", "anthropic", "credentials"],
     answer:
-      "Khuzemah holds 14 official certifications from Anthropic (Claude Academy), specializing in Backend & AI Engineering: Tool Use with the Messages API, Model Context Protocol (Advanced Topics & Foundations), Building with the Claude API, Cloud deployments on AWS Bedrock and Google Cloud Vertex AI, Claude Code in Action, and Enterprise AI deployment governance.",
-    action: { label: "View Certifications in About Section", href: "#about" },
+      "Khuzemah holds 14 official certifications from Anthropic (Claude Academy), specializing in Backend & AI Engineering: Tool Use with the Messages API, Model Context Protocol (Advanced Topics & Foundations), Building with the Claude API, Cloud deployments on AWS Bedrock and Google Cloud Vertex AI, Claude Code in Action, and Enterprise AI deployment governance. All verified certificates can be viewed directly on his LinkedIn certifications page.",
+    action: { label: "View Certifications on LinkedIn", href: "https://www.linkedin.com/in/khuzemah-saeed/details/certifications/" },
   },
   {
     keywords: ["contact", "email", "phone", "reach", "hire"],

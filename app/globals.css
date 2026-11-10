@@ -1839,6 +1839,25 @@ ol {
   gap: 2px;
 }
 
+.cert-name-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cert-link-arrow {
+  opacity: 0.55;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  margin-top: 0 !important;
+  color: inherit !important;
+  flex-shrink: 0;
+}
+
+.cert-name-link:hover .cert-link-arrow {
+  opacity: 1;
+  transform: translate(1px, -1px);
+}
+
 .cert-meta {
   display: flex;
   flex-wrap: wrap;
@@ -1859,6 +1878,28 @@ ol {
   color: var(--accent);
   border: 1px solid var(--line);
   line-height: 1.4;
+}
+
+.cert-pdf-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--surface-2);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  text-decoration: none;
+  transition: all 0.15s ease;
+  line-height: 1.4;
+}
+
+.cert-pdf-link:hover {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
 }
 
 .cert-toggle-btn {
