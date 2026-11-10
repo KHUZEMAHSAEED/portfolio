@@ -41,13 +41,130 @@ export const PROFILE = {
     city: "Islamabad",
     years: "2016 — 2020",
   },
-  // e.g. { name: "AWS Certified Developer", issuer: "Amazon", year: "2025", url: "https://..." } — url is optional
+  // Verified certifications from Anthropic · Claude Academy, prioritized by Backend & AI Engineering expertise.
   certifications: [
-    { name: "Claude Code 101", issuer: "Anthropic · Claude Academy", year: "2026" },
-    { name: "Claude 101", issuer: "Anthropic · Claude Academy", year: "2026" },
-    { name: "AI Fluency: Framework & Foundations", issuer: "Anthropic · Claude Academy", year: "2026" },
+    {
+      name: "Tool Use with the Messages API",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "AI & Agents",
+      tag: "Function Calling & Tools",
+      url: "https://academy.claude.com/courses/tool-use-with-the-messages-api",
+    },
+    {
+      name: "Model Context Protocol: Advanced Topics",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "AI & Agents",
+      tag: "Advanced MCP Architecture",
+      url: "https://academy.claude.com/courses/model-context-protocol-advanced-topics",
+    },
+    {
+      name: "Introduction to Model Context Protocol",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "AI & Agents",
+      tag: "MCP Client & Server Standards",
+      url: "https://academy.claude.com/courses/introduction-to-model-context-protocol",
+    },
+    {
+      name: "Building with the Claude API",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "AI & Agents",
+      tag: "Streaming & Structured Outputs",
+      url: "https://academy.claude.com/courses/building-with-the-claude-api",
+    },
+    {
+      name: "Introduction to Claude Cowork",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "AI & Agents",
+      tag: "Agent Task Delegation",
+      url: "https://academy.claude.com/courses/introduction-to-claude-cowork",
+    },
+    {
+      name: "Building with the Claude API on Amazon Bedrock",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "Cloud & Enterprise",
+      tag: "AWS Bedrock Infrastructure",
+      url: "https://academy.claude.com/courses/claude-with-amazon-bedrock",
+    },
+    {
+      name: "Claude on Google Cloud (Vertex AI)",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "Cloud & Enterprise",
+      tag: "GCP Vertex AI Scaling",
+      url: "https://academy.claude.com/courses/claude-with-google-cloud-s-vertex-ai",
+    },
+    {
+      name: "Deploying Claude Enterprise with Confidence",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "Cloud & Enterprise",
+      tag: "Enterprise Governance & Security",
+      url: "https://academy.claude.com/courses/deploying-claude-enterprise-with-confidence",
+    },
+    {
+      name: "Claude Code in Action",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "Developer Tooling",
+      tag: "Production CLI Agent Workflows",
+      url: "https://academy.claude.com/courses/claude-code-in-action",
+    },
+    {
+      name: "Claude Platform 101",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "Developer Tooling",
+      tag: "Console & Rate Limit Architecture",
+      url: "https://academy.claude.com/courses/claude-platform-101",
+    },
+    {
+      name: "Claude Code 101",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "Developer Tooling",
+      tag: "Agentic Engineering CLI",
+      url: "https://academy.claude.com/courses/claude-code-101",
+    },
+    {
+      name: "Claude 101",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "Foundations",
+      tag: "Core Prompting & Artifacts",
+      url: "https://academy.claude.com/courses/claude-101",
+    },
+    {
+      name: "Introduction to Claude Tag",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "Foundations",
+      tag: "Team Collaboration",
+      url: "https://academy.claude.com/courses/introduction-to-claude-tag",
+    },
+    {
+      name: "AI Fluency: Framework and Foundations",
+      issuer: "Anthropic · Claude Academy",
+      year: "2026",
+      category: "Foundations",
+      tag: "4D Collaboration Framework",
+      url: "https://academy.claude.com/courses/ai-fluency-framework-foundations",
+    },
   ],
 };
+
+export const CERTIFICATION_CATEGORIES = [
+  "All",
+  "AI & Agents",
+  "Cloud & Enterprise",
+  "Developer Tooling",
+  "Foundations",
+];
 
 // LinkedIn recommendations, transcribed verbatim. `pull` is an exact excerpt used as the headline quote.
 // The first entry is featured; the rest follow by relevance to senior roles.
@@ -1366,6 +1483,12 @@ export const RECRUITER_KNOWLEDGE = [
     keywords: ["education", "degree", "university", "nust"],
     answer:
       "Khuzemah holds a Bachelor of Computer Science (2016 — 2020) from the National University of Sciences and Technology (NUST), Islamabad.",
+  },
+  {
+    keywords: ["certifications", "certs", "certified", "claude academy", "anthropic", "credentials"],
+    answer:
+      "Khuzemah holds 14 official certifications from Anthropic (Claude Academy), specializing in Backend & AI Engineering: Tool Use with the Messages API, Model Context Protocol (Advanced Topics & Foundations), Building with the Claude API, Cloud deployments on AWS Bedrock and Google Cloud Vertex AI, Claude Code in Action, and Enterprise AI deployment governance.",
+    action: { label: "View Certifications in About Section", href: "#about" },
   },
   {
     keywords: ["contact", "email", "phone", "reach", "hire"],

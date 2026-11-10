@@ -1,10 +1,15 @@
-import { PROFILE, DOMAINS } from "@/data/portfolioData";
+"use client";
+
+import { useState } from "react";
+import { PROFILE, DOMAINS, CERTIFICATION_CATEGORIES } from "@/data/portfolioData";
 import SectionHeading from "./SectionHeading";
-import { IconCap, IconCheck } from "./Icons";
+import { IconCap, IconCheck, IconArrowUpRight, IconChevronDown } from "./Icons";
 
 // About + what I'm looking for + education: the "can we hire this person?" questions in one place.
 export default function Education() {
   const { education, certifications, languages } = PROFILE;
+  const [activeCertTab, setActiveCertTab] = useState("All");
+  const [expanded, setExpanded] = useState(false);
 
   const lookingFor = [
     ["Roles", PROFILE.openTo.join(", ")],
@@ -15,6 +20,18 @@ export default function Education() {
     PROFILE.relocation && ["Relocation", PROFILE.relocation],
     languages.length > 0 && ["Languages", languages.join(", ")],
   ].filter(Boolean);
+
+  const filteredCerts =
+    activeCertTab === "All"
+      ? certifications
+      : certifications.filter((c) => c.category === activeCertTab);
+
+  // When "All" is active, show top 6 featured by default, expandable to all 14.
+  // When a specific category is active, show all in that category.
+  const displayedCerts =
+    activeCertTab === "All" && !expanded
+      ? filteredCerts.slice(0, 6)
+      : filteredCerts;
 
   return (
     <section id="about" className="section section-alt" aria-labelledby="about-title">
@@ -72,13 +89,59 @@ export default function Education() {
             </div>
 
             {certifications.length > 0 && (
-              <div className="card">
-                <h3 className="card-title">Certifications</h3>
+              <div className="card cert-card">
+                <div className="cert-card-header">
+                  <div>
+                    <h3 className="card-title">Certifications</h3>
+                    <p className="cert-subtitle">
+                      {certifications.length} Credentials · Anthropic Claude Academy
+                    </p>
+                  </div>
+                  {PROFILE.linkedin && (
+                    <a
+                      className="cert-verify-link"
+                      href={PROFILE.linkedin}
+                      target="_blank"
+                      rel="noreferrer"
+                      title="Verify credentials on LinkedIn"
+                    >
+                      <span>Verify on LinkedIn</span>
+                      <IconArrowUpRight size={13} />
+                    </a>
+                  )}
+                </div>
+
+                <div className="cert-tabs" role="tablist" aria-label="Filter certifications by expertise">
+                  {CERTIFICATION_CATEGORIES.map((cat) => {
+                    const count =
+                      cat === "All"
+                        ? certifications.length
+                        : certifications.filter((c) => c.category === cat).length;
+                    const isActive = activeCertTab === cat;
+                    return (
+                      <button
+                        key={cat}
+                        type="button"
+                        role="tab"
+                        aria-selected={isActive}
+                        className={`cert-pill ${isActive ? "active" : ""}`}
+                        onClick={() => {
+                          setActiveCertTab(cat);
+                          if (cat !== "All") setExpanded(true);
+                        }}
+                      >
+                        {cat}
+                        <span className="cert-pill-count">{count}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+
                 <ul className="check-list">
-                  {certifications.map((c) => (
+                  {displayedCerts.map((c) => (
                     <li key={c.name}>
                       <IconCheck size={16} />
-                      <span>
+                      <div className="cert-item-content">
                         {c.url ? (
                           <a className="text-link" href={c.url} target="_blank" rel="noreferrer">
                             {c.name}
@@ -86,14 +149,31 @@ export default function Education() {
                         ) : (
                           c.name
                         )}
-                        <small>
-                          {c.issuer}
-                          {c.year && ` · ${c.year}`}
-                        </small>
-                      </span>
+                        <span className="cert-meta">
+                          <span>{c.issuer}</span>
+                          {c.year && <span>· {c.year}</span>}
+                          {c.tag && <span className="cert-tag">{c.tag}</span>}
+                        </span>
+                      </div>
                     </li>
                   ))}
                 </ul>
+
+                {activeCertTab === "All" && filteredCerts.length > 6 && (
+                  <button
+                    type="button"
+                    className="cert-toggle-btn"
+                    onClick={() => setExpanded((prev) => !prev)}
+                    aria-expanded={expanded}
+                  >
+                    <span>
+                      {expanded
+                        ? "Show primary credentials"
+                        : `View all ${filteredCerts.length} credentials (+${filteredCerts.length - 6})`}
+                    </span>
+                    <IconChevronDown className={expanded ? "is-expanded" : ""} size={14} />
+                  </button>
+                )}
               </div>
             )}
           </div>
